@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clase 12 — Portafolio profesional con HTML semántico y SEO</title>
+  <meta name="description" content="Portafolio profesional con estructura semántica, meta etiquetas modernas, Open Graph, Twitter Card y JSON‑LD para un SEO sólido.">
+  <meta name="keywords" content="portafolio, HTML semántico, SEO, Open Graph, Twitter Card, JSON-LD, accesibilidad">
+  <meta name="author" content="Curso HTML 2025">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ejemplo.com/portafolio">
+
+  <!-- Social: Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Curso HTML 2025">
+  <meta property="og:title" content="Portafolio profesional con HTML semántico y SEO">
+  <meta property="og:description" content="Portafolio optimizado con estructura semántica, accesible y listo para posicionar.">
+  <meta property="og:url" content="https://ejemplo.com/portafolio">
+  <meta property="og:image" content="../../CLASE 3/3- IMAGENES/images/recorte-1200.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cursohtml2025">
+  <meta name="twitter:title" content="Portafolio profesional con HTML semántico y SEO">
+  <meta name="twitter:description" content="Portafolio optimizado con estructura semántica, accesible y listo para posicionar.">
+  <meta name="twitter:image" content="../../CLASE 3/3- IMAGENES/images/recorte-1200.png">
+
+  <!-- Iconos / PWA básico -->
+  <link rel="icon" type="image/png" href="../../CLASE 3/3- IMAGENES/images/logo.png">
+  <meta name="theme-color" content="#2f6e93">
+
+  <!-- Perf -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preload" as="image" href="images/portfolio-hero.svg">
+
+  <style>
+    :root{ --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --brand:#2f6e93; --border:#e6ebef; --card:#f7f9fb }
+    *{ box-sizing:border-box }
+    body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
+    a.skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+    a.skip:focus{ left:12px; top:12px; width:auto; height:auto; padding:.4rem .6rem; background:#fff; border:2px solid var(--brand); border-radius:8px; z-index:10 }
+    header.site{ background:linear-gradient(#cfe0ea, #dfe8ee 42%, var(--bg) 42%); padding:38px 16px 18px }
+    .wrap{ max-width:1100px; margin:0 auto; padding:0 16px }
+    nav[aria-label]{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px }
+    nav a{ color:#184b62; text-decoration:none; padding:4px 8px; border-radius:8px }
+    nav a:focus, nav a:hover{ background:#e6eef4 }
+    main{ padding:24px 0; display:grid; gap:20px; grid-template-columns: 1.18fr .82fr }
+    article, aside, section.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px }
+    .hero{ display:grid; gap:16px; grid-template-columns: 1.1fr .9fr; align-items:center }
+    .hero h1{ margin:.2rem 0 .4rem; font-size:clamp(24px,4.5vw,38px); color:#254b5a }
+    .meta{ font-size:.95rem; color:#6b7c86 }
+    .btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:10px 12px; border-radius:10px; text-decoration:none }
+    .btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
+    .grid{ display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)) }
+    figure{ margin:0 }
+    figure img{ width:100%; height:auto; border-radius:10px; display:block }
+    figcaption{ font-size:.9rem; color:#44525b; margin-top:6px }
+    .skills{ display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 0 }
+    .tag{ display:inline-block; background:#eef3f6; border:1px solid #e6ebef; color:#184b62; padding:.2rem .55rem; border-radius:999px; font-size:.85rem }
+    footer.site{ border-top:1px solid var(--border); padding:16px 0; background:#fafcfe; color:#44525b; font-size:.95rem; margin-top:20px }
+    @media (max-width:900px){ main{ grid-template-columns:1fr } .hero{ grid-template-columns:1fr } }
+  </style>
+
+  <!-- JSON-LD: Person + WebSite + BreadcrumbList + ItemList(Proyectos) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "JCARRILO",
+        "jobTitle": "Desarrollador Web Frontend",
+        "url": "https://ejemplo.com/portafolio",
+        "image": "https://ejemplo.com/assets/autor.png",
+        "sameAs": [
+          "https://github.com/JCARRILO",
+          "https://www.linkedin.com/in/tu-perfil/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://ejemplo.com",
+        "name": "Curso HTML 2025",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ejemplo.com/buscar?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ejemplo.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Portafolio", "item": "https://ejemplo.com/portafolio"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Proyectos destacados",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "url": "https://ejemplo.com/proyecto-a"},
+          {"@type": "ListItem", "position": 2, "url": "https://ejemplo.com/proyecto-b"},
+          {"@type": "ListItem", "position": 3, "url": "https://ejemplo.com/proyecto-c"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#contenido" class="skip">Saltar al contenido principal</a>
+
+  <header class="site" role="banner">
+    <div class="wrap">
+      <p class="meta">Portafolio · Curso HTML 2025</p>
+      <nav aria-label="Navegación principal">
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#blog">Blog</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <article class="hero" itemscope itemtype="https://schema.org/Person">
+      <div>
+        <h1 itemprop="headline">Portafolio profesional con HTML semántico y SEO</h1>
+        <p class="meta">Soy <strong itemprop="name">JCARRILO</strong>, <span itemprop="jobTitle">Desarrollador Frontend</span> enfocado en accesibilidad, rendimiento y SEO técnico.</p>
+        <div class="skills" aria-label="Habilidades">
+          <span class="tag">HTML semántico</span>
+          <span class="tag">Accesibilidad (a11y)</span>
+          <span class="tag">SEO Técnico</span>
+          <span class="tag">Performance</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <p style="margin-top:10px">
+          <a class="btn primary" href="#projects">Ver proyectos</a>
+          <a class="btn" href="#contacto">Contactar</a>
+        </p>
+      </div>
+      <figure>
+        <img src="images/portfolio-hero.svg" alt="Ilustración de portafolio optimizado para SEO" decoding="async" loading="eager" style="aspect-ratio:1200/630">
+        <figcaption class="visually-hidden">Ilustración introductoria del portafolio.</figcaption>
+      </figure>
+    </article>
+
+    <section id="about" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre mí</h2>
+      <p>Creo interfaces claras y accesibles, con foco en <strong>HTML semántico</strong>, <strong>microdatos/JSON‑LD</strong>, <strong>metadatos sociales</strong> y <strong>rendimiento</strong>.</p>
+    </section>
+
+    <section id="projects" class="card" aria-labelledby="projects-title">
+      <h2 id="projects-title">Proyectos destacados</h2>
+      <div class="grid">
+        <figure>
+          <img src="../../CLASE 3/3- IMAGENES/images/recorte-1200.png" srcset="../../CLASE 3/3- IMAGENES/images/recorte-600.png 600w, ../../CLASE 3/3- IMAGENES/images/recorte-1200.png 1200w" sizes="(max-width: 600px) 100vw, 420px" alt="Proyecto A: interfaz accesible" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Proyecto A</strong> — Interfaz accesible y semántica. <a href="#">Ver detalle</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../CLASE 3/3- IMAGENES/images/paisaje.png" alt="Proyecto B: sitio rápido y SEO" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Proyecto B</strong> — Sitio veloz con SEO técnico. <a href="#">Ver detalle</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../CLASE 3/3- IMAGENES/images/logo.png" alt="Proyecto C: branding y microdatos" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Proyecto C</strong> — Branding y datos estructurados. <a href="#">Ver detalle</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="blog" class="card" aria-labelledby="blog-title">
+      <h2 id="blog-title">Blog</h2>
+      <ul>
+        <li><a href="#">Estructura semántica que Google entiende</a></li>
+        <li><a href="#">JSON‑LD práctico para tu sitio</a></li>
+      </ul>
+    </section>
+
+    <aside id="contacto" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contacto</h2>
+      <p>¿Trabajamos juntos? Escríbeme a <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a> o visita mi <a href="https://github.com/JCARRILO" target="_blank" rel="noopener">GitHub</a>.</p>
+    </aside>
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Portafolio · Curso HTML 2025</p>
+      <nav aria-label="Enlaces de pie">
+        <a href="#about">Sobre mí</a> · <a href="#projects">Proyectos</a> · <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
