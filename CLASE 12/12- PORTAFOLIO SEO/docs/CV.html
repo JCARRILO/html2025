@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · JCARRILO</title>
+  <meta name="description" content="Currículum vitae de JCARRILO — Desarrollador Frontend.">
+  <style>
+    :root{ --ink:#1a1a1a; --muted:#5b6b75; --brand:#2f6e93; --border:#e6ebef }
+    *{ box-sizing:border-box }
+    body{ margin:0; font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink) }
+    .a4{ width:210mm; min-height:297mm; margin:0 auto; padding:18mm 16mm; background:#fff; }
+    header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px }
+    h1{ margin:0; font-size:24px; color:#254b5a }
+    .sub{ color:var(--muted) }
+    h2{ margin:14px 0 6px; font-size:16px; color:#254b5a; border-bottom:1px solid var(--border); padding-bottom:4px }
+    ul{ margin:4px 0 8px 16px }
+    .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px }
+    .btns{ display:flex; gap:8px; margin:10px 0 }
+    .btn{ padding:6px 10px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:#184b62 }
+    @media print{
+      .btns{ display:none }
+      .a4{ box-shadow:none; margin:0 }
+    }
+  </style>
+</head>
+<body>
+  <div class="a4">
+    <header>
+      <div>
+        <h1>JCARRILO</h1>
+        <div class="sub">Desarrollador Frontend · Accesibilidad · SEO</div>
+      </div>
+      <div style="text-align:right">
+        <div><a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></div>
+        <div><a href="https://github.com/JCARRILO">github.com/JCARRILO</a></div>
+      </div>
+    </header>
+    <div class="btns">
+      <a class="btn" href="javascript:window.print()">Imprimir / Guardar PDF</a>
+      <a class="btn" href="../index.html">Volver al portafolio</a>
+    </div>
+
+    <section>
+      <h2>Perfil</h2>
+      <p>Desarrollador con foco en HTML semántico, accesibilidad (ARIA), rendimiento y SEO técnico. Experiencia construyendo interfaces limpias y mantenibles.</p>
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Experiencia</h2>
+        <ul>
+          <li><strong>Frontend Developer</strong> · Empresa X (2022–2025). Sitios accesibles y optimizados para SEO.</li>
+          <li><strong>UI Engineer</strong> · Empresa Y (2020–2022). Componentes reutilizables con buenas prácticas.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Educación</h2>
+        <ul>
+          <li>Licenciatura en Computación · Universidad Z</li>
+          <li>Certificaciones: Accesibilidad Web, SEO Técnico</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML semántico, ARIA, patrones accesibles</li>
+        <li>CSS moderno, responsive, performance</li>
+        <li>JavaScript, DOM, optimizaciones</li>
+        <li>SEO on‑page, Open Graph/Twitter, JSON‑LD</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
+

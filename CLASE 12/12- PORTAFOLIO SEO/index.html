@@ -10,7 +10,7 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://ejemplo.com/portafolio">
 
-  <!-- Social: Open Graph / Twitter -->
+    <link rel="alternate" hreflang="es" href="?lang=es">`r`n  <link rel="alternate" hreflang="en" href="?lang=en">`r`n<!-- Social: Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Curso HTML 2025">
@@ -113,13 +113,13 @@
 
   <header class="site" role="banner">
     <div class="wrap">
-      <p class="meta">Portafolio · Curso HTML 2025</p>
+      <p class="meta" data-i18n="hero.sub">Portafolio · Curso HTML 2025</p>
       <nav aria-label="Navegación principal">
-        <a href="#about">Sobre mí</a>
-        <a href="#proyectos-destacados">Proyectos</a>
-        <a href="#blog">Blog</a>
-        <a href="#contacto">Contacto</a>
-        <a href="docs/CV.pdf" download aria-label="Descargar CV en PDF" class="btn">Descargar CV</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#proyectos-destacados" data-i18n="nav.projects">Proyectos</a>
+        <a href="#blog" data-i18n="nav.blog">Blog</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        <a href="docs/CV.html" download aria-label="Descargar CV en PDF" class="btn">Descargar CV</a>
       </nav>
       <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
         <label for="lang" aria-label="Cambiar idioma">Idioma</label>
@@ -134,8 +134,8 @@
   <main id="contenido" class="wrap">
     <article class="hero" itemscope itemtype="https://schema.org/Person">
       <div>
-        <h1 itemprop="headline">Portafolio profesional con HTML semántico y SEO</h1>
-        <p class="meta">Soy <strong itemprop="name">JCARRILO</strong>, <span itemprop="jobTitle">Desarrollador Frontend</span> enfocado en accesibilidad, rendimiento y SEO técnico.</p>
+        <h1 itemprop="headline" data-i18n="hero.title">Portafolio profesional con HTML semántico y SEO</h1>
+        <p class="meta" data-i18n="hero.sub">Soy <strong itemprop="name">JCARRILO</strong>, <span itemprop="jobTitle">Desarrollador Frontend</span> enfocado en accesibilidad, rendimiento y SEO técnico.</p>
         <div class="skills" aria-label="Habilidades">
           <span class="tag">HTML semántico</span>
           <span class="tag">Accesibilidad (a11y)</span>
@@ -144,8 +144,8 @@
           <span class="tag">JavaScript</span>
         </div>
         <p style="margin-top:10px">
-          <a class="btn primary" href="#proyectos-destacados">Ver proyectos</a>
-          <a class="btn" href="#contacto">Contactar</a>
+          <a class="btn primary" href="#proyectos-destacados" data-i18n="cta.viewProjects">Ver proyectos</a>
+          <a class="btn" href="#contacto" data-i18n="cta.contact">Contactar</a>
         </p>
       </div>
       <figure>
@@ -218,7 +218,7 @@
     <div class="wrap">
       <p>&copy; <span id="year"></span> Portafolio · Curso HTML 2025</p>
       <nav aria-label="Enlaces de pie">
-        <a href="#about">Sobre mí</a> · <a href="#projects">Proyectos</a> · <a href="#contacto">Contacto</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a> · <a href="#projects">Proyectos</a> · <a href="#contacto" data-i18n="nav.contact">Contacto</a>
       </nav>
     </div>
   </footer>
@@ -226,5 +226,40 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+    (function(){
+      const DICT = {
+        es: {
+          'nav.about':'Sobre m�','nav.projects':'Proyectos','nav.blog':'Blog','nav.contact':'Contacto',
+          'hero.title':'Portafolio profesional con HTML sem�ntico y SEO',
+          'hero.sub':'Soy <strong itemprop="name">JCARRILO</strong>, <span itemprop="jobTitle">Desarrollador Frontend</span> enfocado en accesibilidad, rendimiento y SEO t�cnico.',
+          'cta.viewProjects':'Ver proyectos','cta.contact':'Contactar'
+        },
+        en: {
+          'nav.about':'About','nav.projects':'Projects','nav.blog':'Blog','nav.contact':'Contact',
+          'hero.title':'Professional Portfolio with Semantic HTML and SEO',
+          'hero.sub':'I am <strong itemprop="name">JCARRILO</strong>, a <span itemprop="jobTitle">Frontend Developer</span> focused on accessibility, performance and technical SEO.',
+          'cta.viewProjects':'View projects','cta.contact':'Contact'
+        }
+      };
+      function setLang(lang){
+        const dict = DICT[lang] || DICT.es;
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el=>{
+          const k = el.getAttribute('data-i18n');
+          if(dict[k] != null){ el.innerHTML = dict[k]; }
+        });
+        try{ localStorage.setItem('lang', lang);}catch(e){}
+      }
+      const sel = document.getElementById('lang');
+      const urlLang = new URLSearchParams(location.search).get('lang');
+      const saved = (function(){ try{return localStorage.getItem('lang');}catch(e){return null} })();
+      const init = urlLang || saved || document.documentElement.lang || 'es';
+      if(sel){ sel.value = init; sel.addEventListener('change', ()=>setLang(sel.value)); }
+      setLang(init);
+    })();
+  </script>
 </body>
 </html>
+
+
