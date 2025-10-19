@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t">
+  <title id="t">Marca del curso HTML 2025</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#cfe0ea"/>
+      <stop offset="1" stop-color="#dfe8ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="28" fill="url(#g)"/>
+  <g fill="none" stroke="#2f6e93" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="46" y="60" width="164" height="120" rx="12" fill="#ffffff"/>
+    <path d="M70 96h40M70 120h80M70 144h60"/>
+    <circle cx="200" cy="184" r="24" fill="#2f6e93"/>
+  </g>
+  <text x="24" y="232" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="22" fill="#254b5a">HTML 2025</text>
+</svg>

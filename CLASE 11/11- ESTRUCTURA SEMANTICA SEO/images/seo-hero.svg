@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title desc">
+  <title id="title">Clase 11 · Estructura semántica y meta tags</title>
+  <desc id="desc">Portada con gradiente suave, tarjeta y texto con los colores de la marca.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe0ea"/>
+      <stop offset="0.45" stop-color="#dfe8ee"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.18)"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(120,110)">
+    <rect width="960" height="410" rx="22" fill="#ffffff" stroke="#e6ebef" filter="url(#shadow)"/>
+    <g transform="translate(40,40)">
+      <rect x="0" y="0" width="560" height="18" rx="9" fill="#2f6e93"/>
+      <rect x="0" y="40" width="620" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="0" y="72" width="520" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="0" y="104" width="460" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="0" y="168" width="300" height="180" rx="12" fill="#f7f9fb" stroke="#e6ebef"/>
+      <rect x="332" y="168" width="280" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="332" y="198" width="320" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="332" y="228" width="220" height="14" rx="7" fill="#e6eef4"/>
+      <rect x="332" y="258" width="260" height="14" rx="7" fill="#e6eef4"/>
+    </g>
+  </g>
+  <g font-family="system-ui,Segoe UI,Roboto,Arial" fill="#254b5a">
+    <text x="120" y="88" font-size="34">Clase 11 · Estructura semántica y meta tags</text>
+    <text x="120" y="120" font-size="18" fill="#5b6b75">SEO moderno · Open Graph · Twitter Card · JSON‑LD</text>
+  </g>
+</svg>
