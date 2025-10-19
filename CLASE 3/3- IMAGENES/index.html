@@ -16,13 +16,14 @@
     </style>
 </head>
 <body>
+    <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
     <header>
         <h1>Ejemplos de imágenes</h1>
         <p>Archivo: index.html — práctica básica con &lt;img&gt;, figuras y fondo con CSS.</p>
     </header>
 
     <!-- 1) Imagen local (coloca "paisaje.png" en la carpeta "images") -->
-    <section class="gallery" aria-label="Galería de imágenes">
+    <section id="contenido" class="gallery" aria-label="Galería de imágenes">
         <div class="card">
             <figure>
                 <img src="images/paisaje.png" alt="Paisaje con montañas y lago" class="responsive">
@@ -33,7 +34,7 @@
         <!-- 2) Imagen desde internet (placeholder) -->
         <div class="card">
             <figure>
-                <img src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/12/Tux-Linux-Windows-Laptop.jpg?resize=1200%2C800&quality=70&strip=all&ssl=1" alt="Imagen de ejemplo" class="responsive">
+                <img src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/12/Tux-Linux-Windows-Laptop.jpg?resize=1200%2C800&quality=70&strip=all&ssl=1" alt="Imagen de ejemplo" class="responsive" loading="lazy" decoding="async">
                 <figcaption>Imagen remota (placeholder)</figcaption>
             </figure>
         </div>
@@ -42,7 +43,7 @@
         <div class="card">
             <figure>
                 <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                    <img src="images/logo.png" alt="Logo del sitio" class="responsive">
+                    <img src="images/logo.png" alt="Logo del sitio" class="responsive" loading="lazy" decoding="auto">
                 </a>
                 <figcaption>Imagen que funciona como enlace (images/logo.png)</figcaption>
             </figure>
@@ -55,8 +56,7 @@
                     src="images/recorte-600.png"
                     srcset="images/recorte-600.png 600w, images/recorte-1200.png 1200w"
                     sizes="(max-width:600px) 100vw, 300px"
-                    alt="Detalle recortado"
-                    class="responsive">
+                    alt="Detalle recortado"`r`n                    class="responsive" loading="lazy" decoding="async">
                 <figcaption>Responsive con srcset</figcaption>
             </figure>
         </div>
@@ -76,3 +76,4 @@
     </section>
 </body>
 </html>
+

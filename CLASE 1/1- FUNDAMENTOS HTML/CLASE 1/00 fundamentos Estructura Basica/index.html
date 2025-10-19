@@ -8,6 +8,7 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
+    <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
     <!-- Encabezado -->
     <header>
         <h1>Fundamentos HTML</h1>
@@ -15,7 +16,7 @@
     </header>
 
     <!-- Navegación simple -->
-    <nav>
+    <nav aria-label="Navegación principal">
         <ul>
             <li><a href="#introduccion">Introducción</a></li>
             <li><a href="#estructura">Estructura</a></li>
@@ -24,7 +25,7 @@
     </nav>
 
     <!-- Contenido principal -->
-    <main>
+    <main id="contenido">
         <section id="introduccion">
             <h2>Introducción</h2>
             <p>Este archivo contiene la estructura mínima recomendada para un documento HTML5.</p>

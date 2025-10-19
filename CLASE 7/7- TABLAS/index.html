@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -35,7 +35,7 @@
     #tabla-ventas caption{text-align:center}
     thead th{position:sticky;top:0;background:#f7fbfe;border-bottom:2px solid var(--border);z-index:2}
     th, td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
-    /* Alinear numÃ©ricas de columnas 2-5 (regiones) y Ãºltima columna */
+    /* Alinear numéricas de columnas 2-5 (regiones) y última columna */
     tbody td:nth-child(n+2):nth-child(-n+5),
     tfoot td:nth-child(n+2):nth-child(-n+5),
     tbody td:last-child,
@@ -45,7 +45,7 @@
     th[scope="row"]{white-space:nowrap}
     .num{text-align:right}
     colgroup col.total{background:#f9fcff}
-    /* Anchos fijos por columna para mantener alineaciÃ³n perfecta */
+    /* Anchos fijos por columna para mantener alineación perfecta */
     colgroup col.col-prod{width:32%}
     colgroup col.col-region{width:13.5%}
     colgroup col.col-total{width:14%}
@@ -75,11 +75,11 @@
     #tabla-ventas tbody td:last-child,
     #tabla-ventas tfoot td:last-child{ text-align:right }
     /* Reset para NO afectar otras tablas */
-    main table:not(#tabla-ventas) td{ text-align:left !important; }    /* Alineación de encabezados SOLO tabla 1 */
+    main table:not(#tabla-ventas) td{ text-align:left !important; }    /* Alineaci�n de encabezados SOLO tabla 1 */
     #tabla-ventas thead tr:first-child th{ text-align:center }
     #tabla-ventas thead tr:first-child th:first-child{ text-align:center; vertical-align:middle }
     #tabla-ventas thead tr:first-child th:last-child{ text-align:center }
-    /* Forzar centrado explícito del encabezado Total anual */
+    /* Forzar centrado expl�cito del encabezado Total anual */
     #tabla-ventas thead #h-total{ text-align:center !important; vertical-align:middle }
     #tabla-ventas thead tr:nth-child(2) th:nth-child(n+2):nth-child(-n+5){ text-align:right }
     #tabla-ventas thead tr:nth-child(2) th:first-child{ text-align:right }
@@ -91,7 +91,7 @@
     #tabla-permisos thead abbr{ text-decoration:none; border-bottom:none }
     #tabla-permisos tbody th[scope="row"]{ text-align:center; vertical-align:middle; font-weight:400 }
     #tabla-permisos td{ text-align:center; vertical-align:middle }
-    /* Asegurar que ✓ y ✗ (celdas .num) queden centrados */
+    /* Asegurar que ? y ? (celdas .num) queden centrados */
     #tabla-permisos td.num{ text-align:center !important; vertical-align:middle }
     #tabla-permisos th, #tabla-permisos td{ border-right:1px solid var(--border); vertical-align:middle }
     #tabla-permisos th:first-child, #tabla-permisos td:first-child{ border-left:1px solid var(--border) }
@@ -116,7 +116,7 @@
     }
   </style>
   </head>
-<body>
+<body>`r`n  <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
 
   <header class="hero">
     <div class="wrap">
@@ -126,19 +126,19 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="contenido" class="wrap">
     <!-- 1) Informe de ventas con cabecera multinivel, colgroup, tfoot, filtro y sort -->
     <section class="section">
       <div class="card">
         <h2 class="title">1) Informe de ventas 2024</h2>
         <p class="muted">Tabla grande con encabezados multinivel, totales y utilidades de filtrado y ordenamiento.</p>
 
-        <div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
+        `<div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
           <label for="filter-ventas" class="small">Filtrar por producto:</label>
           <input id="filter-ventas" type="search" placeholder="Ej. Port&aacute;til, Teclado..." aria-controls="tabla-ventas" aria-describedby="filter-help">
           <span id="filter-help" class="small muted">Escribe para mostrar solo filas coincidentes.</span>
           <button class="btn" id="clear-ventas" type="button">Limpiar filtro</button>
-        </div>
+        </div>`r`n        <div id="ventas-status" aria-live="polite" class="small muted" style="margin-top:6px"></div>
         <p class="small muted">Nota: los totales se calculan sobre las filas visibles. Limpia el filtro para ver los totales de todos los productos.</p>
 
         <div class="table-wrap">
@@ -339,7 +339,7 @@
     // Utilidades: normalizar texto (para ordenamiento/filtrado)
     const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').trim();
 
-    // Formatear números del cuerpo de la tabla 1 en es-ES
+    // Formatear n�meros del cuerpo de la tabla 1 en es-ES
     function formatVentasBodyES(){
       const table = document.getElementById('tabla-ventas');
       if(!table || !table.tBodies.length) return;
@@ -362,33 +362,19 @@
       });
     }
 
-    function computeVentasTotals(){
-      const table = document.getElementById('tabla-ventas');
-      if(!table || !table.tBodies.length || !table.tFoot) return;
-      const rows = Array.from(table.tBodies[0].rows);
-      const parse = (txt)=>{
-        const clean = (txt||'').toString().replace(/[^0-9.,-]/g,'');
-        const normalized = clean.indexOf(',')>clean.indexOf('.')
-          ? clean.replace(/\./g,'').replace(',', '.')
-          : clean.replace(/,/g,'');
-        const n = parseFloat(normalized);
-        return isNaN(n) ? 0 : n;
-      };
-      const nfES = new Intl.NumberFormat('es-ES');
-      const fmt = (n)=> nfES.format(Math.round(n));
+    
+      const statusEl = document.getElementById('ventas-status');
       const sumsVis = [0,0,0,0]; let totalCol = 0;
       rows.forEach(tr=>{
         if(tr.style.display === 'none') return;
         for(let i=0;i<4;i++){\n          const val = parse(tr.cells[i+1]?.textContent);\n          sumsVis[i] += val;\n        }\n        totalCol += parse(tr.cells[5]?.textContent);
       });
       const totalVis = totalCol;
-      const tds = table.tFoot.rows[0]?.cells;
-      if(tds && tds.length>=6){
-        tds[1].textContent = fmt(sumsVis[0]);
-        tds[2].textContent = fmt(sumsVis[1]);
-        tds[3].textContent = fmt(sumsVis[2]);
-        tds[4].textContent = fmt(sumsVis[3]);
-        tds[5].textContent = fmt(totalVis);
+      
+      // Actualizar aria-live con resumen
+      if(statusEl){
+        const resumen = Totales visibles � Norte: , Sur: , Este: , Oeste: , Total: ;
+        statusEl.textContent = resumen;
       }
     }
 
@@ -473,7 +459,7 @@
         computeVentasTotals();
       }
     })();
-      // Filtro de filas por materia/día en tabla 2 (horario)
+      // Filtro de filas por materia/d�a en tabla 2 (horario)
     (function(){
       const input = document.getElementById('filter-horario');
       const clear = document.getElementById('clear-horario');
@@ -499,14 +485,17 @@
         el.style.textAlign = 'center';
         el.style.verticalAlign = 'middle';
       });
-      // Marcar ✓ / ✗ con clases para colores
+      // Marcar ? / ? con clases para colores
       t.querySelectorAll('tbody td.num').forEach(td=>{
         const txt = (td.textContent||'').trim();
         td.classList.remove('ok','no');
-        if(txt === '✓' || txt === '\u2713') td.classList.add('ok');
-        else if(txt === '✗' || txt === '\u2717') td.classList.add('no');
+        if(txt === '?' || txt === '\u2713') td.classList.add('ok');
+        else if(txt === '?' || txt === '\u2717') td.classList.add('no');
       });
     })();</script>
 
 </body>
 </html>
+
+
+

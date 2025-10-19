@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -37,6 +37,7 @@
   </style>
 </head>
 <body>
+  <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
   <section class="hero">
     <div class="wrap">
       <p class="kicker">Frontend</p>
@@ -45,7 +46,7 @@
     </div>
   </section>
 
-  <section class="grid" aria-label="Elementos y demo">
+  <main id="contenido">`r`n  <section class="grid" aria-label="Elementos y demo">
     <div class="panel">
       <h2 class="heading">Elementos clave de un formulario HTML</h2>
       <ul class="bullets">
@@ -57,11 +58,11 @@
     </div>
 
     <aside class="form-card" aria-labelledby="demo-title">
-      <h3 id="demo-title">Demo de formulario</h3>
+      <h3 id="demo-title">Demo de formulario</h3>`r`n      <div id="form-status" aria-live="polite" class="help" style="margin:10px 0"></div>
       <form action="#" method="post" novalidate>
         <div class="field">
           <label for="name">Nombre</label>
-          <input id="name" name="name" type="text" placeholder="Tu nombre" required minlength="2" autocomplete="name" pattern="^[A-Za-zÃÃ‰ÃÃ“ÃšÃœÃ‘Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±\s'\-]{2,}$" title="Solo letras, espacios, ap&oacute;strofo o guion. M&iacute;nimo 2 caracteres.">
+          <input id="name" name="name" type="text" placeholder="Tu nombre" required minlength="2" autocomplete="name" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s'\-]{2,}$" title="Solo letras, espacios, ap&oacute;strofo o guion. M&iacute;nimo 2 caracteres.">
         </div>
         <div class="field">
           <label for="email">Email</label>
@@ -135,7 +136,7 @@
 
           <div class="field">
             <label for="fs-name">Nombre</label>
-            <input id="fs-name" name="fs-name" type="text" required minlength="2" placeholder="Tu nombre" autocomplete="name" pattern="^[A-Za-zÃÃ‰ÃÃ“ÃšÃœÃ‘Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±\s'\-]{2,}$" title="Solo letras, espacios, ap&oacute;strofo o guion. M&iacute;nimo 2 caracteres.">
+            <input id="fs-name" name="fs-name" type="text" required minlength="2" placeholder="Tu nombre" autocomplete="name" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s'\-]{2,}$" title="Solo letras, espacios, ap&oacute;strofo o guion. M&iacute;nimo 2 caracteres.">
           </div>
 
           <div class="field">
@@ -155,7 +156,7 @@
             </div>
             <div id="genero-especificar" style="margin-top:.5rem;display:none;">
               <label for="genero-text">Especificar</label>
-              <input id="genero-text" name="genero_text" type="text" placeholder="&iquest;C&oacute;mo te identificas?" pattern="^[A-Za-zÃÃ‰ÃÃ“ÃšÃœÃ‘Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±\s'\-]{2,}$" title="Usa letras y espacios. M&iacute;nimo 2 caracteres.">
+              <input id="genero-text" name="genero_text" type="text" placeholder="&iquest;C&oacute;mo te identificas?" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s'\-]{2,}$" title="Usa letras y espacios. M&iacute;nimo 2 caracteres.">
             </div>
           </div>
 
@@ -365,5 +366,5 @@
     })();
   </script>
 
-</body>
+</main>`r`n</body>
 </html>
