@@ -116,7 +116,7 @@
     }
   </style>
   </head>
-<body>`r`n  <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
+<body>rn  <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
 
   <header class="hero">
     <div class="wrap">
@@ -133,12 +133,12 @@
         <h2 class="title">1) Informe de ventas 2024</h2>
         <p class="muted">Tabla grande con encabezados multinivel, totales y utilidades de filtrado y ordenamiento.</p>
 
-        `<div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
+        <div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
           <label for="filter-ventas" class="small">Filtrar por producto:</label>
           <input id="filter-ventas" type="search" placeholder="Ej. Port&aacute;til, Teclado..." aria-controls="tabla-ventas" aria-describedby="filter-help">
           <span id="filter-help" class="small muted">Escribe para mostrar solo filas coincidentes.</span>
           <button class="btn" id="clear-ventas" type="button">Limpiar filtro</button>
-        </div>`r`n        <div id="ventas-status" aria-live="polite" class="small muted" style="margin-top:6px"></div>
+        </div>rn        <div id="ventas-status" aria-live="polite" class="small muted" style="margin-top:6px"></div>
         <p class="small muted">Nota: los totales se calculan sobre las filas visibles. Limpia el filtro para ver los totales de todos los productos.</p>
 
         <div class="table-wrap">
@@ -363,22 +363,51 @@
     }
 
     
-      const statusEl = document.getElementById('ventas-status');
-      const sumsVis = [0,0,0,0]; let totalCol = 0;
-      rows.forEach(tr=>{
-        if(tr.style.display === 'none') return;
-        for(let i=0;i<4;i++){\n          const val = parse(tr.cells[i+1]?.textContent);\n          sumsVis[i] += val;\n        }\n        totalCol += parse(tr.cells[5]?.textContent);
-      });
-      const totalVis = totalCol;
-      
-      // Actualizar aria-live con resumen
-      if(statusEl){
-        const resumen = Totales visibles — Norte: , Sur: , Este: , Oeste: , Total: ;
-        statusEl.textContent = resumen;
+      const recomputeTotalsAndStatus = (function(){
+  return function(){
+    const table = document.getElementById('tabla-ventas');
+    if(!table || !table.tBodies.length || !table.tFoot) return;
+    const rows = Array.from(table.tBodies[0].rows);
+    const parse = (txt)=>{
+      const clean = (txt||'').toString().replace(/[^0-9.,-]/g,'');
+      const normalized = clean.indexOf(',')>clean.indexOf('.')
+        ? clean.replace(/\./g,'').replace(',', '.')
+        : clean.replace(/,/g,'');
+      const n = parseFloat(normalized);
+      return isNaN(n) ? 0 : n;
+    };
+    const nfES = new Intl.NumberFormat('es-ES');
+    const fmt = (n)=> nfES.format(Math.round(n));
+    const sumsVis = [0,0,0,0]; let totalCol = 0;
+    rows.forEach(tr=>{
+      if(tr.style.display === 'none') return;
+      for(let i=0;i<4;i++){
+        const val = parse(tr.cells[i+1]?.textContent);
+        sumsVis[i] += val;
       }
+      totalCol += parse(tr.cells[5]?.textContent);
+    });
+    const totalVis = totalCol;
+    const tds = table.tFoot.rows[0]?.cells;
+    if(tds && tds.length>=6){
+      tds[1].textContent = fmt(sumsVis[0]);
+      tds[2].textContent = fmt(sumsVis[1]);
+      tds[3].textContent = fmt(sumsVis[2]);
+      tds[4].textContent = fmt(sumsVis[3]);
+      tds[5].textContent = fmt(totalVis);
     }
+    const statusEl = document.getElementById('ventas-status');
+    if(statusEl){
+      statusEl.textContent = 'Totales visibles — Norte: ' + fmt(sumsVis[0])
+        + ', Sur: ' + fmt(sumsVis[1])
+        + ', Este: ' + fmt(sumsVis[2])
+        + ', Oeste: ' + fmt(sumsVis[3])
+        + ', Total: ' + fmt(totalVis);
+    }
+  }
+})();
 
-    // Recalcular totales por fila (Total anual)
+// Recalcular totales por fila// Recalcular totales por fila (Total anual)
     function updateRowTotals(){
       const table = document.getElementById('tabla-ventas');
       if(!table || !table.tBodies.length) return;
@@ -417,12 +446,12 @@
           const txt = norm(cell ? cell.textContent : '');
           tr.style.display = q && !txt.includes(q) ? 'none' : '';
         });
-        computeVentasTotals();
+        recomputeTotalsAndStatus();
       }
       input.addEventListener('input', apply);
       if(clear) clear.addEventListener('click', ()=>{ input.value=''; input.focus(); apply(); });
       // Totales iniciales
-      computeVentasTotals();
+      recomputeTotalsAndStatus();
     })();
 
     // Ordenamiento accesible por columna (thead de la fila 2)
@@ -441,8 +470,8 @@
         headers.forEach(h=>h.setAttribute('aria-sort','none'));
         th.setAttribute('aria-sort', dir);
         lastIndex = index; lastDir = dir;
-        computeVentasTotals();
-      }
+        recomputeTotalsAndStatus();
+        (function(){ const statusEl = document.getElementById('ventas-status'); if(statusEl){ const name = (th.textContent||'').trim(); const dirTxt = dir==='ascending' ? 'ascendente' : 'descendente'; statusEl.textContent = 'Ordenado por ' + name + ' (' + dirTxt + '). ' + statusEl.textContent; } })();\r\n      }
       function sortBy(index, dir){
         const tbody = table.tBodies[0];
         const rows = Array.from(tbody.rows);
@@ -456,7 +485,7 @@
         });
         rows.forEach(r=>tbody.appendChild(r));
         updateRowTotals();
-        computeVentasTotals();
+        recomputeTotalsAndStatus();
       }
     })();
       // Filtro de filas por materia/día en tabla 2 (horario)
@@ -496,6 +525,9 @@
 
 </body>
 </html>
+
+
+
 
 
 
