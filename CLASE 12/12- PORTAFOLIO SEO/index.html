@@ -116,10 +116,18 @@
       <p class="meta">Portafolio · Curso HTML 2025</p>
       <nav aria-label="Navegación principal">
         <a href="#about">Sobre mí</a>
-        <a href="#projects">Proyectos</a>
+        <a href="#proyectos-destacados">Proyectos</a>
         <a href="#blog">Blog</a>
         <a href="#contacto">Contacto</a>
+        <a href="docs/CV.pdf" download aria-label="Descargar CV en PDF" class="btn">Descargar CV</a>
       </nav>
+      <div style="margin-top:8px; display:flex; gap:8px; align-items:center">
+        <label for="lang" aria-label="Cambiar idioma">Idioma</label>
+        <select id="lang" name="lang" aria-controls="contenido">
+          <option value="es" selected>Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -136,7 +144,7 @@
           <span class="tag">JavaScript</span>
         </div>
         <p style="margin-top:10px">
-          <a class="btn primary" href="#projects">Ver proyectos</a>
+          <a class="btn primary" href="#proyectos-destacados">Ver proyectos</a>
           <a class="btn" href="#contacto">Contactar</a>
         </p>
       </div>
@@ -145,13 +153,30 @@
         <figcaption class="visually-hidden">Ilustración introductoria del portafolio.</figcaption>
       </figure>
     </article>
+    <section aria-label="Estadísticas rápidas" class="card">
+      <h2 style="margin-top:0">Estadísticas rápidas</h2>
+      <div role="group" aria-label="Logros">
+        <div>+10 proyectos lanzados</div>
+        <div>3 productos en producción</div>
+        <div>+5 años de experiencia</div>
+      </div>
+    </section>
 
     <section id="about" class="card" aria-labelledby="about-title">
       <h2 id="about-title">Sobre mí</h2>
       <p>Creo interfaces claras y accesibles, con foco en <strong>HTML semántico</strong>, <strong>microdatos/JSON‑LD</strong>, <strong>metadatos sociales</strong> y <strong>rendimiento</strong>.</p>
+      <figure>
+        <picture>
+          <!-- Recomendado: AVIF/WEBP si están disponibles en producción -->
+          <source media="(min-width: 900px)" srcset="../../CLASE 3/3- IMAGENES/images/recorte-1200.png" type="image/png">
+          <source media="(min-width: 600px)" srcset="../../CLASE 3/3- IMAGENES/images/recorte-600.png" type="image/png">
+          <img src="../../CLASE 3/3- IMAGENES/images/paisaje.png" alt="Espacio de trabajo ordenado y accesible" loading="lazy" decoding="async" width="800" height="450" style="max-width:100%;height:auto;border-radius:10px">
+        </picture>
+        <figcaption>Foto de trabajo: enfoque en accesibilidad, SEO y claridad.</figcaption>
+      </figure>
     </section>
 
-    <section id="projects" class="card" aria-labelledby="projects-title">
+    <section id="proyectos-destacados" class="card" aria-labelledby="projects-title">
       <h2 id="projects-title">Proyectos destacados</h2>
       <div class="grid">
         <figure>
@@ -203,4 +228,3 @@
   </script>
 </body>
 </html>
-
