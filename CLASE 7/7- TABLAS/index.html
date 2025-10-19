@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tablas avanzadas en HTML</title>
+  <style>
+    :root{
+      --bg:#ffffff; --ink:#1a1a1a; --muted:#5a6b77; --card:#f5f7f9;
+      --brand:#2f6e93; --accent:#e2edf4; --border:#e7ebef; --error:#b00020;
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px}
+    .hero{background:linear-gradient(#cfe0ea, #dfe8ee 38%, var(--bg) 38%);padding:44px 20px 22px}
+    .kicker{letter-spacing:.08em;text-transform:uppercase;color:#6e93a8}
+    h1{margin:6px 0 4px;color:#254b5a;font-size:clamp(26px,4.5vw,40px);line-height:1.1}
+    .sub{margin:8px 0 0;max-width:70ch;color:#314e5d}
+
+    .section{margin:28px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:16px}
+    .title{margin:0 0 .25rem;color:#254b5a;font-size:clamp(18px,3vw,24px)}
+    .muted{color:var(--muted)}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 12px}
+    .toolbar input{padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:#fff}
+    .btn{border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+
+    .table-wrap{overflow:auto;border-radius:12px;border:1px solid var(--border);background:#fff}
+    table{width:100%;border-collapse:separate;border-spacing:0;min-width:780px;table-layout:fixed}
+    caption{caption-side:top;text-align:left;padding:12px 14px;font-weight:700;color:#254b5a}
+    /* Centrar solo el caption de la tabla 1 */
+    #tabla-ventas caption{text-align:center}
+    thead th{position:sticky;top:0;background:#f7fbfe;border-bottom:2px solid var(--border);z-index:2}
+    th, td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+    /* Alinear numÃ©ricas de columnas 2-5 (regiones) y Ãºltima columna */
+    tbody td:nth-child(n+2):nth-child(-n+5),
+    tfoot td:nth-child(n+2):nth-child(-n+5),
+    tbody td:last-child,
+    tfoot td:last-child{ text-align:right }
+    tbody tr:nth-child(odd){background:#fafcfe}
+    tfoot td, tfoot th{background:#f3f6f9;font-weight:700;border-top:2px solid var(--border)}
+    th[scope="row"]{white-space:nowrap}
+    .num{text-align:right}
+    colgroup col.total{background:#f9fcff}
+    /* Anchos fijos por columna para mantener alineaciÃ³n perfecta */
+    colgroup col.col-prod{width:32%}
+    colgroup col.col-region{width:13.5%}
+    colgroup col.col-total{width:14%}
+    .tag{display:inline-block;background:#eaf4ec;border:1px solid #d3ead8;color:#246b37;border-radius:999px;padding:.15rem .5rem;font-size:.75rem}
+
+    /* Tabla horario */
+    .small{font-size:.9rem}
+
+    /* Accesibilidad visual al ordenar */
+    th.sortable{cursor:pointer}
+    th.sortable .arrow{opacity:.35;margin-left:.25rem}
+    th[aria-sort="ascending"] .arrow::after{content:"\\25B2"}
+    th[aria-sort="descending"] .arrow::after{content:"\\25BC"}
+    th[aria-sort="none"] .arrow::after{content:"\\2195"}
+
+    @media (max-width:700px){
+      .toolbar{flex-direction:column;align-items:stretch}
+      .table-wrap{border-radius:10px}
+    }
+      /* Ajustes SOLO para la tabla 1 (ventas) */
+    table{table-layout:auto}
+    #tabla-ventas{table-layout:fixed}
+    #tabla-ventas th, #tabla-ventas td{ border-right:1px solid var(--border); }
+    #tabla-ventas th:first-child, #tabla-ventas td:first-child{ border-left:1px solid var(--border); }
+    #tabla-ventas tbody td:nth-child(n+2):nth-child(-n+5),
+    #tabla-ventas tfoot td:nth-child(n+2):nth-child(-n+5),
+    #tabla-ventas tbody td:last-child,
+    #tabla-ventas tfoot td:last-child{ text-align:right }
+    /* Reset para NO afectar otras tablas */
+    main table:not(#tabla-ventas) td{ text-align:left !important; }    /* Alineación de encabezados SOLO tabla 1 */
+    #tabla-ventas thead tr:first-child th{ text-align:center }
+    #tabla-ventas thead tr:first-child th:first-child{ text-align:center; vertical-align:middle }
+    #tabla-ventas thead tr:first-child th:last-child{ text-align:center }
+    /* Forzar centrado explícito del encabezado Total anual */
+    #tabla-ventas thead #h-total{ text-align:center !important; vertical-align:middle }
+    #tabla-ventas thead tr:nth-child(2) th:nth-child(n+2):nth-child(-n+5){ text-align:right }
+    #tabla-ventas thead tr:nth-child(2) th:first-child{ text-align:right }
+    #tabla-ventas thead tr:nth-child(2) th:last-child{ text-align:right }
+
+    /* Tabla 3: Permisos (scoped) */
+    #tabla-permisos caption{ text-align:center }
+    #tabla-permisos thead th{ text-align:center }
+    #tabla-permisos thead abbr{ text-decoration:none; border-bottom:none }
+    #tabla-permisos tbody th[scope="row"]{ text-align:center; vertical-align:middle; font-weight:400 }
+    #tabla-permisos td{ text-align:center; vertical-align:middle }
+    /* Asegurar que ✓ y ✗ (celdas .num) queden centrados */
+    #tabla-permisos td.num{ text-align:center !important; vertical-align:middle }
+    #tabla-permisos th, #tabla-permisos td{ border-right:1px solid var(--border); vertical-align:middle }
+    #tabla-permisos th:first-child, #tabla-permisos td:first-child{ border-left:1px solid var(--border) }
+    /* Colores por estado en permisos */
+    #tabla-permisos td.ok{ background:#eaf4ec !important; color:#246b37 !important }
+    #tabla-permisos td.no{ background:#fdecec !important; color:#8b1a1a !important }
+
+    /* Tabla 2: Horario (scoped) */
+    #tabla-horario caption{ text-align:center }
+    #tabla-horario thead th{ text-align:center }
+    #tabla-horario tbody th[scope="row"]{ text-align:center }
+    #tabla-horario td{ text-align:center; vertical-align:middle }
+    #tabla-horario th, #tabla-horario td{ border-right:1px solid var(--border); vertical-align:middle }
+    #tabla-horario th:first-child, #tabla-horario td:first-child{ border-left:1px solid var(--border) }
+    /* Destacar jornadas completas (fila completa) */
+    #tabla-horario tbody tr.full-day th,
+    #tabla-horario tbody tr.full-day td{
+      background:#fef6e7; /* suave resaltado */
+      border-top:2px solid #f0c36d;
+      border-bottom:2px solid #f0c36d;
+      font-weight:600;
+    }
+  </style>
+  </head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">Frontend</p>
+      <h1>Tablas avanzadas: estructura, accesibilidad y UX</h1>
+      <p class="sub">Ejemplos con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, encabezados multinivel, <code>rowspan</code>/<code>colspan</code>, <code>colgroup</code>, cabecera pegajosa, ordenamiento y filtrado accesible.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 1) Informe de ventas con cabecera multinivel, colgroup, tfoot, filtro y sort -->
+    <section class="section">
+      <div class="card">
+        <h2 class="title">1) Informe de ventas 2024</h2>
+        <p class="muted">Tabla grande con encabezados multinivel, totales y utilidades de filtrado y ordenamiento.</p>
+
+        <div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
+          <label for="filter-ventas" class="small">Filtrar por producto:</label>
+          <input id="filter-ventas" type="search" placeholder="Ej. Port&aacute;til, Teclado..." aria-controls="tabla-ventas" aria-describedby="filter-help">
+          <span id="filter-help" class="small muted">Escribe para mostrar solo filas coincidentes.</span>
+          <button class="btn" id="clear-ventas" type="button">Limpiar filtro</button>
+        </div>
+        <p class="small muted">Nota: los totales se calculan sobre las filas visibles. Limpia el filtro para ver los totales de todos los productos.</p>
+
+        <div class="table-wrap">
+          <table id="tabla-ventas">
+  <caption>Informe de ventas por producto y regi&oacute;n (Q1&ndash;Q4 2024)</caption>
+  <colgroup>
+    <col class="col-prod" span="1">
+    <col class="col-region" span="4">
+    <col class="col-total total" span="1">
+  </colgroup>
+  <thead>
+    <tr>
+      <th scope="col" rowspan="2" id="h-prod">Producto</th>
+      <th scope="colgroup" colspan="4" id="h-region">Regi&oacute;n</th>
+      <th scope="col" rowspan="2" class="num" id="h-total">Total anual</th>
+    </tr>
+    <tr>
+      <th scope="col" class="sortable" data-type="text" id="h-norte" aria-sort="none" tabindex="0">Norte <span class="arrow"></span></th>
+      <th scope="col" class="sortable" data-type="text" id="h-sur" aria-sort="none" tabindex="0">Sur <span class="arrow"></span></th>
+      <th scope="col" class="sortable" data-type="text" id="h-este" aria-sort="none" tabindex="0">Este <span class="arrow"></span></th>
+      <th scope="col" class="sortable" data-type="text" id="h-oeste" aria-sort="none" tabindex="0">Oeste <span class="arrow"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" headers="h-prod">Port&aacute;til 14" <span class="tag">Nuevo</span></th>
+      <td headers="h-region h-norte">2,340</td>
+      <td headers="h-region h-sur">1,980</td>
+      <td headers="h-region h-este">2,120</td>
+      <td headers="h-region h-oeste">1,760</td>
+      <td class="num" headers="h-total">8,200</td>
+    </tr>
+    <tr>
+      <th scope="row" headers="h-prod">Monitor 27"</th>
+      <td headers="h-region h-norte">1,120</td>
+      <td headers="h-region h-sur">1,250</td>
+      <td headers="h-region h-este">980</td>
+      <td headers="h-region h-oeste">1,050</td>
+      <td class="num" headers="h-total">4,400</td>
+    </tr>
+    <tr>
+      <th scope="row" headers="h-prod">Teclado mec&aacute;nico</th>
+      <td headers="h-region h-norte">860</td>
+      <td headers="h-region h-sur">910</td>
+      <td headers="h-region h-este">790</td>
+      <td headers="h-region h-oeste">880</td>
+      <td class="num" headers="h-total">3,440</td>
+    </tr>
+    <tr>
+      <th scope="row" headers="h-prod">Rat&oacute;n inal&aacute;mbrico</th>
+      <td headers="h-region h-norte">1,540</td>
+      <td headers="h-region h-sur">1,420</td>
+      <td headers="h-region h-este">1,350</td>
+      <td headers="h-region h-oeste">1,230</td>
+      <td class="num" headers="h-total">5,540</td>
+    </tr>
+    <tr>
+      <th scope="row" headers="h-prod">Base USB-C</th>
+      <td headers="h-region h-norte">640</td>
+      <td headers="h-region h-sur">700</td>
+      <td headers="h-region h-este">620</td>
+      <td headers="h-region h-oeste">680</td>
+      <td class="num" headers="h-total">2,640</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">Totales (visibles)</th>
+      <td class="num">6.500</td>
+      <td class="num">&#10007;</td>
+      <td class="num">5.860</td>
+      <td class="num">&#10007;</td>
+      <td class="num">24.220</td>
+    </tr>
+  </tfoot>
+</table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Horario con rowspan/colspan -->
+    <section class="section">
+      <div class="card">
+        <h2 class="title">2) Horario semanal con celdas combinadas</h2>
+        <p class="muted">Ejemplo de <code>rowspan</code> para sesiones continuas y <code>colspan</code> para descansos comunes.</p>
+        <div class="toolbar" role="region" aria-label="Controles horario">
+          <label for="filter-horario" class="small">Filtrar por materia o d&iacute;a:</label>
+          <input id="filter-horario" type="search" placeholder="Ej. JavaScript, Accesibilidad, Lunes" aria-controls="tabla-horario">
+          <button class="btn" id="clear-horario" type="button">Limpiar filtro</button>
+        </div>
+        <div class="table-wrap">
+          <table id="tabla-horario">
+            <caption>Horario del curso (Semana tipo)</caption>
+            <thead>
+              <tr>
+                <th scope="col">D&iacute;a</th>
+                <th scope="col"> 08:00 - 10:00 </th>
+                <th scope="col"> 10:00 - 12:00 </th>
+                <th scope="col"> 12:00 - 14:00 </th>
+                <th scope="col"> 14:00 - 16:00 </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lunes</th>
+                <td>HTML b&aacute;sico</td>
+                <td>CSS layout</td>
+                <td colspan="2">Descanso / Estudio libre</td>
+              </tr>
+              <tr>
+                <th scope="row">Martes</th>
+                <td>HTML b&aacute;sico</td>
+                <td>Flexbox y Grid</td>
+                <td>Dise&ntilde;o responsivo</td>
+                <td>Proyecto</td>
+              </tr>
+              <tr>
+                <th scope="row">Mi&eacute;rcoles</th>
+                <td>Accesibilidad</td>
+                <td>JavaScript DOM</td>
+                <td>Componentes</td>
+                <td>Proyecto</td>
+              </tr>
+              <tr>
+                <th scope="row">Jueves</th>
+                <td>Sem&aacute;ntica</td>
+                <td>JavaScript DOM</td>
+                <td>Pruebas</td>
+                <td>Proyecto</td>
+              </tr>
+              <tr class="full-day">
+                <th scope="row">Viernes</th>
+                <td>Demo final y retroalimentaci&oacute;n</td>
+                <td>Demo final y retroalimentaci&oacute;n</td>
+                <td>Demo final y retroalimentaci&oacute;n</td>
+                <td>Demo final y retroalimentaci&oacute;n</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Matriz de permisos con colgroup -->
+    <section class="section">
+      <div class="card">
+        <h2 class="title">3) Matriz de permisos (colgroup + &lt;abbr&gt;)</h2>
+        <p class="muted">Uso de <code>&lt;colgroup&gt;</code> para estilo por columna y cabeceras claras con <code>&lt;abbr&gt;</code>.</p>
+        <div class="table-wrap">
+          <table id="tabla-permisos">
+            <caption>Permisos por rol</caption>
+            <colgroup>
+              <col>
+              <col style="background:#fcf7f1">
+              <col style="background:#f3fbf5">
+              <col style="background:#f3f6fb">
+              <col style="background:#f9f3fb">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Recurso</th>
+                <th scope="col"><abbr title="Crear">C</abbr></th>
+                <th scope="col"><abbr title="Leer">R</abbr></th>
+                <th scope="col"><abbr title="Actualizar">U</abbr></th>
+                <th scope="col"><abbr title="Eliminar">D</abbr></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Usuarios</th>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num no">&#10007;</td>
+              </tr>
+              <tr>
+                <th scope="row">Productos</th>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row">Pedidos</th>
+                <td class="num no">&#10007;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num ok">&#10003;</td>
+                <td class="num no">&#10007;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Utilidades: normalizar texto (para ordenamiento/filtrado)
+    const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').trim();
+
+    // Formatear números del cuerpo de la tabla 1 en es-ES
+    function formatVentasBodyES(){
+      const table = document.getElementById('tabla-ventas');
+      if(!table || !table.tBodies.length) return;
+      const nf = new Intl.NumberFormat('es-ES');
+      const rows = Array.from(table.tBodies[0].rows);
+      const parse = (txt)=>{
+        const clean = (txt||'').toString().replace(/[^0-9.,-]/g,'');
+        const normalized = clean.indexOf(',')>clean.indexOf('.')
+          ? clean.replace(/\./g,'').replace(',', '.')
+          : clean.replace(/,/g,'');
+        const n = parseFloat(normalized);
+        return isNaN(n) ? 0 : n;
+      };
+      rows.forEach(tr=>{
+        for(let i=1;i<tr.cells.length;i++){
+          const cell = tr.cells[i];
+          const n = parse(cell.textContent);
+          cell.textContent = nf.format(Math.round(n));
+        }
+      });
+    }
+
+    function computeVentasTotals(){
+      const table = document.getElementById('tabla-ventas');
+      if(!table || !table.tBodies.length || !table.tFoot) return;
+      const rows = Array.from(table.tBodies[0].rows);
+      const parse = (txt)=>{
+        const clean = (txt||'').toString().replace(/[^0-9.,-]/g,'');
+        const normalized = clean.indexOf(',')>clean.indexOf('.')
+          ? clean.replace(/\./g,'').replace(',', '.')
+          : clean.replace(/,/g,'');
+        const n = parseFloat(normalized);
+        return isNaN(n) ? 0 : n;
+      };
+      const nfES = new Intl.NumberFormat('es-ES');
+      const fmt = (n)=> nfES.format(Math.round(n));
+      const sumsVis = [0,0,0,0]; let totalCol = 0;
+      rows.forEach(tr=>{
+        if(tr.style.display === 'none') return;
+        for(let i=0;i<4;i++){\n          const val = parse(tr.cells[i+1]?.textContent);\n          sumsVis[i] += val;\n        }\n        totalCol += parse(tr.cells[5]?.textContent);
+      });
+      const totalVis = totalCol;
+      const tds = table.tFoot.rows[0]?.cells;
+      if(tds && tds.length>=6){
+        tds[1].textContent = fmt(sumsVis[0]);
+        tds[2].textContent = fmt(sumsVis[1]);
+        tds[3].textContent = fmt(sumsVis[2]);
+        tds[4].textContent = fmt(sumsVis[3]);
+        tds[5].textContent = fmt(totalVis);
+      }
+    }
+
+    // Recalcular totales por fila (Total anual)
+    function updateRowTotals(){
+      const table = document.getElementById('tabla-ventas');
+      if(!table || !table.tBodies.length) return;
+      const nf = new Intl.NumberFormat('es-ES');
+      const parse = (txt)=>{
+        const clean = (txt||'').toString().replace(/[^0-9.,-]/g,'');
+        const normalized = clean.indexOf(',')>clean.indexOf('.')
+          ? clean.replace(/\./g,'').replace(',', '.')
+          : clean.replace(/,/g,'');
+        const n = parseFloat(normalized);
+        return isNaN(n) ? 0 : n;
+      };
+      const rows = Array.from(table.tBodies[0].rows);
+      rows.forEach(tr=>{
+        const sum = parse(tr.cells[1]?.textContent)
+                 + parse(tr.cells[2]?.textContent)
+                 + parse(tr.cells[3]?.textContent)
+                 + parse(tr.cells[4]?.textContent);
+        if(tr.cells[5]) tr.cells[5].textContent = nf.format(Math.round(sum));
+      });
+    }
+
+    // Inicializacion
+    formatVentasBodyES();
+    updateRowTotals();
+    (function(){
+      const input = document.getElementById('filter-ventas');
+      const clear = document.getElementById('clear-ventas');
+      const table = document.getElementById('tabla-ventas');
+      if(!input || !table) return;
+      const rows = Array.from(table.tBodies[0].rows);
+      function apply(){
+        const q = norm(input.value);
+        rows.forEach(tr => {
+          const cell = tr.cells[0];
+          const txt = norm(cell ? cell.textContent : '');
+          tr.style.display = q && !txt.includes(q) ? 'none' : '';
+        });
+        computeVentasTotals();
+      }
+      input.addEventListener('input', apply);
+      if(clear) clear.addEventListener('click', ()=>{ input.value=''; input.focus(); apply(); });
+      // Totales iniciales
+      computeVentasTotals();
+    })();
+
+    // Ordenamiento accesible por columna (thead de la fila 2)
+    (function(){
+      const table = document.getElementById('tabla-ventas');
+      if(!table) return;
+      const headers = table.tHead.rows[1].querySelectorAll('th.sortable');
+      let lastIndex = -1; let lastDir = 'none';
+      headers.forEach((th, idx)=>{
+        th.addEventListener('click', ()=>toggle(idx, th));
+        th.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(idx, th); } });
+      });
+      function toggle(index, th){
+        const dir = (lastIndex===index && lastDir==='ascending') ? 'descending' : 'ascending';
+        sortBy(index, dir);
+        headers.forEach(h=>h.setAttribute('aria-sort','none'));
+        th.setAttribute('aria-sort', dir);
+        lastIndex = index; lastDir = dir;
+        computeVentasTotals();
+      }
+      function sortBy(index, dir){
+        const tbody = table.tBodies[0];
+        const rows = Array.from(tbody.rows);
+        const mult = dir==='ascending' ? 1 : -1;
+        rows.sort((a,b)=>{
+          const A = a.cells[index+1].textContent.replace(/[^0-9.,-]/g,'');
+          const B = b.cells[index+1].textContent.replace(/[^0-9.,-]/g,'');
+          const an = parseFloat(A.replace('.', '').replace(',', '.')) || 0;
+          const bn = parseFloat(B.replace('.', '').replace(',', '.')) || 0;
+          return (an-bn)*mult;
+        });
+        rows.forEach(r=>tbody.appendChild(r));
+        updateRowTotals();
+        computeVentasTotals();
+      }
+    })();
+      // Filtro de filas por materia/día en tabla 2 (horario)
+    (function(){
+      const input = document.getElementById('filter-horario');
+      const clear = document.getElementById('clear-horario');
+      const table = document.getElementById('tabla-horario');
+      if(!table || !input) return;
+      const rows = Array.from(table.tBodies[0].rows);
+      const normText = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
+      function apply(){
+        const q = normText(input.value).trim();
+        rows.forEach(tr =>{
+          const txt = normText(tr.textContent);
+          tr.style.display = q && !txt.includes(q) ? 'none' : '';
+        });
+      }
+      input.addEventListener('input', apply);
+      if(clear) clear.addEventListener('click', ()=>{ input.value=''; input.focus(); apply(); });
+    })();
+    // Estilos y centrado para tabla 3 (permisos)
+    (function(){
+      const t = document.getElementById('tabla-permisos');
+      if(!t) return;
+      t.querySelectorAll('th,td').forEach(el=>{
+        el.style.textAlign = 'center';
+        el.style.verticalAlign = 'middle';
+      });
+      // Marcar ✓ / ✗ con clases para colores
+      t.querySelectorAll('tbody td.num').forEach(td=>{
+        const txt = (td.textContent||'').trim();
+        td.classList.remove('ok','no');
+        if(txt === '✓' || txt === '\u2713') td.classList.add('ok');
+        else if(txt === '✗' || txt === '\u2717') td.classList.add('no');
+      });
+    })();</script>
+
+</body>
+</html>

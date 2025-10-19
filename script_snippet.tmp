@@ -1,0 +1,61 @@
+  <script>
+    // Utilidades: normalizar texto (para ordenamiento/filtrado)
+    const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').trim();
+
+    // Formatear números del cuerpo de la tabla 1 en es-ES
+    FUNCTION_REPLACEMENT_MARKER
+    (function(){
+      const input = document.getElementById('filter-ventas');
+      const clear = document.getElementById('clear-ventas');
+      const table = document.getElementById('tabla-ventas');
+      if(!input || !table) return;
+      const rows = Array.from(table.tBodies[0].rows);
+      function apply(){
+        const q = norm(input.value);
+        rows.forEach(tr => {
+          const cell = tr.cells[0];
+          const txt = norm(cell ? cell.textContent : '');
+          tr.style.display = q && !txt.includes(q) ? 'none' : '';
+        });
+        computeVentasTotals();
+      }
+      input.addEventListener('input', apply);
+      if(clear) clear.addEventListener('click', ()=>{ input.value=''; input.focus(); apply(); });
+      // Totales iniciales
+      computeVentasTotals();
+    })();
+
+    // Ordenamiento accesible por columna (thead de la fila 2)
+    (function(){
+      const table = document.getElementById('tabla-ventas');
+      if(!table) return;
+      const headers = table.tHead.rows[1].querySelectorAll('th.sortable');
+      let lastIndex = -1; let lastDir = 'none';
+      headers.forEach((th, idx)=>{
+        th.addEventListener('click', ()=>toggle(idx, th));
+        th.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(idx, th); } });
+      });
+      function toggle(index, th){
+        const dir = (lastIndex===index && lastDir==='ascending') ? 'descending' : 'ascending';
+        sortBy(index, dir);
+        headers.forEach(h=>h.setAttribute('aria-sort','none'));
+        th.setAttribute('aria-sort', dir);
+        lastIndex = index; lastDir = dir;
+        computeVentasTotals();
+      }
+      function sortBy(index, dir){
+        const tbody = table.tBodies[0];
+        const rows = Array.from(tbody.rows);
+        const mult = dir==='ascending' ? 1 : -1;
+        rows.sort((a,b)=>{
+          const A = a.cells[index+1].textContent.replace(/[^0-9.,-]/g,'');
+          const B = b.cells[index+1].textContent.replace(/[^0-9.,-]/g,'');
+          const an = parseFloat(A.replace('.', '').replace(',', '.')) || 0;
+          const bn = parseFloat(B.replace('.', '').replace(',', '.')) || 0;
+          return (an-bn)*mult;
+        });
+        rows.forEach(r=>tbody.appendChild(r));
+        computeVentasTotals();
+      }
+    })();
+  </script>

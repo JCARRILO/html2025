@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Texto — Jerarquías</title>
+    <style>
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 2rem; line-height: 1.5; color: #111; }
+        header { margin-bottom: 1.5rem; }
+        section { margin-bottom: 1.25rem; }
+        pre { background:#f6f8fa; padding:0.75rem; border-radius:6px; overflow:auto; }
+        blockquote { margin:0 0 0 1rem; padding-left:1rem; border-left:4px solid #ccc; color:#444; }
+        .muted { color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jerarquía de texto en HTML</h1>
+        <p class="muted">Ejemplos básicos de títulos, párrafos y elementos en línea.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Títulos (h1 → h6)</h2>
+            <h1>Encabezado h1 — nivel principal</h1>
+            <h2>Encabezado h2 — subsección</h2>
+            <h3>Encabezado h3 — sub-subsección</h3>
+            <h4>Encabezado h4</h4>
+            <h5>Encabezado h5</h5>
+            <h6>Encabezado h6</h6>
+        </section>
+
+        <section>
+            <h2>Párrafos y texto en línea</h2>
+            <p>Este es un <strong>párrafo</strong> con <em>énfasis</em>, <mark>texto resaltado</mark>, y una <a href="#" title="Ejemplo">enlace</a>.</p>
+            <p>Uso de <small>texto pequeño</small>, <abbr title="Hipervínculo">URL</abbr>, y <del>texto eliminado</del>.</p>
+        </section>
+
+        <section>
+            <h2>Listas</h2>
+            <p>Lista ordenada:</p>
+            <ol>
+                <li>Primer elemento</li>
+                <li>Segundo elemento
+                    <ul>
+                        <li>Subelemento A</li>
+                        <li>Subelemento B</li>
+                    </ul>
+                </li>
+                <li>Tercer elemento</li>
+            </ol>
+            <p>Lista de definición:</p>
+            <dl>
+                <dt>Término</dt>
+                <dd>Definición del término con un ejemplo breve.</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Citas y código</h2>
+
+            <!-- Referencia: elementos de contenido de texto — https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements#contenido_del_texto -->
+
+            <p>Ejemplos de &lt;blockquote&gt; (citas largas) y otras etiquetas de texto en contexto:</p>
+
+            <blockquote>
+                La claridad en el texto ayuda a la jerarquía y comprensión del contenido.
+                <footer>— Autor desconocido</footer>
+            </blockquote>
+
+            <blockquote>
+                “La lectura es una conversación. Todos los libros hablan. Pero un buen libro escucha también.”
+                <footer>— <cite>Mark Twain</cite></footer>
+            </blockquote>
+
+            <blockquote cite="https://example.com/fuente">
+                Este bloque incluye el atributo <code>cite</code> que apunta a la fuente original.
+                <footer>Fuente: <a href="https://example.com/fuente">example.com</a></footer>
+            </blockquote>
+
+            <blockquote>
+                Cita principal.
+                <blockquote>
+                    Cita anidada para mostrar una cita dentro de otra.
+                    <footer>— Autor anidado</footer>
+                </blockquote>
+            </blockquote>
+
+            <p>Ejemplo de cita corta en línea: <q>Este es un ejemplo de cita corta.</q></p>
+
+            <p>Ejemplos de elementos de texto (en una frase): 
+                <a href="#">enlace</a>, 
+                <abbr title="Acronimo">ABC</abbr>, 
+                <b>negrita</b>, 
+                <strong>importante</strong>, 
+                <i>cursiva</i>, 
+                <em>énfasis</em>, 
+                <mark>resaltado</mark>, 
+                <small>texto pequeño</small>, 
+                <del>eliminado</del>, 
+                <ins>insertado</ins>, 
+                <s>tachado</s>, 
+                <u>subrayado</u>, 
+                <code>console.log()</code>, 
+                <var>x</var>, 
+                <samp>salida</samp>, 
+                <kbd>Ctrl</kbd>, 
+                <time datetime="2025-10-16">16 oct 2025</time>, 
+                <data value="42">42</data>, 
+                <dfn>término</dfn>, 
+                <span class="muted">span genérico</span>.
+            </p>
+
+            <p>Ejemplo de <ruby>texto<rt>pronunciación</rt></ruby> y uso de <wbr> para saltos opcionales: supercalifragil<wbr>ístico.</p>
+
+            <p>Fragmento en línea: <code>const saludo = "Hola";</code></p>
+
+            <pre><code>// Ejemplo de bloque de código
+function saludar(nombre) {
+    return `Hola, ${nombre}!`;
+}
+console.log(saludar('Mundo'));
+</code></pre>
+        </section>
+
+        <section>
+            <h2>Accesibilidad y estructura</h2>
+            <p>Usa títulos en orden para mantener una estructura lógica. Añade atributos <code>title</code>, <code>alt</code> y roles cuando sea necesario para mejorar la accesibilidad.</p>
+        </section>
+    </main>
+    
+
+    <footer class="muted">
+        <p>Clase 2 — Texto y jerarquías</p>
+    </footer>
+</body>
+</html>

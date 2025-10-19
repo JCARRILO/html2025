@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Listas — Ejemplos</title>
+    <style>
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 2rem; line-height: 1.5; color:#222; }
+        header { margin-bottom: 1.5rem; }
+        section { margin-bottom: 1.25rem; }
+        pre { background:#f5f5f7; padding:0.75rem; border-radius:6px; overflow:auto; }
+        .example { padding:0.75rem 1rem; border:1px solid #e6e6ea; border-radius:6px; background:#fff; }
+        ul, ol { margin:0.5rem 0 0.5rem 1.25rem; }
+        .small-note { font-size:0.85rem; color:#555; margin-top:0.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Listas en HTML</h1>
+        <p>Ejemplos básicos: lista desordenada, ordenada, anidada y de definiciones.</p>
+    </header>
+
+    <section>
+        <h2>Lista desordenada (&lt;ul&gt;)</h2>
+        <div class="example" aria-label="Ejemplo de lista desordenada">
+            <ul>
+                <li>Manzanas</li>
+                <li>Peras</li>
+                <li>Naranjas</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Lista ordenada (&lt;ol&gt;)</h2>
+        <div class="example" aria-label="Ejemplo de lista ordenada">
+            <ol>
+                <li>Preparar los ingredientes</li>
+                <li>Mezclar</li>
+                <li>Hornear</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>Lista anidada</h2>
+        <div class="example" aria-label="Ejemplo de lista anidada">
+            <ul>
+                <li>Frutas
+                    <ul>
+                        <li>Manzana</li>
+                        <li>Plátano</li>
+                        <li>Melón</li>
+                    </ul>
+                </li>
+                <li>Verduras
+                    <ol>
+                        <li>Zanahoria</li>
+                        <li>Lechuga</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Lista de definiciones (&lt;dl&gt;)</h2>
+        <div class="example" aria-label="Ejemplo de lista de definiciones">
+            <dl>
+                <dt>HTML</dt>
+                <dd>Lenguaje de marcado para estructurar páginas web.</dd>
+
+                <dt>CSS</dt>
+                <dd>Hojas de estilo para presentar el contenido HTML.</dd>
+            </dl>
+        </div>
+    </section>
+
+    <section>
+        <h2>Propiedad type y list-style-type</h2>
+        <div class="example" aria-label="Ejemplos de type en listas">
+            <p><strong>Ejemplos con &lt;ol&gt; usando el atributo <code>type</code>:</strong></p>
+
+            <ol type="1">
+                <li><a href="#item1" rel="noopener noreferrer">Primer item</a></li>
+                <li><a href="#item2" rel="noopener noreferrer">Segundo item</a></li>
+            </ol>
+
+            <ol type="a">
+                <li><a href="#a1">primer</a></li>
+                <li><a href="#a2">segundo</a></li>
+            </ol>
+
+            <ol type="A">
+                <li>PRIMERO</li>
+                <li>SEGUNDO</li>
+            </ol>
+
+            <ol type="i">
+                <li>i</li>
+                <li>ii</li>
+            </ol>
+
+            <p style="margin-top:0.6rem;"><strong>Ejemplos para &lt;ul&gt; (usar CSS: <code>list-style-type</code>):</strong></p>
+
+            <ul style="list-style-type:disc;">
+                <li><a href="https://www.example.com/disc1" rel="noopener noreferrer">Marcador disc</a></li>
+                <li>Marcador disc</li>
+            </ul>
+
+            <ul style="list-style-type:circle;">
+                <li>Marcador circle</li>
+                <li><a href="https://www.example.com/circle2" rel="noopener noreferrer">Marcador circle (enlace)</a></li>
+            </ul>
+
+            <ul style="list-style-type:square;">
+                <li>Marcador square</li>
+                <li>Marcador square</li>
+            </ul>
+
+            <ul style="list-style-type:none;">
+                <li> <a href="https://platzi.com" target="_blank" rel="noopener noreferrer">Platzi</a></li>
+                <li><a href="mailto:info@ejemplo.com?subject=Consulta&body=Hola">Enviar email</a></li>
+                <li><a href="tel:+3412345678">Llamar: +34 123 456 78</a></li>
+            </ul>
+
+            <p class="small-note">
+                Si al hacer clic no aparece la ventana de redacción, probablemente no tengas configurado un cliente de correo predeterminado en Windows.
+                Para usar webmail (Gmail, Outlook.com) necesitas extensiones o configuraciones del navegador que asocien mailto con ese servicio.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Prueba a editar y crear tus propias listas.</p>
+    </footer>
+</body>
+</html>

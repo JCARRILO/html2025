@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Clase 3 — Imágenes</title>
+    <style>
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:1.5rem; }
+        header { margin-bottom:1.25rem; }
+        .gallery { display:flex; gap:1rem; flex-wrap:wrap; }
+        .card { width:300px; border:1px solid #ddd; padding:0.5rem; border-radius:6px; background:#fafafa; }
+        img.responsive { width:100%; height:auto; display:block; border-radius:4px; }
+        figure { margin:0; }
+        figcaption { font-size:0.9rem; color:#444; margin-top:0.4rem; }
+        .bg-example { width:100%; height:180px; border-radius:6px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; color:white; font-weight:600; text-shadow:0 1px 2px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejemplos de imágenes</h1>
+        <p>Archivo: index.html — práctica básica con &lt;img&gt;, figuras y fondo con CSS.</p>
+    </header>
+
+    <!-- 1) Imagen local (coloca "paisaje.png" en la carpeta "images") -->
+    <section class="gallery" aria-label="Galería de imágenes">
+        <div class="card">
+            <figure>
+                <img src="images/paisaje.png" alt="Paisaje con montañas y lago" class="responsive">
+                <figcaption>Paisaje local (images/paisaje.png)</figcaption>
+            </figure>
+        </div>
+
+        <!-- 2) Imagen desde internet (placeholder) -->
+        <div class="card">
+            <figure>
+                <img src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/12/Tux-Linux-Windows-Laptop.jpg?resize=1200%2C800&quality=70&strip=all&ssl=1" alt="Imagen de ejemplo" class="responsive">
+                <figcaption>Imagen remota (placeholder)</figcaption>
+            </figure>
+        </div>
+
+        <!-- 3) Imagen como enlace -->
+        <div class="card">
+            <figure>
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                    <img src="images/logo.png" alt="Logo del sitio" class="responsive">
+                </a>
+                <figcaption>Imagen que funciona como enlace (images/logo.png)</figcaption>
+            </figure>
+        </div>
+
+        <!-- 4) Imagen optimizada con srcset para pantallas de mayor resolución -->
+        <div class="card">
+            <figure>
+                <img
+                    src="images/recorte-600.png"
+                    srcset="images/recorte-600.png 600w, images/recorte-1200.png 1200w"
+                    sizes="(max-width:600px) 100vw, 300px"
+                    alt="Detalle recortado"
+                    class="responsive">
+                <figcaption>Responsive con srcset</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- 5) Fondo con CSS -->
+    <section style="margin-top:1.25rem;">
+        <h2>Fondo con CSS</h2>
+        <div class="bg-example" style="background-image:url('images/fondo.png');">
+            Fondo usando background-image
+        </div>
+        <p style="font-size:0.9rem;color:#555;margin-top:0.5rem;">
+            Nota: usa imágenes en la carpeta "images" junto a este index.html. Asegúrate de añadir descripciones en
+            <code>alt</code> para accesibilidad.
+        </p>
+        <!-- Consejo: comprime las imágenes (por ejemplo con https://tinypng.com) para reducir su peso sin perder calidad. -->
+    </section>
+</body>
+</html>

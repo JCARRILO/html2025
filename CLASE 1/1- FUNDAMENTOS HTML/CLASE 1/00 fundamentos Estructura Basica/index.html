@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fundamentos HTML — Estructura Básica</title>
+    <!-- Hoja de estilos local (descomentar si existe) -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Fundamentos HTML</h1>
+        <p>Documento: Estructura básica (index.html)</p>
+    </header>
+
+    <!-- Navegación simple -->
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#estructura">Estructura</a></li>
+            <li><a href="#ejemplo">Ejemplo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <p>Este archivo contiene la estructura mínima recomendada para un documento HTML5.</p>
+        </section>
+
+        <section id="estructura">
+            <h2>Estructura básica</h2>
+            <p>doctype, elemento <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.</p>
+        </section>
+
+        <section id="ejemplo">
+            <h2>Ejemplo rápido</h2>
+            <p>Agrega tu contenido aquí y guarda como <strong>index.html</strong>.</p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; <span id="year"></span> — Curso HTML</p>
+    </footer>
+
+    <!-- Script pequeño para completar el año en el pie -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
