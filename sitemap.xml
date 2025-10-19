@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Reemplaza https://ejemplo.com con tu dominio real -->
+  <url><loc>https://ejemplo.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ejemplo.com/clase-1-fundamentos</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-2-texto-jerarquias</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-3-imagenes</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-4-listas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-5-etiquetas-semanticas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-6-formularios</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-7-tablas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-8-imagenes-responsivas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-9-video-audio</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-10-aria</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ejemplo.com/clase-11-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ejemplo.com/clase-12-portafolio</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

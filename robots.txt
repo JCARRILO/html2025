@@ -1,0 +1,9 @@
+# Reemplaza el host y la ruta del sitemap cuando despliegues en tu dominio
+User-agent: *
+Allow: /
+
+# Rutas administrativas (si existieran)
+Disallow: /admin/
+Disallow: /privado/
+
+Sitemap: https://ejemplo.com/sitemap.xml
