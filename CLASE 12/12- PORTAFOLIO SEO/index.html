@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -73,6 +73,7 @@
       <nav aria-label="Navegaci&oacute;n principal">
         <a href="#about" data-i18n="nav.about">Sobre m&iacute;</a>
         <a href="#proyectos-destacados" data-i18n="nav.projects">Proyectos</a>
+        <a href="#certificacion" data-i18n="nav.cert">Certificaci&oacute;n</a>
         <a href="#blog" data-i18n="nav.blog">Blog</a>
         <a href="#contacto" data-i18n="nav.contact">Contacto</a>
         <a href="docs/CV.html" download aria-label="Descargar o imprimir el CV" class="btn" data-i18n="nav.cv">Descargar CV</a>
@@ -117,6 +118,27 @@
         <div>3 productos en producci&oacute;n</div>
         <div>+5 a&ntilde;os de experiencia</div>
       </div>
+    </section>
+
+    <section id="certificacion" class="card" aria-labelledby="cert-title">
+      <h2 id="cert-title" data-i18n="cert.title">Certificaci&oacute;n</h2>
+      <figure>
+        <img src="../../CLASE 3/3- IMAGENES/images/certificadocursohtmlplatzioctubredel2025.png" alt="Diploma de certificaci&oacute;n del curso de HTML." loading="lazy" decoding="async" width="1000" height="707" style="max-width:100%;height:auto;border-radius:10px">
+        <figcaption data-i18n="cert.caption">Diploma de certificaci&oacute;n que acredita habilidades en HTML sem&aacute;ntico, Accesibilidad (ARIA) y SEO.</figcaption>
+      </figure>
+      <h3 data-i18n="cert.skills">Habilidades acreditadas</h3>
+      <ul>
+        <li>HTML sem&aacute;ntico y jerarqu&iacute;a correcta de t&iacute;tulos</li>
+        <li>Accesibilidad: ARIA, foco, teclado y live regions</li>
+        <li>Formularios accesibles y validaciones claras</li>
+        <li>Tablas avanzadas con totales y anuncio de cambios</li>
+        <li>Im&aacute;genes responsivas (srcset/picture), lazy y decoding</li>
+        <li>Audio/Video con m&uacute;ltiples fuentes y subt&iacute;tulos</li>
+        <li>SEO moderno: OG/Twitter, canonical, JSON-LD</li>
+        <li>Rendimiento: preconnect, preload y evitar CLS</li>
+        <li>i18n (ES/EN) con hreflang y selector</li>
+        <li>CV imprimible y portafolio listo para compartir</li>
+      </ul>
     </section>
 
     <section id="about" class="card" aria-labelledby="about-title">
@@ -174,7 +196,7 @@
     <div class="wrap">
       <p>&copy; <span id="year"></span> <span data-i18n="footer.brand">Portafolio &middot; Curso HTML 2025</span></p>
       <nav aria-label="Enlaces de pie">
-        <a href="#about" data-i18n="nav.about">Sobre m&iacute;</a> &middot; <a href="#proyectos-destacados" data-i18n="nav.projects">Proyectos</a> &middot; <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        <a href="#about" data-i18n="nav.about">Sobre m&iacute;</a> &middot; <a href="#proyectos-destacados" data-i18n="nav.projects">Proyectos</a> &middot; <a href="#certificacion" data-i18n="nav.cert">Certificaci&oacute;n</a> &middot; <a href="#contacto" data-i18n="nav.contact">Contacto</a>
       </nav>
     </div>
   </footer>
@@ -186,23 +208,23 @@
     (function(){
       const DICT = {
         es: {
-          'nav.about':'Sobre m&iacute;','nav.projects':'Proyectos','nav.blog':'Blog','nav.contact':'Contacto','nav.cv':'Descargar CV',
+          'nav.about':'Sobre m&iacute;','nav.projects':'Proyectos','nav.cert':'Certificaci&oacute;n','nav.blog':'Blog','nav.contact':'Contacto','nav.cv':'Descargar CV',
           'hero.title':'Portafolio profesional con HTML sem&aacute;ntico y SEO',
           'hero.sub':'Soy <strong itemprop="name">JCARRILO</strong>, <span itemprop="jobTitle">Desarrollador Frontend</span> enfocado en accesibilidad, rendimiento y SEO t&eacute;cnico.',
           'cta.viewProjects':'Ver proyectos','cta.contact':'Contactar',
           'stats.title':'Estad&iacute;sticas r&aacute;pidas',
           'about.title':'Sobre m&iacute;','about.text':'Creo interfaces claras y accesibles, con foco en <strong>HTML sem&aacute;ntico</strong>, <strong>microdatos/JSON-LD</strong>, <strong>metadatos sociales</strong> y <strong>rendimiento</strong>.',
-          'projects.title':'Proyectos destacados','blog.title':'Blog','contact.title':'Contacto','contact.text':'&iquest;Trabajamos juntos? Escr&iacute;beme a <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a> o visita mi <a href="https://github.com/JCARRILO" target="_blank" rel="noopener">GitHub</a>.',
+          'projects.title':'Proyectos destacados','cert.title':'Certificaci&oacute;n','cert.caption':'Diploma de certificaci&oacute;n que acredita habilidades en HTML sem&aacute;ntico, Accesibilidad (ARIA) y SEO.','cert.skills':'Habilidades acreditadas','blog.title':'Blog','contact.title':'Contacto','contact.text':'&iquest;Trabajamos juntos? Escr&iacute;beme a <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a> o visita mi <a href="https://github.com/JCARRILO" target="_blank" rel="noopener">GitHub</a>.',
           'footer.brand':'Portafolio &middot; Curso HTML 2025'
         },
         en: {
-          'nav.about':'About','nav.projects':'Projects','nav.blog':'Blog','nav.contact':'Contact','nav.cv':'Download CV',
+          'nav.about':'About','nav.projects':'Projects','nav.cert':'Certification','nav.blog':'Blog','nav.contact':'Contact','nav.cv':'Download CV',
           'hero.title':'Professional Portfolio with Semantic HTML and SEO',
           'hero.sub':'I am <strong itemprop="name">JCARRILO</strong>, a <span itemprop="jobTitle">Frontend Developer</span> focused on accessibility, performance and technical SEO.',
           'cta.viewProjects':'View projects','cta.contact':'Contact',
           'stats.title':'Quick stats',
           'about.title':'About me','about.text':'I build clear, accessible interfaces, focusing on <strong>semantic HTML</strong>, <strong>microdata/JSON-LD</strong>, <strong>social metadata</strong> and <strong>performance</strong>.',
-          'projects.title':'Featured projects','blog.title':'Blog','contact.title':'Contact','contact.text':'Shall we work together? Email me at <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a> or visit my <a href="https://github.com/JCARRILO" target="_blank" rel="noopener">GitHub</a>.',
+          'projects.title':'Featured projects','cert.title':'Certification','cert.caption':'Certification diploma accrediting skills in Semantic HTML, Accessibility (ARIA) and SEO.','cert.skills':'Certified skills','blog.title':'Blog','contact.title':'Contact','contact.text':'Shall we work together? Email me at <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a> or visit my <a href="https://github.com/JCARRILO" target="_blank" rel="noopener">GitHub</a>.',
           'footer.brand':'Portfolio &middot; HTML Course 2025'
         }
       };
@@ -224,3 +246,4 @@
   </script>
 </body>
 </html>
+
