@@ -1,3 +1,30 @@
+/*
+  Nota (Clase 1 - CSS)
+  ---------------------
+  Refactor de estilos realizado en todas las clases (1–12):
+  - Se creó y enlazó un archivo externo `styles.css` en cada carpeta de clase.
+  - Se movieron todas las reglas de los bloques <style> embebidos a su `styles.css` correspondiente.
+  - Se eliminaron estilos inline (atributo style="...") del HTML y se reemplazaron por clases
+    utilitarias definidas en CSS (ej.: `.visually-hidden`, `.brand`, `.header-inner`, `.embed`, etc.).
+  - Se agregó/estandarizó la clase `.visually-hidden` para el enlace de “Saltar al contenido”,
+    mejorando accesibilidad sin estilos incrustados.
+  - Ajustes puntuales por clase (resumen):
+      • Clase 3: `.spaced`, `.bg-example` (con background-image), `.note`.
+      • Clase 5: `.header-inner`, `.brand`, `img.logo`, `.title-center`.
+      • Clase 8: `.fixed-600` para imágenes con ancho fijo responsivo.
+      • Clase 9: `.embed` para iframes 16:9 sin borde.
+      • Clase 11: `.page-title` para márgenes del título principal.
+  - Se mantuvo la semántica HTML y se limpiaron duplicaciones visuales.
+
+  Buenas prácticas a seguir:
+  - Evitar `style="..."` en HTML; crear/usar clases en CSS.
+  - Centralizar utilidades repetidas en este archivo si aplican a la clase.
+  - Nombrar clases de forma clara y reutilizable.
+
+  Control de versiones:
+  - Los cambios fueron versionados en Git (commit: "Extrae estilos a styles.css por clase y elimina inline styles").
+*/
+
 /* Estilos base Clase 1 */
 body{margin:0;line-height:1.5;color:#111;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial}
 .visually-hidden{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
