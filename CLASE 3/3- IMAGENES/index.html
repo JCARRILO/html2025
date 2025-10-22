@@ -3,20 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
     <title>Clase 3 — Imágenes</title>
-    <style>
-        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:1.5rem; }
-        header { margin-bottom:1.25rem; }
-        .gallery { display:flex; gap:1rem; flex-wrap:wrap; }
-        .card { width:300px; border:1px solid #ddd; padding:0.5rem; border-radius:6px; background:#fafafa; }
-        img.responsive { width:100%; height:auto; display:block; border-radius:4px; }
-        figure { margin:0; }
-        figcaption { font-size:0.9rem; color:#444; margin-top:0.4rem; }
-        .bg-example { width:100%; height:180px; border-radius:6px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; color:white; font-weight:600; text-shadow:0 1px 2px rgba(0,0,0,0.5); }
-    </style>
+    
 </head>
 <body>
-    <a href="#contenido" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
+    <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
     <header>
         <h1>Ejemplos de imágenes</h1>
         <p>Archivo: index.html — práctica básica con &lt;img&gt;, figuras y fondo con CSS.</p>
@@ -63,12 +55,12 @@
     </section>
 
     <!-- 5) Fondo con CSS -->
-    <section style="margin-top:1.25rem;">
+    <section class="spaced">
         <h2>Fondo con CSS</h2>
-        <div class="bg-example" style="background-image:url('images/fondo.png');">
+        <div class="bg-example">
             Fondo usando background-image
         </div>
-        <p style="font-size:0.9rem;color:#555;margin-top:0.5rem;">
+        <p class="note">
             Nota: usa imágenes en la carpeta "images" junto a este index.html. Asegúrate de añadir descripciones en
             <code>alt</code> para accesibilidad.
         </p>
