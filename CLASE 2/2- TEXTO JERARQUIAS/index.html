@@ -14,8 +14,17 @@
         <p class="muted">Ejemplos básicos de títulos, párrafos y elementos en línea.</p>
     </header>
 
-    <main id="contenido">
-        <section>
+    <main id="contenido" class="wrap">
+        <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-2">
+            <h2 id="aside-title-clase-2">En esta clase</h2>
+            <ul>
+                <li><span class="dot dot-titulos" aria-hidden="true"></span><a href="#titulos">Jerarquía de títulos (h1–h6)</a></li>
+                <li><span class="dot dot-parrafos" aria-hidden="true"></span><a href="#parrafos">Párrafos y énfasis</a></li>
+                <li><span class="dot dot-listas" aria-hidden="true"></span><a href="#listas">Listas</a></li>
+                <li><span class="dot dot-citas" aria-hidden="true"></span><a href="#citas">Citas y código</a></li>
+            </ul>
+        </aside>
+        <section id="titulos">
             <h2>Títulos (h1 → h6)</h2>
             <h1>Encabezado h1 — nivel principal</h1>
             <h2>Encabezado h2 — subsección</h2>
@@ -25,13 +34,13 @@
             <h6>Encabezado h6</h6>
         </section>
 
-        <section>
+        <section id="parrafos">
             <h2>Párrafos y texto en línea</h2>
             <p>Este es un <strong>párrafo</strong> con <em>énfasis</em>, <mark>texto resaltado</mark>, y una <a href="#" title="Ejemplo">enlace</a>.</p>
             <p>Uso de <small>texto pequeño</small>, <abbr title="Hipervínculo">URL</abbr>, y <del>texto eliminado</del>.</p>
         </section>
 
-        <section>
+        <section id="listas">
             <h2>Listas</h2>
             <p>Lista ordenada:</p>
             <ol>
@@ -51,7 +60,7 @@
             </dl>
         </section>
 
-        <section>
+        <section id="citas">
             <h2>Citas y código</h2>
 
             <!-- Referencia: elementos de contenido de texto — https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements#contenido_del_texto -->

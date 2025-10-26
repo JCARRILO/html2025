@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS — Clase 2 · Sintaxis y selectores</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#contenido" class="visualmente-oculto">Saltar al contenido principal</a>
+
+  <header class="site">
+    <div class="wrap">
+      <h1>CSS — Clase 2</h1>
+      <p class="muted">Sintaxis de reglas y selectores: básicos, combinadores, pseudo‑clases y especificidad.</p>
+      <nav aria-label="Índice">
+        <a href="#sintaxis">Sintaxis</a>
+        <a href="#basicos">Selectores básicos</a>
+        <a href="#combinadores">Combinadores</a>
+        <a href="#pseudo">Pseudo‑clases</a>
+        <a href="#especificidad">Especificidad</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-css-2">
+      <h2 id="aside-title-css-2">En esta clase</h2>
+      <ul>
+        <li><span class="dot dot-sintaxis" aria-hidden="true"></span><a href="#sintaxis">Sintaxis de reglas</a></li>
+        <li><span class="dot dot-basicos" aria-hidden="true"></span><a href="#basicos">Selectores básicos</a></li>
+        <li><span class="dot dot-combinadores" aria-hidden="true"></span><a href="#combinadores">Combinadores</a></li>
+        <li><span class="dot dot-pseudo" aria-hidden="true"></span><a href="#pseudo">Pseudo‑clases y pseudo‑elementos</a></li>
+        <li><span class="dot dot-especificidad" aria-hidden="true"></span><a href="#especificidad">Especificidad</a></li>
+      </ul>
+    </aside>
+    <section id="sintaxis" class="card">
+      <h2>1) Sintaxis de CSS</h2>
+      <p>Una regla CSS tiene <strong>selector</strong> y <strong>declaraciones</strong> (propiedad: valor) dentro de llaves.</p>
+      <pre><code>/* Comentario */
+selector {
+  propiedad: valor;
+  otra-propiedad: otro-valor;
+}
+
+/* Ejemplo */
+.btn {
+  background: #2f6e93;
+  color: #fff;
+}
+      </code></pre>
+      <ul>
+        <li>Los puntos y comas separan declaraciones.</li>
+        <li>Los nombres de propiedades son en minúsculas y con guiones.</li>
+        <li>Evita <code>!important</code> salvo excepciones; aprende especificidad.</li>
+      </ul>
+    </section>
+    <section id="basicos" class="card">
+      <h2>2) Selectores básicos</h2>
+      <p>Elemento, clase e ID.</p>
+      <div id="demo-basicos">
+        <p>Un párrafo</p>
+        <p class="destacado">Párrafo destacado por clase</p>
+        <p id="unico">Párrafo con ID único</p>
+      </div>
+    </section>
+
+    <section id="combinadores" class="card">
+      <h2>3) Combinadores</h2>
+      <div class="parent">
+        <p>Hijo A (selector hijo: >)</p>
+        <div class="box">
+          <p>Descendiente dentro de .box</p>
+        </div>
+        <p class="hermano">Hermano adyacente (+)</p>
+        <p>Hermano general (~)</p>
+      </div>
+    </section>
+
+    <section id="pseudo" class="card">
+      <h2>4) Pseudo‑clases y pseudo‑elementos</h2>
+      <a class="btn" href="#">Botón</a>
+      <ul class="menu">
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+      </ul>
+    </section>
+
+    <section id="especificidad" class="card">
+      <h2>5) Especificidad (ejercicio)</h2>
+      <button id="cta" class="btn primary">Probar</button>
+      <pre><code>.btn.primary { background:#2f6e93 }
+#cta { background:#184b62 }</code></pre>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <small>CSS · Clase 2</small>
+    </div>
+  </footer>
+</body>
+</html>

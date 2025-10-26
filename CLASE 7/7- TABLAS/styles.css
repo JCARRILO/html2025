@@ -1,4 +1,4 @@
-:root{
+﻿:root{
       --bg:#ffffff; --ink:#1a1a1a; --muted:#5a6b77; --card:#f5f7f9;
       --brand:#2f6e93; --accent:#e2edf4; --border:#e7ebef; --error:#b00020;
       --shadow:0 8px 24px rgba(0,0,0,.08);
@@ -28,7 +28,7 @@
     #tabla-ventas caption{text-align:center}
     thead th{position:sticky;top:0;background:#f7fbfe;border-bottom:2px solid var(--border);z-index:2}
     th, td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
-    /* Alinear numéricas de columnas 2-5 (regiones) y última columna */
+    /* Alinear numÃ©ricas de columnas 2-5 (regiones) y Ãºltima columna */
     tbody td:nth-child(n+2):nth-child(-n+5),
     tfoot td:nth-child(n+2):nth-child(-n+5),
     tbody td:last-child,
@@ -38,7 +38,7 @@
     th[scope="row"]{white-space:nowrap}
     .num{text-align:right}
     colgroup col.total{background:#f9fcff}
-    /* Anchos fijos por columna para mantener alineación perfecta */
+    /* Anchos fijos por columna para mantener alineaciÃ³n perfecta */
     colgroup col.col-prod{width:32%}
     colgroup col.col-region{width:13.5%}
     colgroup col.col-total{width:14%}
@@ -68,11 +68,11 @@
     #tabla-ventas tbody td:last-child,
     #tabla-ventas tfoot td:last-child{ text-align:right }
     /* Reset para NO afectar otras tablas */
-    main table:not(#tabla-ventas) td{ text-align:left !important; }    /* Alineaci�n de encabezados SOLO tabla 1 */
+    main table:not(#tabla-ventas) td{ text-align:left !important; }    /* Alineación de encabezados SOLO tabla 1 */
     #tabla-ventas thead tr:first-child th{ text-align:center }
     #tabla-ventas thead tr:first-child th:first-child{ text-align:center; vertical-align:middle }
     #tabla-ventas thead tr:first-child th:last-child{ text-align:center }
-    /* Forzar centrado expl�cito del encabezado Total anual */
+    /* Forzar centrado explícito del encabezado Total anual */
     #tabla-ventas thead #h-total{ text-align:center !important; vertical-align:middle }
     #tabla-ventas thead tr:nth-child(2) th:nth-child(n+2):nth-child(-n+5){ text-align:right }
     #tabla-ventas thead tr:nth-child(2) th:first-child{ text-align:right }
@@ -109,3 +109,53 @@
     }
 
 .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; margin:0 }
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem; color:#254b5a }
+.lesson-aside ul{ list-style:none; padding:0; margin:0 }
+.lesson-aside li{ display:flex; align-items:center; gap:8px; margin:6px 0; color:#314e5d }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.dot-structure{ background:var(--k-structure) }
+.dot-headers{ background:var(--k-headers) }
+    .dot-caption{ background:var(--k-caption) }
+    .dot-a11y{ background:var(--k-a11y) }
+    .dot-schedule{ background:var(--k-schedule) }
+    .dot-perms{ background:var(--k-perms) }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.lesson-aside a:hover, .lesson-aside a:focus{ text-decoration:underline }
+
+/* Layout: contenido + aside derecho */
+main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
+.lesson-aside{ position:sticky; top:16px; height:fit-content; grid-column:2; grid-row:1; align-self:start }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+
+/* Resaltado suave por conocimiento */
+.card.k-structure{ background:#f0f7f2; border-left:4px solid var(--k-structure) }
+thead.k-headers th{ background:#eef7ff !important; border-bottom-color:var(--k-headers) }
+caption.k-caption{ background:#f7f1ff; color:#4b3b73; padding:8px 14px; border-left:4px solid var(--k-caption) }
+    .toolbar.k-a11y{ background:#fff8e7; border:1px dashed #f0c36d; border-left:4px solid var(--k-a11y); border-radius:10px; padding:8px }
+    caption.k-schedule{ background:#fff9ec; color:#6d5210; padding:8px 14px; border-left:4px solid var(--k-schedule) }
+    caption.k-perms{ background:#f2fbf6; color:#1f5b3e; padding:8px 14px; border-left:4px solid var(--k-perms) }
+
+/* Resaltado al navegar con el aside */
+#k-structure:target{ outline:2px solid var(--k-structure); outline-offset:3px; scroll-margin-top:16px }
+thead#k-headers:target th{ box-shadow: inset 0 -3px 0 var(--k-headers) }
+caption#k-caption:target{ outline:2px solid var(--k-caption); outline-offset:3px }
+    #k-a11y:target{ outline:2px dashed var(--k-a11y); outline-offset:3px }
+    caption#k-horario:target{ outline:2px solid var(--k-schedule); outline-offset:3px }
+    caption#k-permisos:target{ outline:2px solid var(--k-perms); outline-offset:3px }
+
+html{ scroll-behavior:smooth }
+
+@media (max-width: 1024px){
+  main.wrap{ display:flex; flex-direction:column }
+  .lesson-aside{ position:static; margin:16px 0; order:99 }
+}
+
+:root{
+  --k-structure:#78c2a4;
+  --k-headers:#6aa0e8;
+  --k-caption:#a884e5;
+  --k-a11y:#f0b45b;
+  --k-schedule:#f0c36d;
+  --k-perms:#84c5a3;
+}

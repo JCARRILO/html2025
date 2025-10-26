@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">`r`n<title>Tablas avanzadas en HTML</title>
+    <link rel="stylesheet" href="styles.css"><title>Tablas avanzadas en HTML</title>
   
   </head>
-<body>rn  <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
-
+<body>
+  <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
+  
   <header class="hero">
     <div class="wrap">
       <p class="kicker">Frontend</p>
@@ -17,13 +18,24 @@
   </header>
 
   <main id="contenido" class="wrap">
+    <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-7">
+      <h2 id="aside-title-clase-7">En esta clase</h2>
+      <ul>
+        <li><span class="dot dot-structure" aria-hidden="true"></span><a href="#k-structure">Estructura de tabla (table, thead, tbody, tfoot)</a></li>
+        <li><span class="dot dot-headers" aria-hidden="true"></span><a href="#k-headers">Encabezados y scope (th/td)</a></li>
+        <li><span class="dot dot-caption" aria-hidden="true"></span><a href="#k-caption">Caption</a></li>
+        <li><span class="dot dot-a11y" aria-hidden="true"></span><a href="#k-a11y">Accesibilidad en tablas</a></li>
+        <li><span class="dot dot-schedule" aria-hidden="true"></span><a href="#k-horario">Horario (colspan y filas destacadas)</a></li>
+        <li><span class="dot dot-perms" aria-hidden="true"></span><a href="#k-permisos">Matriz de permisos (colgroup y abbr)</a></li>
+      </ul>
+    </aside>
     <!-- 1) Informe de ventas con cabecera multinivel, colgroup, tfoot, filtro y sort -->
     <section class="section">
-      <div class="card">
+      <div class="card k-structure" id="k-structure" tabindex="-1">
         <h2 class="title">1) Informe de ventas 2024</h2>
         <p class="muted">Tabla grande con encabezados multinivel, totales y utilidades de filtrado y ordenamiento.</p>
 
-        <div class="toolbar" role="region" aria-label="Controles de tabla de ventas">
+        <div class="toolbar k-a11y" id="k-a11y" tabindex="-1" role="region" aria-label="Controles de tabla de ventas">
           <label for="filter-ventas" class="small">Filtrar por producto:</label>
           <input id="filter-ventas" type="search" placeholder="Ej. Port&aacute;til, Teclado..." aria-controls="tabla-ventas" aria-describedby="filter-help">
           <span id="filter-help" class="small muted">Escribe para mostrar solo filas coincidentes.</span>
@@ -34,13 +46,13 @@
 
         <div class="table-wrap">
           <table id="tabla-ventas">
-  <caption>Informe de ventas por producto y regi&oacute;n (Q1&ndash;Q4 2024)</caption>
+  <caption class="k-caption" id="k-caption" tabindex="-1">Informe de ventas por producto y regi&oacute;n (Q1&ndash;Q4 2024)</caption>
   <colgroup>
     <col class="col-prod" span="1">
     <col class="col-region" span="4">
     <col class="col-total total" span="1">
   </colgroup>
-  <thead>
+  <thead class="k-headers" id="k-headers" tabindex="-1">
     <tr>
       <th scope="col" rowspan="2" id="h-prod">Producto</th>
       <th scope="colgroup" colspan="4" id="h-region">Regi&oacute;n</th>
@@ -122,7 +134,7 @@
         </div>
         <div class="table-wrap">
           <table id="tabla-horario">
-            <caption>Horario del curso (Semana tipo)</caption>
+            <caption class="k-schedule" id="k-horario" tabindex="-1">Horario del curso (Semana tipo)</caption>
             <thead>
               <tr>
                 <th scope="col">D&iacute;a</th>
@@ -180,7 +192,7 @@
         <p class="muted">Uso de <code>&lt;colgroup&gt;</code> para estilo por columna y cabeceras claras con <code>&lt;abbr&gt;</code>.</p>
         <div class="table-wrap">
           <table id="tabla-permisos">
-            <caption>Permisos por rol</caption>
+            <caption class="k-perms" id="k-permisos" tabindex="-1">Permisos por rol</caption>
             <colgroup>
               <col>
               <col style="background:#fcf7f1">
@@ -230,7 +242,7 @@
     // Utilidades: normalizar texto (para ordenamiento/filtrado)
     const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').trim();
 
-    // Formatear n�meros del cuerpo de la tabla 1 en es-ES
+    // Formatear nï¿½meros del cuerpo de la tabla 1 en es-ES
     function formatVentasBodyES(){
       const table = document.getElementById('tabla-ventas');
       if(!table || !table.tBodies.length) return;
@@ -289,7 +301,7 @@
     }
     const statusEl = document.getElementById('ventas-status');
     if(statusEl){
-      statusEl.textContent = 'Totales visibles � Norte: ' + fmt(sumsVis[0])
+      statusEl.textContent = 'Totales visibles ï¿½ Norte: ' + fmt(sumsVis[0])
         + ', Sur: ' + fmt(sumsVis[1])
         + ', Este: ' + fmt(sumsVis[2])
         + ', Oeste: ' + fmt(sumsVis[3])
@@ -379,7 +391,7 @@
         recomputeTotalsAndStatus();
       }
     })();
-      // Filtro de filas por materia/d�a en tabla 2 (horario)
+      // Filtro de filas por materia/dï¿½a en tabla 2 (horario)
     (function(){
       const input = document.getElementById('filter-horario');
       const clear = document.getElementById('clear-horario');
@@ -416,6 +428,7 @@
 
 </body>
 </html>
+
 
 
 

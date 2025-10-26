@@ -1,0 +1,68 @@
+:root{
+  --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --card:#f7f9fb; --border:#e6ebef; --brand:#2f6e93;
+  /* Colores suaves para asociar temas */
+  --k-sintaxis:#78c2a4; --k-basicos:#6aa0e8; --k-combinadores:#f0c36d; --k-pseudo:#a884e5; --k-especificidad:#f0b45b;
+}
+*{ box-sizing:border-box }
+body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
+.wrap{ max-width:1000px; margin:0 auto; padding:24px 16px }
+/* Layout contenido + aside derecha */
+main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px }
+.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2 }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+@media (max-width: 1024px){ main.wrap{ display:flex; flex-direction:column } .lesson-aside{ position:static; order:99 } }
+/* Aside y puntos */
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem; color:#184b62 }
+.lesson-aside ul{ list-style:none; margin:0; padding:0 }
+.lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.dot-sintaxis{ background:var(--k-sintaxis) }
+.dot-basicos{ background:var(--k-basicos) }
+.dot-combinadores{ background:var(--k-combinadores) }
+.dot-pseudo{ background:var(--k-pseudo) }
+.dot-especificidad{ background:var(--k-especificidad) }
+/* Resaltado suave por tema */
+#sintaxis.card{ border-left:4px solid var(--k-sintaxis) }
+#basicos.card{ border-left:4px solid var(--k-basicos) }
+#combinadores.card{ border-left:4px solid var(--k-combinadores) }
+#pseudo.card{ border-left:4px solid var(--k-pseudo) }
+#especificidad.card{ border-left:4px solid var(--k-especificidad) }
+html{ scroll-behavior:smooth }
+
+/* Accesibilidad */
+.visualmente-oculto{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+
+/* Cabecera y tarjetas */
+header.site{ background:linear-gradient(#cfe0ea, #dfe8ee 42%, var(--bg) 42%); padding:36px 0 20px }
+header nav a{ color:#184b62; text-decoration:none; padding:4px 8px; border-radius:8px }
+header nav a:hover, header nav a:focus{ background:#e6eef4 }
+.muted{ color:var(--muted) }
+.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
+pre{ background:#eef3f6; border:1px solid var(--border); border-radius:10px; padding:10px; overflow:auto }
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95em }
+
+/* 1) Selectores básicos */
+#demo-basicos p{ background:#eef3f6; padding:6px 10px; border-radius:8px }
+#demo-basicos .destacado{ background:#ffe9b3 }
+#demo-basicos #unico{ background:#ffd1d1 }
+
+/* 2) Combinadores */
+.parent{ border:1px dashed #c6d3db; padding:10px; border-radius:10px }
+.parent > p{ border-left:4px solid #9ecae0; padding-left:8px }
+.parent .box p{ color:#184b62; font-weight:600 }
+.parent .hermano + p{ text-decoration:underline dotted }
+.parent p ~ p{ opacity:.9 }
+
+/* 3) Pseudo‑clases y pseudo‑elementos */
+.btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
+.btn:hover, .btn:focus{ background:#e6eef4 }
+.btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
+.menu{ padding-left:1.25rem }
+.menu li::marker{ color:#6e93a8 }
+.menu li:first-child{ font-weight:700 }
+
+/* 4) Especificidad (ver HTML) */
+#cta{ /* 100 puntos */ }
+.btn.primary{ /* 10 + 10 = 20 puntos */ }
+button{ /* 1 punto */ }

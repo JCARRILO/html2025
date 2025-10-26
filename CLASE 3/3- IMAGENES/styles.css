@@ -10,3 +10,21 @@ figcaption { font-size:0.9rem; color:#444; margin-top:0.4rem; }
 .spaced{ margin-top:1.25rem }
 .note{ font-size:0.9rem; color:#555; margin-top:0.5rem }
 .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+/* Layout aside derecha */
+main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px }
+.lesson-aside{ background:#f8fafc; border:1px solid #e6ebef; border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2 }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+@media (max-width:1024px){ main.wrap{ display:flex; flex-direction:column } .lesson-aside{ position:static; order:99 } }
+/* Aside + puntos */
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem }
+.lesson-aside ul{ list-style:none; margin:0; padding:0 }
+.lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.dot-img{ background:#6aa0e8 }
+.dot-figure{ background:#78c2a4 }
+.dot-bg{ background:#f0c36d }
+/* Resaltado */
+#k-galeria{ border-left:4px solid #6aa0e8; padding-left:8px }
+#k-bg{ border-left:4px solid #f0c36d; padding-left:8px }
+html{ scroll-behavior:smooth }
