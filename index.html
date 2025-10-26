@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Curso HTML — Clases unificadas</title>
+  <link rel="stylesheet" href="CSS/common.css" />
+  <link rel="stylesheet" href="CSS/app.css" />
+</head>
+<body>
+  <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
+
+  <header class="site">
+    <div class="wrap">
+      <h1>Curso HTML</h1>
+      <p class="muted">Clases 1–12 en una sola página. Un solo encabezado, estilos y componentes modulares.</p>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <aside class="toc" role="complementary" aria-labelledby="toc-title">
+      <h2 id="toc-title">Clases</h2>
+      <ol>
+        <li><span class="dot c1" aria-hidden="true"></span><a href="#clase-1">Clase 1 — Fundamentos HTML</a></li>
+        <li><span class="dot c2" aria-hidden="true"></span><a href="#clase-2">Clase 2 — Jerarquía de texto</a></li>
+        <li><span class="dot c3" aria-hidden="true"></span><a href="#clase-3">Clase 3 — Imágenes</a></li>
+        <li><span class="dot c4" aria-hidden="true"></span><a href="#clase-4">Clase 4 — Listas</a></li>
+        <li><span class="dot c5" aria-hidden="true"></span><a href="#clase-5">Clase 5 — Etiquetas semánticas</a></li>
+        <li><span class="dot c6" aria-hidden="true"></span><a href="#clase-6">Clase 6 — Formularios</a></li>
+        <li><span class="dot c7" aria-hidden="true"></span><a href="#clase-7">Clase 7 — Tablas</a></li>
+        <li><span class="dot c8" aria-hidden="true"></span><a href="#clase-8">Clase 8 — Imágenes responsive</a></li>
+        <li><span class="dot c9" aria-hidden="true"></span><a href="#clase-9">Clase 9 — Audio y video</a></li>
+        <li><span class="dot c10" aria-hidden="true"></span><a href="#clase-10">Clase 10 — ARIA</a></li>
+        <li><span class="dot c11" aria-hidden="true"></span><a href="#clase-11">Clase 11 — SEO semántico</a></li>
+        <li><span class="dot c12" aria-hidden="true"></span><a href="#clase-12">Clase 12 — Portafolio</a></li>
+      </ol>
+    </aside>
+
+    <div class="content">
+      <!-- Clase 1 -->
+      <section id="clase-1" class="lesson" tabindex="-1">
+        <h2>Clase 1 — Fundamentos HTML</h2>
+        <article class="card" id="c1-intro">
+          <h3>Introducción</h3>
+          <p>Archivo base con <strong>doctype</strong>, elementos <code>html</code>, <code>head</code> y <code>body</code>. Esta guía unifica todas las lecciones sin duplicar código.</p>
+        </article>
+        <article class="card" id="c1-estructura">
+          <h3>Estructura básica</h3>
+          <pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt; ... &lt;/head&gt;
+  &lt;body&gt; ... &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </article>
+        <article class="card" id="c1-ejemplo">
+          <h3>Ejemplo rápido</h3>
+          <p>Agrega tu contenido dentro de <code>main</code> siguiendo la jerarquía de títulos. Usa utilidades comunes para accesibilidad y layout.</p>
+        </article>
+      </section>
+
+      <!-- Clase 2 -->
+      <section id="clase-2" class="lesson" tabindex="-1">
+        <h2>Clase 2 — Jerarquía de texto</h2>
+        <article class="card">
+          <h3>Títulos</h3>
+          <p>Usa un solo <code>h1</code> en la página. Para subsecciones usa <code>h2</code>–<code>h6</code> en orden lógico.</p>
+          <div class="demo-titles">
+            <h1 class="only-demo" aria-hidden="true">h1 (solo demo)</h1>
+            <h2>h2 subsección</h2>
+            <h3>h3 sub-sección</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Párrafos y énfasis</h3>
+          <p>Un <strong>párrafo</strong> con <em>énfasis</em>, <mark>resaltado</mark> y un <a href="#" title="Ejemplo">enlace</a>. También puedes usar <small>texto pequeño</small>, <abbr title="Hipervínculo">URL</abbr> y <code>code</code>.</p>
+        </article>
+        <article class="card">
+          <h3>Listas</h3>
+          <p>Lista ordenada con subelementos:</p>
+          <ol>
+            <li>Primer elemento</li>
+            <li>Segundo elemento
+              <ul>
+                <li>Subelemento A</li>
+                <li>Subelemento B</li>
+              </ul>
+            </li>
+            <li>Tercer elemento</li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- Clases 3–12: espacio para migrar contenido -->
+      <section id="clase-3" class="lesson" tabindex="-1">
+        <h2>Clase 3 — Imágenes</h2>
+        <p class="muted">Contenido por migrar.</p>
+      </section>
+      <section id="clase-4" class="lesson" tabindex="-1"><h2>Clase 4 — Listas</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-5" class="lesson" tabindex="-1"><h2>Clase 5 — Etiquetas semánticas</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-6" class="lesson" tabindex="-1"><h2>Clase 6 — Formularios</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-7" class="lesson" tabindex="-1"><h2>Clase 7 — Tablas</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-8" class="lesson" tabindex="-1"><h2>Clase 8 — Imágenes responsive</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-9" class="lesson" tabindex="-1"><h2>Clase 9 — Audio y video</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-10" class="lesson" tabindex="-1"><h2>Clase 10 — ARIA</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-11" class="lesson" tabindex="-1"><h2>Clase 11 — SEO semántico</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-12" class="lesson" tabindex="-1"><h2>Clase 12 — Portafolio</h2><p class="muted">Contenido por migrar.</p></section>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <small>&copy; <span id="year"></span> — Curso HTML</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  <script src="CSS/aside-scrollspy.js"></script>
+  <script src="JS/app.js"></script>
+</body>
+</html>
+
