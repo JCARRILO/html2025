@@ -91,6 +91,12 @@ audio.responsive{ width:100% }
   .avatar-fixed:hover{ transform: scale(1.03) }
 }
 
+/* Override portada: usar gradiente y mostrar imagen <img.site-cover> */
+header.site{ background:linear-gradient(var(--grad-blue-1), var(--grad-blue-2) 42%, var(--bg) 42%) !important }
+.site-cover{ display:block; height:auto; margin:0 auto 12px }
+@media (min-width:1024px){ .site-cover{ width:900px; max-width:100% } }
+@media (max-width:1023.98px){ .site-cover{ width:100%; max-width:100% } }
+
 /* Responsive */
 @media (max-width:1024px){
   main.wrap{ display:flex; flex-direction:column }
