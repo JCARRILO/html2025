@@ -291,7 +291,51 @@
         </article>
       </section>
 
-      <!-- CSS: Clase 1 -->
+      <!-- CSS: Clase 4 -->
+      <section id="css-4" class="lesson css-c4" tabindex="-1">
+        <h2>CSS 4 — Box Model</h2>
+        <p class="muted">Domina cómo se combinan <strong>contenido</strong>, <strong>padding</strong>, <strong>borde</strong> y <strong>margin</strong>. Usa <code>box-sizing</code> para controlar dimensiones reales y evitar sorpresas.</p>
+
+        <article class="card">
+          <h3>¿Qué es el box model?</h3>
+          <ul>
+            <li><strong>Contenido</strong>: área real del elemento.</li>
+            <li><strong>Padding</strong>: espacio interno entre borde y contenido.</li>
+            <li><strong>Borde</strong>: delinea el contenedor y suma píxeles.</li>
+            <li><strong>Margin</strong>: separación externa entre cajas.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>content-box vs border-box</h3>
+          <div class="box-row">
+            <div>
+              <h4>content-box (por defecto)</h4>
+              <div class="bm-box cb">Caja 200px + padding + borde</div>
+              <p class="muted">Ancho total = width + padding laterales + bordes laterales</p>
+            </div>
+            <div>
+              <h4>border-box (recomendado)</h4>
+              <div class="bm-box bb">Caja 200px incluye padding y borde</div>
+              <p class="muted">Ancho total = width (ya incluye padding y borde)</p>
+            </div>
+          </div>
+          <pre><code>/* Reset recomendado */
+*, *::before, *::after{ box-sizing: border-box; }
+html, body, h1, h2, p, ul, ol{ margin:0; padding:0 }
+</code></pre>
+        </article>
+
+        <article class="card">
+          <h3>Inspección en devtools</h3>
+          <ul>
+            <li>Selecciona un elemento y observa el diagrama del modelo.</li>
+            <li>Activa/desactiva padding/borde/margin para ver su efecto.</li>
+            <li>Verifica width/height y cómo cambia el tamaño final.</li>
+          </ul>
+        </article>
+      </section>
+ -->
       <section id="css-1" class="lesson" tabindex="-1">
         <h2>CSS 1 â€” Fundamentos y Cascada</h2>
         <article class="card">
@@ -313,7 +357,51 @@
         </article>
       </section>
 
-      <!-- CSS: Clase 2 -->
+      <!-- CSS: Clase 4 -->
+      <section id="css-4" class="lesson css-c4" tabindex="-1">
+        <h2>CSS 4 — Box Model</h2>
+        <p class="muted">Domina cómo se combinan <strong>contenido</strong>, <strong>padding</strong>, <strong>borde</strong> y <strong>margin</strong>. Usa <code>box-sizing</code> para controlar dimensiones reales y evitar sorpresas.</p>
+
+        <article class="card">
+          <h3>¿Qué es el box model?</h3>
+          <ul>
+            <li><strong>Contenido</strong>: área real del elemento.</li>
+            <li><strong>Padding</strong>: espacio interno entre borde y contenido.</li>
+            <li><strong>Borde</strong>: delinea el contenedor y suma píxeles.</li>
+            <li><strong>Margin</strong>: separación externa entre cajas.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>content-box vs border-box</h3>
+          <div class="box-row">
+            <div>
+              <h4>content-box (por defecto)</h4>
+              <div class="bm-box cb">Caja 200px + padding + borde</div>
+              <p class="muted">Ancho total = width + padding laterales + bordes laterales</p>
+            </div>
+            <div>
+              <h4>border-box (recomendado)</h4>
+              <div class="bm-box bb">Caja 200px incluye padding y borde</div>
+              <p class="muted">Ancho total = width (ya incluye padding y borde)</p>
+            </div>
+          </div>
+          <pre><code>/* Reset recomendado */
+*, *::before, *::after{ box-sizing: border-box; }
+html, body, h1, h2, p, ul, ol{ margin:0; padding:0 }
+</code></pre>
+        </article>
+
+        <article class="card">
+          <h3>Inspección en devtools</h3>
+          <ul>
+            <li>Selecciona un elemento y observa el diagrama del modelo.</li>
+            <li>Activa/desactiva padding/borde/margin para ver su efecto.</li>
+            <li>Verifica width/height y cómo cambia el tamaño final.</li>
+          </ul>
+        </article>
+      </section>
+ -->
       <section id="css-2" class="lesson" tabindex="-1">
         <h2>CSS 2 â€” Selectores bÃ¡sicos</h2>
         <article class="card">
@@ -396,5 +484,7 @@ main p span, h2, h3 { font-style: normal }</code></pre>
   <script src="JS/app.js"></script>
 </body>
 </html>
+
+
 
 
