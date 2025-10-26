@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS â€” Clase 2 Â· Sintaxis y selectores</title>
+  <title>CSS — Clase 2 — Sintaxis y selectores</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,14 +11,15 @@
 
   <header class="site">
     <div class="wrap">
-      <h1>CSS â€” Clase 2</h1>
-      <p class="muted">Sintaxis de reglas y selectores: bÃ¡sicos, combinadores, pseudoâ€‘clases y especificidad.</p>
-      <nav aria-label="Ãndice">
+      <h1>CSS — Clase 2</h1>
+      <p class="muted">Sintaxis de reglas y selectores: básicos, descendientes, pseudoclases y especificidad.</p>
+      <nav aria-label="Índice">
         <a href="#sintaxis">Sintaxis</a>
-        <a href="#basicos">Selectores bÃ¡sicos</a>
-        <a href="#combinadores">Combinadores</a>
-        <a href="#pseudoclases">Pseudoâ€‘clases</a>
+        <a href="#basicos">Selectores básicos</a>
+        <a href="#descendientes">Descendientes</a>
+        <a href="#pseudoclases">Pseudoclases</a>
         <a href="#especificidad">Especificidad</a>
+        <a href="#herencia">Herencia</a>
       </nav>
     </div>
   </header>
@@ -28,12 +29,14 @@
       <h2 id="aside-title-css-2">En esta clase</h2>
       <ul>
         <li><span class="dot dot-sintaxis" aria-hidden="true"></span><a href="#sintaxis">Sintaxis de reglas</a></li>
-        <li><span class="dot dot-basicos" aria-hidden="true"></span><a href="#basicos">Selectores bÃ¡sicos</a></li>
-        <li><span class="dot dot-combinadores" aria-hidden="true"></span><a href="#combinadores">Combinadores</a></li>
+        <li><span class="dot dot-basicos" aria-hidden="true"></span><a href="#basicos">Etiqueta, clase e ID</a></li>
+        <li><span class="dot dot-desc" aria-hidden="true"></span><a href="#descendientes">Descendientes y contenedores</a></li>
         <li><span class="dot dot-pseudo" aria-hidden="true"></span><a href="#pseudoclases">Pseudoclases (hover, link, visited)</a></li>
         <li><span class="dot dot-especificidad" aria-hidden="true"></span><a href="#especificidad">Especificidad</a></li>
+        <li><span class="dot dot-herencia" aria-hidden="true"></span><a href="#herencia">Herencia</a></li>
       </ul>
     </aside>
+
     <section id="sintaxis" class="card">
       <h2>1) Sintaxis de CSS</h2>
       <p>Una regla CSS tiene <strong>selector</strong> y <strong>declaraciones</strong> (propiedad: valor) dentro de llaves.</p>
@@ -51,33 +54,29 @@ selector {
       </code></pre>
       <ul>
         <li>Los puntos y comas separan declaraciones.</li>
-        <li>Los nombres de propiedades son en minÃºsculas y con guiones.</li>
+        <li>Los nombres de propiedades son en minúsculas y con guiones.</li>
         <li>Evita <code>!important</code> salvo excepciones; aprende especificidad.</li>
       </ul>
     </section>
-    <section id="basicos" class="card">
-      <h2>2) Selectores bÃ¡sicos</h2>
-      <p>Elemento, clase e ID.</p>
-      <div id="demo-basicos">
-        <p>Un pÃ¡rrafo</p>
-        <p class="destacado">PÃ¡rrafo destacado por clase</p>
-        <p id="unico">PÃ¡rrafo con ID Ãºnico</p>
-      </div>
-      <pre><code>/* Selector de etiqueta */`r`n p { margin-bottom: 30px; }`r`n /* Clase reutilizable */`r`n .rojo { color: red; }`r`n /* ID único */`r`n #unico { background: yellow; }`r`n       </code></pre>`r`n    </section>
 
-    <section id="combinadores" class="card">
-      <h2>3) Combinadores</h2>
-      <div class="parent">
-        <p>Hijo A (selector hijo: >)</p>
-        <div class="box">
-          <p>Descendiente dentro de .box</p>
-        </div>
-        <p class="hermano">Hermano adyacente (+)</p>
-        <p>Hermano general (~)</p>
+    <section id="basicos" class="card">
+      <h2>2) Selectores básicos</h2>
+      <p>Elemento, clase e ID. Evita estilos inline como práctica habitual.</p>
+      <div id="demo-basicos" class="ejemplo-selectores">
+        <p>Selector de etiqueta (p) aplica a todos los p.</p>
+        <p class="rojo">Clase reutilizable .rojo</p>
+        <p id="unico">ID único #unico</p>
       </div>
+      <pre><code>/* Selector de etiqueta */
+p { margin-bottom: 30px; }
+/* Clase reutilizable */
+.rojo { color: red; }
+/* ID único */
+#unico { background: yellow; }
+      </code></pre>
     </section>
 
-        <section id="descendientes" class="card">
+    <section id="descendientes" class="card">
       <h2>3) Descendientes y contenedores</h2>
       <p>Usa un contenedor con clase para limitar el alcance y evitar “pisarse” entre estilos.</p>
       <div class="contenedor demo-contenedor">
@@ -92,25 +91,49 @@ selector {
 /* Solo dentro de .contenedor */
 .contenedor p { color: blue; }
       </code></pre>
-    </section><section id="pseudoclases" class="card">`r`n      <h2>4) Pseudoclases (hover, link, visited)</h2>`r`n      <button class="demo-btn">Botón (hover)</button>`r`n      <p>`r`n        <a href="https://example.com" target="_blank" rel="noopener">Enlace externo</a>`r`n        · <a href="#sintaxis">Enlace interno</a>`r`n      </p>`r`n      <pre><code>button:hover { background: lightblue; cursor: pointer; }`r`n a:link { color: green; }`r`n a:visited { color: goldenrod; }`r`n      </code></pre>`r`n    </section>
+    </section>
+
+    <section id="pseudoclases" class="card">
+      <h2>4) Pseudoclases (hover, link, visited)</h2>
+      <button class="demo-btn">Botón (hover)</button>
+      <p>
+        <a href="https://example.com" target="_blank" rel="noopener">Enlace externo</a>
+        · <a href="#sintaxis">Enlace interno</a>
+      </p>
+      <pre><code>button:hover { background: lightblue; cursor: pointer; }
+a:link { color: green; }
+a:visited { color: goldenrod; }
+      </code></pre>
+    </section>
 
     <section id="especificidad" class="card">
       <h2>5) Especificidad (ejercicio)</h2>
+      <p>Elementos: 1 · Clases: 10 · ID: 100 · Inline: 1000 · <code>!important</code> (último recurso).</p>
       <button id="cta" class="btn primary">Probar</button>
       <pre><code>.btn.primary { background:#2f6e93 }
-#cta { background:#184b62 }</code></pre>
+#cta { background:#184b62 }
+/* Inline y !important deben usarse con cuidado */
+      </code></pre>
+    </section>
+
+    <section id="herencia" class="card">
+      <h2>6) Herencia</h2>
+      <p>Propiedades de texto (color, font-family, font-size, text-align, font-style) se heredan a hijos. Otras como margin/border no.</p>
+      <div class="contenedor demo-herencia">
+        <p>Este texto hereda el color del contenedor.</p>
+        <div><span>Span interno también hereda.</span></div>
+      </div>
+      <pre><code>/* El color se hereda a los hijos */
+.contenedor { color: blue; }
+      </code></pre>
     </section>
   </main>
 
   <footer class="site">
     <div class="wrap">
-      <small>CSS Â· Clase 2</small>
+      <small>CSS — Clase 2</small>
     </div>
   </footer>
 </body>
 </html>
-
-
-
-
 

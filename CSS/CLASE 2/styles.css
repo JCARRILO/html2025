@@ -7,10 +7,15 @@
 body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
 .wrap{ max-width:1000px; margin:0 auto; padding:24px 16px }
 /* Layout contenido + aside derecha */
-main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px }
-.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2 }
+main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
+.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2; grid-row:1; align-self:start }
 main.wrap > :not(.lesson-aside){ grid-column:1 }
-@media (max-width: 1024px){ main.wrap{ display:flex; flex-direction:column } .lesson-aside{ position:static; order:99 } }
+@media (max-width: 1024px){
+  .wrap{ max-width:100%; padding-left:12px; padding-right:12px }
+  main.wrap{ display:flex; flex-direction:column }
+  main.wrap > *{ width:100% }
+  .lesson-aside{ position:static; order:99; margin:16px 0 }
+}
 /* Aside y puntos */
 .lesson-aside h2{ margin:0 0 8px; font-size:1rem; color:#184b62 }
 .lesson-aside ul{ list-style:none; margin:0; padding:0 }
