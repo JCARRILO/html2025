@@ -164,8 +164,51 @@
         </article>
       </section>
       <section id="clase-5" class="lesson" tabindex="-1"><h2>Clase 5 — Etiquetas semánticas</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-6" class="lesson" tabindex="-1"><h2>Clase 6 — Formularios</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-7" class="lesson" tabindex="-1"><h2>Clase 7 — Tablas</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-6" class="lesson" tabindex="-1">
+        <h2>Clase 6 — Formularios</h2>
+        <article class="card">
+          <h3>Elementos clave</h3>
+          <ul>
+            <li><code>&lt;form&gt;</code> como contenedor.</li>
+            <li><code>&lt;label for&gt;</code> enlaza con <code>id</code> del control.</li>
+            <li>Usa <code>required</code>, <code>minlength</code>, <code>pattern</code> y tipos semánticos.</li>
+          </ul>
+        </article>
+        <article class="card form-demo">
+          <h3>Demo</h3>
+          <form action="#" method="post" novalidate>
+            <label for="f6-name">Nombre</label>
+            <input id="f6-name" name="name" type="text" placeholder="Tu nombre" required minlength="2">
+            <label for="f6-mail">Email</label>
+            <input id="f6-mail" name="email" type="email" placeholder="tunombre@correo.com" required>
+            <label for="f6-msg">Mensaje</label>
+            <textarea id="f6-msg" name="message" placeholder="¿Cómo podemos ayudarte?" minlength="5" maxlength="500" required></textarea>
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+        </article>
+      </section>
+      <section id="clase-7" class="lesson" tabindex="-1">
+        <h2>Clase 7 — Tablas</h2>
+        <article class="card">
+          <h3>Estructura básica con <code>thead</code>, <code>tbody</code>, <code>tfoot</code></h3>
+          <div class="table-wrap">
+            <table class="tbl-basic">
+              <caption>Ventas por región (demo)</caption>
+              <thead>
+                <tr><th>Producto</th><th>Norte</th><th>Sur</th><th>Este</th><th>Oeste</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Portátil 14"</th><td>2,340</td><td>1,980</td><td>2,120</td><td>1,760</td></tr>
+                <tr><th scope="row">Monitor 27"</th><td>1,120</td><td>1,250</td><td>980</td><td>1,050</td></tr>
+                <tr><th scope="row">Teclado mecánico</th><td>860</td><td>910</td><td>790</td><td>880</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th scope="row">Totales</th><td>4,320</td><td>4,140</td><td>3,890</td><td>3,690</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </article>
+      </section>
       <section id="clase-8" class="lesson" tabindex="-1"><h2>Clase 8 — Imágenes responsive</h2><p class="muted">Contenido por migrar.</p></section>
       <section id="clase-9" class="lesson" tabindex="-1"><h2>Clase 9 — Audio y video</h2><p class="muted">Contenido por migrar.</p></section>
       <section id="clase-10" class="lesson" tabindex="-1"><h2>Clase 10 — ARIA</h2><p class="muted">Contenido por migrar.</p></section>
