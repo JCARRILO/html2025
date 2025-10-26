@@ -106,6 +106,8 @@ header.site{
 /* Grid robusto para evitar solapamiento del TOC en desktop */
 main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; align-items:start }
 .toc{ grid-column:2; position:sticky; top:16px; z-index:0 }
+/* Elevar especificidad para vencer main.wrap > :not(.lesson-aside) de common.css */
+main.wrap > .toc{ grid-column:2 !important }
 .content{ grid-column:1; min-width:0 }
 
 /* Responsive */
