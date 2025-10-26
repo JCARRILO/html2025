@@ -20,7 +20,7 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 .toc .dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
 .toc .c1{ background:var(--c1) } .toc .c2{ background:var(--c2) } .toc .c3{ background:var(--c3) }
 .toc .c4{ background:var(--c4) } .toc .c5{ background:var(--c5) } .toc .c6{ background:var(--c6) }
-.toc .cx1{ background:var(--cx1) } .toc .cx2{ background:var(--cx2) } .toc .cx3{ background:var(--cx3) }
+.toc .cx1{ background:var(--cx1) } .toc .cx2{ background:var(--cx2) } .toc .cx3{ background:var(--cx3) } .toc .cx4{ background:#ffb86b }
 .toc li.is-active a{ font-weight:700; text-decoration:underline }
 .toc li.is-active .dot{ box-shadow:0 0 0 3px rgba(0,0,0,.08) }
 
@@ -34,6 +34,7 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 #css-1{ border-left:4px solid var(--cx1); padding-left:8px }
 #css-2{ border-left:4px solid var(--cx2); padding-left:8px }
 #css-3{ border-left:4px solid var(--cx3); padding-left:8px }
+#css-4{ border-left:4px solid #ffb86b; padding-left:8px }
 
 /* Demo: evitar confusión con único h1 */
 .only-demo{ font-size:1rem; opacity:.6 }
