@@ -53,6 +53,12 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 .tbl-basic thead th{ position:sticky; top:0; background:#f7fbfe; border-bottom:2px solid var(--border); z-index:1 }
 .tbl-basic tfoot th, .tbl-basic tfoot td{ background:#f3f6f9; font-weight:700; border-top:2px solid var(--border) }
 
+/* Utilidades generales para demos */
+.grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) }
+iframe.embed{ width:100%; aspect-ratio:16/9; border:0 }
+video.responsive{ width:100%; height:auto; display:block }
+audio.responsive{ width:100% }
+
 /* Responsive */
 @media (max-width:1024px){
   main.wrap{ display:flex; flex-direction:column }
