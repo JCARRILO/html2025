@@ -104,6 +104,12 @@ header.site{
   margin:0 auto; /* centrar */
   padding:0 !important; /* sin padding superior/inferior */
 }
+/* Ajuste exacto al tamaño de la portada: usa dimensiones naturales y respeta viewport */
+header.site.has-cover{
+  width:min(100%, calc(var(--cover-w, 900) * 1px));
+  aspect-ratio: calc(var(--cover-w, 900) / var(--cover-h, 300));
+  background-size:100% 100%; /* llenar sin distorsión si ratio coincide */
+}
 /* H1 fluido: se adapta al dispositivo sin desbordar */
 header.site h1{ font-size:clamp(24px, 5vw, 48px); line-height:1.08 }
 @media (min-width:1024px){ header.site{ min-height:320px } }

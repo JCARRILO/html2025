@@ -21,3 +21,19 @@
   }catch(e){ /* no-op */ }
 })();
 
+
+// Set header size to match natural size of cover image while staying responsive
+(function(){
+  try{
+    var header = document.querySelector('header.site');
+    if(!header) return;
+    var src = 'assets/images/portadadeheader.jpeg';
+    var img = new Image();
+    img.onload = function(){
+      header.style.setProperty('--cover-w', this.naturalWidth);
+      header.style.setProperty('--cover-h', this.naturalHeight);
+      header.classList.add('has-cover');
+    };
+    img.src = src;
+  }catch(e){ /* no-op */ }
+})();
