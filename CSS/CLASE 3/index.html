@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Clase 3 — Pseudoclases y Pseudoelementos</title>
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Aprende a aplicar pseudoclases (:focus, :first-child, :last-child, :nth-child) y pseudoelementos (::before, ::after) con ejemplos directos.">
+</head>
+<body>
+  <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
+
+  <header class="site">
+    <div class="wrap">
+      <h1>CSS - Clase 3: Pseudoclases y Pseudoelementos</h1>
+      <p class="muted">Estados con <code>:focus</code>, selección estructural con <code>:first-child</code>/<code>:last-child</code>/<code>:nth-child</code> y contenido generado con <code>::before</code>/<code>::after</code>.</p>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-css-3">
+      <h2 id="aside-title-css-3">En esta clase</h2>
+      <ul>
+        <li><span class="dot dot-focus" aria-hidden="true"></span><a href="#k-focus">Estados: :focus</a></li>
+        <li><span class="dot dot-child" aria-hidden="true"></span><a href="#k-child">Listas: :first-child y :last-child</a></li>
+        <li><span class="dot dot-nth" aria-hidden="true"></span><a href="#k-nth">Tablas: :nth-child(even)</a></li>
+        <li><span class="dot dot-beforeafter" aria-hidden="true"></span><a href="#k-beforeafter">Pseudoelementos ::before/::after</a></li>
+      </ul>
+    </aside>
+
+    <!-- 1) :focus -->
+    <section id="k-focus" class="card" tabindex="-1">
+      <h2>¿Cómo estilizar estados con pseudoclases de CSS?</h2>
+      <p>Las <strong>pseudoclases</strong> permiten apuntar a estados del DOM sin añadir clases. Un caso típico es <code>:focus</code> en un <code>input</code>: al recibir foco por clic o teclado, podemos cambiar su estilo.</p>
+      <h3>:focus — ¿Qué hace y cómo aplicarlo?</h3>
+      <ul>
+        <li><code>:focus</code> estiliza el elemento enfocado.</li>
+        <li>Útil para guías visuales y accesibilidad.</li>
+        <li>Combina <code>outline</code> y <code>background-color</code> para feedback inmediato.</li>
+      </ul>
+      <div class="demo">
+        <label for="f1" class="label">Nombre</label>
+        <input id="f1" type="text" placeholder="Enfoca este campo" class="control">
+      </div>
+      <pre><code>input:focus {
+  outline: 2px solid #3498DB;
+  background-color: #E8F4F8;
+}</code></pre>
+    </section>
+
+    <!-- 2) first/last-child en listas -->
+    <section id="k-child" class="card" tabindex="-1">
+      <h2>¿Cómo seleccionar elementos específicos en listas?</h2>
+      <p><code>:first-child</code> y <code>:last-child</code> apuntan al primer y último hijo, evitando clases extra en cada elemento.</p>
+      <div class="demo">
+        <ul class="ej-lista">
+          <li>Elemento 1</li>
+          <li>Elemento 2</li>
+          <li>Elemento 3</li>
+          <li>Elemento 4</li>
+        </ul>
+      </div>
+      <pre><code>li:first-child {
+  color: green;
+  font-weight: bold;
+}
+
+li:last-child {
+  color: red;
+  font-weight: bold;
+}</code></pre>
+    </section>
+
+    <!-- 3) nth-child en tablas -->
+    <section id="k-nth" class="card" tabindex="-1">
+      <h2>¿Para qué sirve :nth-child(even) en tablas?</h2>
+      <p>Alterna estilos por posición (pares/impares). Escala con muchas filas sin añadir clases manuales.</p>
+      <div class="table-wrap">
+        <table class="ej-tabla">
+          <thead>
+            <tr><th>Producto</th><th>Precio</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Teclado</td><td>$45</td></tr>
+            <tr><td>Mouse</td><td>$25</td></tr>
+            <tr><td>Pantalla</td><td>$199</td></tr>
+            <tr><td>Auriculares</td><td>$59</td></tr>
+            <tr><td>Webcam</td><td>$39</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>tr:nth-child(even) {
+  background-color: gray;
+}</code></pre>
+    </section>
+
+    <!-- 4) ::before / ::after -->
+    <section id="k-beforeafter" class="card" tabindex="-1">
+      <h2>¿Cómo crear contenido con pseudoelementos?</h2>
+      <p>Con <code>::before</code> y <code>::after</code> puedes generar contenido sin modificar el HTML usando <code>content</code>.</p>
+      <div class="demo">
+        <p class="quotes">El CSS puede generar comillas u otros detalles visuales.</p>
+      </div>
+      <pre><code>.quotes::before {
+  content: '"';
+  color: blue;
+  font-size: 24px;
+}
+
+.quotes::after {
+  content: '"';
+  color: blue;
+  font-size: 24px;
+}</code></pre>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <small>CSS - Clase 3 — Pseudoclases y Pseudoelementos</small>
+    </div>
+  </footer>
+
+  <script src="../aside-scrollspy.js"></script>
+</body>
+</html>
+

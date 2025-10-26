@@ -9,7 +9,7 @@
   
 </head>
 <body>
-  <header class="hero">
+  <header class="hero site">
     <div class="wrap">
       <h1>Clase 10 · ARIA en la práctica</h1>
       <p class="sub">Regla de oro: usa primero HTML semántico; aplica ARIA solo cuando sea necesario para expresar nombre, rol y estado.</p>
@@ -105,14 +105,14 @@
         <button id="open-dialog" class="btn primary">Abrir diálogo</button>
         <div class="backdrop" id="backdrop" aria-hidden="true">
           <div role="dialog" aria-modal="true" aria-labelledby="dlg-title" aria-describedby="dlg-desc" class="dialog" id="dialog">
-            <header>
+            <header class="site">
               <h3 id="dlg-title" style="margin:0">Confirmar acción</h3>
               <button class="btn" id="close-dialog" aria-label="Cerrar">✕</button>
             </header>
             <main id="dlg-desc">
               ¿Deseas continuar con la operación? Esta acción es reversible.
             </main>
-            <footer>
+            <footer class="site">
               <button class="btn" id="cancel-dialog">Cancelar</button>
               <button class="btn primary" id="ok-dialog">Aceptar</button>
             </footer>
@@ -296,6 +296,7 @@
   <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
+
 
 
 

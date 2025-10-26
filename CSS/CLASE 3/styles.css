@@ -1,0 +1,74 @@
+:root{
+  --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --border:#e6ebef; --card:#f7f9fb; --brand:#2f6e93;
+  --k-focus:#3498DB; --k-child:#27AE60; --k-nth:#B3B3B3; --k-before:#3B82F6;
+}
+*{ box-sizing:border-box }
+body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
+header.site{ background:linear-gradient(#cfe0ea, #dfe8ee 42%, var(--bg) 42%); padding:36px 0 20px }
+footer.site{ background:var(--bg); border-top:1px solid var(--border); padding:16px 0 }
+.wrap{ max-width:1100px; margin:0 auto; padding:24px 16px }
+.muted{ color:var(--muted) }
+.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
+
+/* Layout: contenido + aside (desktop) */
+main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
+.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2; grid-row:1; align-self:start }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem }
+.lesson-aside ul{ list-style:none; margin:0; padding:0 }
+.lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.lesson-aside li.is-active a{ font-weight:700; text-decoration:underline }
+.lesson-aside li.is-active .dot{ box-shadow:0 0 0 3px rgba(0,0,0,.08) }
+
+/* Dots por tema */
+.dot-focus{ background:var(--k-focus) }
+.dot-child{ background:var(--k-child) }
+.dot-nth{ background:var(--k-nth) }
+.dot-beforeafter{ background:var(--k-before) }
+
+/* Asociación color ↔ sección (persistente) */
+#k-focus{ border-left:4px solid var(--k-focus); padding-left:8px }
+#k-child{ border-left:4px solid var(--k-child); padding-left:8px }
+#k-nth{ border-left:4px solid var(--k-nth); padding-left:8px }
+#k-beforeafter{ border-left:4px solid var(--k-before); padding-left:8px }
+
+/* Resaltado por ancla (al navegar) */
+#k-focus:target{ outline:2px solid var(--k-focus); outline-offset:3px; scroll-margin-top:16px }
+#k-child:target{ outline:2px solid var(--k-child); outline-offset:3px; scroll-margin-top:16px }
+#k-nth:target{ outline:2px solid var(--k-nth); outline-offset:3px; scroll-margin-top:16px }
+#k-beforeafter:target{ outline:2px solid var(--k-before); outline-offset:3px; scroll-margin-top:16px }
+
+/* Demos */
+.demo{ margin:10px 0 }
+.label{ display:block; font-size:.9rem; color:#314e5d; margin-bottom:6px }
+.control{ border:0; outline:0; border-radius:10px; padding:10px 12px; background:#fff; box-shadow:inset 0 0 0 1px #e1e6eb; font:inherit }
+
+/* :focus (aplica a todos los inputs) */
+input:focus{ outline:2px solid var(--k-focus); background-color:#E8F4F8 }
+
+/* Lista demo */
+.ej-lista{ margin:0; padding-left:1.25rem }
+.ej-lista li{ margin:.25rem 0 }
+.ej-lista li:first-child{ color:var(--k-child); font-weight:700 }
+.ej-lista li:last-child{ color:#D64545; font-weight:700 }
+
+/* Tabla demo */
+.table-wrap{ overflow:auto; border:1px solid var(--border); border-radius:10px; background:#fff }
+.ej-tabla{ width:100%; border-collapse:separate; border-spacing:0; min-width:420px }
+.ej-tabla th, .ej-tabla td{ padding:10px 12px; border-bottom:1px solid var(--border); text-align:left }
+.ej-tabla tbody tr:nth-child(even){ background-color: var(--k-nth) }
+
+/* Pseudoelementos */
+.quotes{ display:inline-block; padding:.25rem .35rem; background:#f7f9fb; border:1px solid var(--border); border-radius:8px }
+.quotes::before{ content:'"'; color:var(--k-before); font-size:24px; margin-right:.15rem }
+.quotes::after{ content:'"'; color:var(--k-before); font-size:24px; margin-left:.15rem }
+
+/* Responsive: apilar aside debajo */
+@media (max-width:1024px){
+  .wrap{ max-width:100%; padding-left:12px; padding-right:12px }
+  main.wrap{ display:flex; flex-direction:column }
+  main.wrap > *{ width:100% }
+  .lesson-aside{ position:static; order:99; margin:16px 0 }
+}

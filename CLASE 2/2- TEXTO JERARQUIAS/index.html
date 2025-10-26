@@ -10,7 +10,7 @@
 </head>
 <body>
     <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
-    <header>
+    <header class="site">
         <h1>Jerarquía de texto en HTML</h1>
         <p class="muted">Ejemplos básicos de títulos, párrafos y elementos en línea.</p>
     </header>
@@ -70,24 +70,24 @@
 
             <blockquote>
                 La claridad en el texto ayuda a la jerarquía y comprensión del contenido.
-                <footer>— Autor desconocido</footer>
+                <footer class="site">— Autor desconocido</footer>
             </blockquote>
 
             <blockquote>
                 “La lectura es una conversación. Todos los libros hablan. Pero un buen libro escucha también.”
-                <footer>— <cite>Mark Twain</cite></footer>
+                <footer class="site">— <cite>Mark Twain</cite></footer>
             </blockquote>
 
             <blockquote cite="https://example.com/fuente">
                 Este bloque incluye el atributo <code>cite</code> que apunta a la fuente original.
-                <footer>Fuente: <a href="https://example.com/fuente">example.com</a></footer>
+                <footer class="site">Fuente: <a href="https://example.com/fuente">example.com</a></footer>
             </blockquote>
 
             <blockquote>
                 Cita principal.
                 <blockquote>
                     Cita anidada para mostrar una cita dentro de otra.
-                    <footer>— Autor anidado</footer>
+                    <footer class="site">— Autor anidado</footer>
                 </blockquote>
             </blockquote>
 
@@ -135,12 +135,13 @@ console.log(saludar('Mundo'));
     </main>
     
 
-    <footer class="muted">
+    <footer class="muted site">
         <p>Clase 2 — Texto y jerarquías</p>
     </footer>
   <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
+
 
 
 
