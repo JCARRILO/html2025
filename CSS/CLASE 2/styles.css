@@ -2,21 +2,8 @@
   --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --card:#f7f9fb; --border:#e6ebef; --brand:#2f6e93;
   /* Colores suaves para asociar temas */
   --k-sintaxis:#78c2a4; --k-basicos:#6aa0e8; --k-desc:#f0c36d; --k-pseudo:#a884e5; --k-especificidad:#f0b45b; --k-herencia:#84c5a3;
-}
-*{ box-sizing:border-box }
-body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
-.wrap{ max-width:1000px; margin:0 auto; padding:24px 16px }
-/* Layout contenido + aside derecha */
-main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
-.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2; grid-row:1; align-self:start }
-main.wrap > :not(.lesson-aside){ grid-column:1 }
-@media (max-width: 1024px){
-  .wrap{ max-width:100%; padding-left:12px; padding-right:12px }
-  main.wrap{ display:flex; flex-direction:column }
-  main.wrap > *{ width:100% }
-  .lesson-aside{ position:static; order:99; margin:16px 0 }
-}
-/* Aside y puntos */
+}\n\n/* Layout contenido + aside derecha */
+main\n\n/* Aside y puntos */
 .lesson-aside h2{ margin:0 0 8px; font-size:1rem; color:#184b62 }
 .lesson-aside ul{ list-style:none; margin:0; padding:0 }
 .lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
@@ -29,23 +16,17 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 .dot-especificidad{ background:var(--k-especificidad) }
 .dot-herencia{ background:var(--k-herencia) }
 /* Resaltado suave por tema */
-#sintaxis.card{ border-left:4px solid var(--k-sintaxis) }
-#basicos.card{ border-left:4px solid var(--k-basicos) }
-#descendientes.card{ border-left:4px solid var(--k-desc) }
-#pseudoclases.card{ border-left:4px solid var(--k-pseudo) }
-#especificidad.card{ border-left:4px solid var(--k-especificidad) }
-#herencia.card{ border-left:4px solid var(--k-herencia) }
-html{ scroll-behavior:smooth }
+#sintaxis
+#basicos
+#descendientes
+#pseudoclases
+#especificidad
+#herencia\n\n/* Accesibilidad */\n\n/* Cabecera y tarjetas */
 
-/* Accesibilidad */
-.visualmente-oculto{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
-
-/* Cabecera y tarjetas */
-header.site{ background:linear-gradient(#cfe0ea, #dfe8ee 42%, var(--bg) 42%); padding:36px 0 20px }
 header nav a{ color:#184b62; text-decoration:none; padding:4px 8px; border-radius:8px }
 header nav a:hover, header nav a:focus{ background:#e6eef4 }
 .muted{ color:var(--muted) }
-.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
+
 pre{ background:#eef3f6; border:1px solid var(--border); border-radius:10px; padding:10px; overflow:auto }
 code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95em }
 
@@ -60,16 +41,12 @@ code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 .contenedor p{ color:blue }
 
 /* 4) Pseudoclases */
-.btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
-.btn:hover, .btn:focus{ background:#e6eef4 }
-.btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
+
 button.demo-btn{ border:1px solid var(--border); background:#fff; padding:8px 10px; border-radius:10px }
 button.demo-btn:hover{ background:lightblue; cursor:pointer }
 a:link{ color:green }
 a:visited{ color:goldenrod }
-.btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
-.btn:hover, .btn:focus{ background:#e6eef4 }
-.btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
+
 .menu{ padding-left:1.25rem }
 .menu li::marker{ color:#6e93a8 }
 .menu li:first-child{ font-weight:700 }
@@ -78,4 +55,5 @@ a:visited{ color:goldenrod }
 #cta{ /* 100 puntos */ }
 .btn.primary{ /* 10 + 10 = 20 puntos */ }
 button{ /* 1 punto */ }
+
 

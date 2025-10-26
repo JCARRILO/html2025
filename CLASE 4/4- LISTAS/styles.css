@@ -1,4 +1,4 @@
-/* Estilos movidos desde <style> en Clase 4 */
+﻿/* Estilos movidos desde <style> en Clase 4 */
 body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 2rem; line-height: 1.5; color:#222; }
 header { margin-bottom: 1.5rem; }
 section { margin-bottom: 1.25rem; }
@@ -26,4 +26,5 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 #ul{ border-left:4px solid #6aa0e8 }
 #ol{ border-left:4px solid #78c2a4 }
 #anidada{ border-left:4px solid #f0c36d }
-html{ scroll-behavior:smooth }
+
+

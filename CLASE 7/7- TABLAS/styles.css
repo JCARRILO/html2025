@@ -142,11 +142,7 @@ thead#k-headers:target th{ box-shadow: inset 0 -3px 0 var(--k-headers) }
 caption#k-caption:target{ outline:2px solid var(--k-caption); outline-offset:3px }
     #k-a11y:target{ outline:2px dashed var(--k-a11y); outline-offset:3px }
     caption#k-horario:target{ outline:2px solid var(--k-schedule); outline-offset:3px }
-    caption#k-permisos:target{ outline:2px solid var(--k-perms); outline-offset:3px }
-
-html{ scroll-behavior:smooth }
-
-@media (max-width: 1024px){
+    caption#k-permisos:target{ outline:2px solid var(--k-perms); outline-offset:3px }\n\n@media (max-width: 1024px){
   main.wrap{ display:flex; flex-direction:column }
   .lesson-aside{ position:static; margin:16px 0; order:99 }
 }
@@ -159,3 +155,4 @@ html{ scroll-behavior:smooth }
   --k-schedule:#f0c36d;
   --k-perms:#84c5a3;
 }
+

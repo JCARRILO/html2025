@@ -1,4 +1,4 @@
-/* Estilos movidos desde <style> + utilidades */
+﻿/* Estilos movidos desde <style> + utilidades */
 body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 2rem; line-height: 1.5; color: #111; }
 header { margin-bottom: 1.5rem; }
 section { margin-bottom: 1.25rem; }
@@ -26,4 +26,5 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 #parrafos{ border-left:4px solid #78c2a4; padding-left:8px }
 #listas{ border-left:4px solid #f0c36d; padding-left:8px }
 #citas{ border-left:4px solid #a884e5; padding-left:8px }
-html{ scroll-behavior:smooth }
+
+

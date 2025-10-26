@@ -1,4 +1,4 @@
-:root{
+﻿:root{
       --bg:#ffffff; --ink:#1a1a1a; --muted:#66727a; --card:#f7f9fb; --border:#e6ebef; --brand:#2f6e93;
     }
     *{ box-sizing:border-box }
@@ -42,3 +42,4 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 .dot-picture{ background:#f0c36d }
 .dot-perf{ background:#a884e5 }
 #sintaxis, #basicos, #combinadores, #pseudo, #especificidad {}
+

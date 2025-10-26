@@ -1,4 +1,4 @@
-:root{ --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --brand:#2f6e93; --border:#e6ebef; --card:#f7f9fb }
+﻿:root{ --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --brand:#2f6e93; --border:#e6ebef; --card:#f7f9fb }
     *{ box-sizing:border-box }
     body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
     a.skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
@@ -39,3 +39,4 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
     @media (max-width:900px){ main{ grid-template-columns:1fr } .hero{ grid-template-columns:1fr } }
 
 .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+
