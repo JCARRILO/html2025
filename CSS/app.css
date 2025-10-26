@@ -64,3 +64,32 @@ audio.responsive{ width:100% }
   main.wrap{ display:flex; flex-direction:column }
   .toc{ position:static; order:99; margin:16px 0 }
 }
+
+/* CSS 5: Position CSS demos */
+.css-c5 .contenedor,
+.css-c5 .contenedor-padre,
+.css-c5 .contenedor-scroll,
+.css-c5 .contenedor-z-index{
+  border:2px solid #1a1a1a; margin:12px 0; padding:10px; border-radius:8px; background:#fff
+}
+.css-c5 .caja,
+.css-c5 .caja-relative,
+.css-c5 .hijo-absolute,
+.css-c5 .boton-fixed,
+.css-c5 .elemento-sticky,
+.css-c5 .capa{ border:1px solid #d04a3b; padding:10px; border-radius:6px; background:#fff7f5 }
+.css-c5 .caja-relative{ position:relative; top:20px; left:30px }
+.css-c5 .contenedor-padre{ position:relative; height:100px }
+.css-c5 .hijo-absolute{ position:absolute; top:10px; right:10px; background:#f1f8ff; border-color:#5795D3 }
+.css-c5 .boton-fixed{ position:fixed; bottom:30px; right:30px; background:#2f6e93; color:#fff; border-color:transparent }
+.css-c5 .contenedor-scroll{ height:150px; overflow-y:auto }
+.css-c5 .elemento-sticky{ position:sticky; top:0; background:#fffbea; border-color:#f0c36d }
+.css-c5 .contenedor-z-index{ position:relative; height:150px }
+.css-c5 .capa{ position:absolute; width:80px; height:80px; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; border-color:transparent }
+.css-c5 .capa-1{ top:20px; left:20px; background:#3b82f6; z-index:1 }
+.css-c5 .capa-2{ top:40px; left:40px; background:#ef4444; z-index:2 }
+.css-c5 .capa-3{ top:60px; left:60px; background:#22c55e; z-index:3 }
+
+/* TOC dot + sección color */
+.toc .cx5{ background:#2f6e93 }
+#css-5{ border-left:4px solid #2f6e93; padding-left:8px }
