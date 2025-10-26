@@ -19,8 +19,9 @@ header.site{
   background-image: 
     linear-gradient(180deg, rgba(207,224,234,.85), rgba(223,232,238,.85)),
     url('../assets/images/portadadeheader.jpeg');
-  background-size: cover; 
-  background-position: center; 
+  /* Mantener tamaño original de la imagen sin estirarla */
+  background-size: auto; 
+  background-position: center top; 
   background-repeat: no-repeat; 
   padding:36px 0 20px !important 
 }
