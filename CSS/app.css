@@ -93,3 +93,24 @@ audio.responsive{ width:100% }
 /* TOC dot + sección color */
 .toc .cx5{ background:#2f6e93 }
 #css-5{ border-left:4px solid #2f6e93; padding-left:8px }
+
+/* Badges (etiquetas) para indicar el tipo de position */
+.css-c5 .caja-relative::before,
+.css-c5 .hijo-absolute::before,
+.css-c5 .boton-fixed::before,
+.css-c5 .elemento-sticky::before,
+.css-c5 .capa-1::before,
+.css-c5 .capa-2::before,
+.css-c5 .capa-3::before{
+  content: attr(data-badge);
+  position:absolute; top:-10px; left:-10px; pointer-events:none;
+  background:#2f6e93; color:#fff; font-size:.7rem; line-height:1; padding:3px 6px; border-radius:999px;
+  box-shadow:0 2px 6px rgba(0,0,0,.15)
+}
+.css-c5 .caja-relative::before{ content:"relative" }
+.css-c5 .hijo-absolute::before{ content:"absolute" }
+.css-c5 .boton-fixed::before{ content:"fixed" }
+.css-c5 .elemento-sticky::before{ content:"sticky" }
+.css-c5 .capa-1::before{ content:"z:1" }
+.css-c5 .capa-2::before{ content:"z:2" }
+.css-c5 .capa-3::before{ content:"z:3" }
