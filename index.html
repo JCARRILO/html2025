@@ -209,11 +209,81 @@
           </div>
         </article>
       </section>
-      <section id="clase-8" class="lesson" tabindex="-1"><h2>Clase 8 — Imágenes responsive</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-9" class="lesson" tabindex="-1"><h2>Clase 9 — Audio y video</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-10" class="lesson" tabindex="-1"><h2>Clase 10 — ARIA</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-11" class="lesson" tabindex="-1"><h2>Clase 11 — SEO semántico</h2><p class="muted">Contenido por migrar.</p></section>
-      <section id="clase-12" class="lesson" tabindex="-1"><h2>Clase 12 — Portafolio</h2><p class="muted">Contenido por migrar.</p></section>
+      <section id="clase-8" class="lesson" tabindex="-1">
+        <h2>Clase 8 — Imágenes responsive</h2>
+        <article class="card">
+          <h3>srcset + sizes</h3>
+          <figure>
+            <img srcset="CLASE 3/3- IMAGENES/images/recorte-600.png 600w, CLASE 3/3- IMAGENES/images/recorte-1200.png 1200w"
+                 sizes="(max-width:700px) 100vw, 700px"
+                 src="CLASE 3/3- IMAGENES/images/recorte-600.png"
+                 alt="Paisaje recortado" class="responsive">
+            <figcaption>Usa 600w en móvil y 1200w en pantallas grandes.</figcaption>
+          </figure>
+        </article>
+        <article class="card">
+          <h3>picture (art direction)</h3>
+          <figure>
+            <picture>
+              <source media="(max-width: 600px)" srcset="CLASE 3/3- IMAGENES/images/recorte-600.png">
+              <source media="(max-width: 1200px)" srcset="CLASE 3/3- IMAGENES/images/recorte-1200.png">
+              <img src="CLASE 3/3- IMAGENES/images/paisaje.png" alt="Paisaje completo" class="responsive">
+            </picture>
+          </figure>
+        </article>
+      </section>
+      <section id="clase-9" class="lesson" tabindex="-1">
+        <h2>Clase 9 — Audio y video</h2>
+        <article class="card">
+          <h3>Video básico</h3>
+          <figure>
+            <video controls preload="metadata" playsinline poster="CLASE 3/3- IMAGENES/images/recorte-1200.png" class="responsive">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+            </video>
+            <figcaption>Dos fuentes + póster.</figcaption>
+          </figure>
+        </article>
+        <article class="card">
+          <h3>Audio</h3>
+          <audio controls preload="auto" class="responsive">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+      </section>
+      <section id="clase-10" class="lesson" tabindex="-1">
+        <h2>Clase 10 — ARIA</h2>
+        <article class="card">
+          <h3>Nombre accesible</h3>
+          <div class="grid">
+            <div>
+              <button aria-label="Abrir carrito" class="btn">🛒</button>
+            </div>
+            <div>
+              <span id="lbl-buscar">Buscar productos</span>
+              <input type="search" aria-labelledby="lbl-buscar" placeholder="Ej. Teclado">
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="clase-11" class="lesson" tabindex="-1">
+        <h2>Clase 11 — SEO semántico</h2>
+        <article class="card">
+          <h3>Meta esenciales</h3>
+          <ul>
+            <li><code>&lt;title&gt;</code> y <code>&lt;meta name="description"&gt;</code>.</li>
+            <li>Canonical, Open Graph y Twitter Card.</li>
+            <li>Uso básico de JSON-LD para Article/Organization.</li>
+          </ul>
+        </article>
+      </section>
+      <section id="clase-12" class="lesson" tabindex="-1">
+        <h2>Clase 12 — Portafolio</h2>
+        <article class="card">
+          <h3>Estructura base</h3>
+          <p>Secciones típicas: Sobre mí, Proyectos, Certificación, Blog y Contacto. Usa semántica, meta y accesibilidad.</p>
+        </article>
+      </section>
     </div>
   </main>
 
