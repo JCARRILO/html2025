@@ -10,10 +10,8 @@
 </head>
 <body>
     <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
-    <header class="site">
-        <h1>Jerarquía de texto en HTML</h1>
-        <p class="muted">Ejemplos básicos de títulos, párrafos y elementos en línea.</p>
-    </header>
+    <header class="site">\n  <div class="wrap">\n<h1>Jerarquía de texto en HTML</h1>
+        <p class="muted">Ejemplos básicos de títulos, párrafos y elementos en línea.</p>\n  </div>\n</header>
 
     <main id="contenido" class="wrap">
         <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-2">
@@ -70,24 +68,24 @@
 
             <blockquote>
                 La claridad en el texto ayuda a la jerarquía y comprensión del contenido.
-                <footer class="site">— Autor desconocido</footer>
+                <footer class="site">\n  <div class="wrap">\n— Autor desconocido\n  </div>\n</footer>
             </blockquote>
 
             <blockquote>
                 “La lectura es una conversación. Todos los libros hablan. Pero un buen libro escucha también.”
-                <footer class="site">— <cite>Mark Twain</cite></footer>
+                <footer class="site">\n  <div class="wrap">\n— <cite>Mark Twain</cite>\n  </div>\n</footer>
             </blockquote>
 
             <blockquote cite="https://example.com/fuente">
                 Este bloque incluye el atributo <code>cite</code> que apunta a la fuente original.
-                <footer class="site">Fuente: <a href="https://example.com/fuente">example.com</a></footer>
+                <footer class="site">\n  <div class="wrap">\nFuente: <a href="https://example.com/fuente">example.com</a>\n  </div>\n</footer>
             </blockquote>
 
             <blockquote>
                 Cita principal.
                 <blockquote>
                     Cita anidada para mostrar una cita dentro de otra.
-                    <footer class="site">— Autor anidado</footer>
+                    <footer class="site">\n  <div class="wrap">\n— Autor anidado\n  </div>\n</footer>
                 </blockquote>
             </blockquote>
 
@@ -135,12 +133,11 @@ console.log(saludar('Mundo'));
     </main>
     
 
-    <footer class="muted site">
-        <p>Clase 2 — Texto y jerarquías</p>
-    </footer>
+    <footer class="muted site">\n  <div class="wrap">\n<p>Clase 2 — Texto y jerarquías</p>\n  </div>\n</footer>
   <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
+
 
 
 

@@ -1,6 +1,10 @@
 :root{
   --bg:#fff; --ink:#1a1a1a; --muted:#5b6b75; --border:#e6ebef; --card:#f7f9fb;
   --brand:#2f6e93; --bp-md:1024px;
+  /* Gradientes suaves azules (modulares) */
+  --grad-blue-1:#cfe0ea;
+  --grad-blue-2:#dfe8ee;
+  --site-heading:#254b5a;
 }
 *{ box-sizing:border-box }
 html{ scroll-behavior:smooth }
@@ -11,8 +15,11 @@ body{ margin:0; color:var(--ink); background:var(--bg); font:16px/1.6 system-ui,
 .card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
 .btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
 .btn:hover, .btn:focus{ background:#e6eef4 }
-header.site{ background:linear-gradient(#cfe0ea, #dfe8ee 42%, var(--bg) 42%); padding:36px 0 20px }
-footer.site{ background:var(--bg); border-top:1px solid var(--border); padding:16px 0 }
+header.site{ background:linear-gradient(var(--grad-blue-1), var(--grad-blue-2) 42%, var(--bg) 42%) !important; padding:36px 0 20px !important }
+header.site h1{ margin:6px 0 4px; font-weight:800; line-height:1.1; color:var(--site-heading) }
+header.site .muted{ color:var(--muted) }
+footer.site{ background:linear-gradient(var(--bg), var(--grad-blue-2) 58%, var(--grad-blue-1)) !important; padding:16px 0 !important; border-top:1px solid var(--border) }
+footer.site p, footer.site small{ margin:0; color:var(--muted) }
 
 /* Layout: contenido + aside (desktop) */
 main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
