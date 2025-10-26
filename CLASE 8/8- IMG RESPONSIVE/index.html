@@ -20,14 +20,14 @@
     <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-8">
       <h2 id="aside-title-clase-8">En esta clase</h2>
       <ul>
-        <li>img responsive (width 100%)</li>
-        <li>srcset y sizes</li>
-        <li>picture</li>
-        <li>Buenas practicas de rendimiento</li>
+        <li><span class="dot dot-img" aria-hidden="true"></span><a href="#img100">Imágenes responsivas (width:100%)</a></li>
+        <li><span class="dot dot-srcset" aria-hidden="true"></span><a href="#srcset">srcset y sizes</a></li>
+        <li><span class="dot dot-picture" aria-hidden="true"></span><a href="#picture">picture</a></li>
+        <li><span class="dot dot-perf" aria-hidden="true"></span><a href="#perf">Buenas prácticas de rendimiento</a></li>
       </ul>
     </aside>
     <!-- 1) srcset + sizes (mismo encuadre, distintos anchos) -->
-    <section class="section">
+    <section class="section" id="srcset" tabindex="-1">
       <div class="card">
         <h2 class="title">1) srcset + sizes</h2>
         <p class="muted">El navegador elige la mejor imagen según el ancho mostrado.</p>
@@ -44,7 +44,7 @@
     </section>
 
     <!-- 2) picture (art direction) -->
-    <section class="section">
+    <section class="section" id="picture" tabindex="-1">
       <div class="card">
         <h2 class="title">2) <code>&lt;picture&gt;</code> (art direction)</h2>
         <p class="muted">Cambia la composición según el medio. En móvil cargamos un recorte estrecho; en escritorio, la imagen completa.</p>

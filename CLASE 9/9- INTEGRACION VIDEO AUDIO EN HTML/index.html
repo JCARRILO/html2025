@@ -18,10 +18,10 @@
     <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-9">
       <h2 id="aside-title-clase-9">En esta clase</h2>
       <ul>
-        <li>audio y video</li>
-        <li>source y formatos</li>
-        <li>track y subtitulos</li>
-        <li>iframe y atributo title</li>
+        <li><span class="dot dot-video" aria-hidden="true"></span><a href="#v-basico">Video básico</a></li>
+        <li><span class="dot dot-audio" aria-hidden="true"></span><a href="#audio">Audio básico</a></li>
+        <li><span class="dot dot-yt" aria-hidden="true"></span><a href="#yt">YouTube embebido</a></li>
+        <li><span class="dot dot-track" aria-hidden="true"></span><a href="#v-sub">Subtítulos (track)</a></li>
       </ul>
     </aside>
     <!-- 1) Video básico con múltiples fuentes + póster -->
@@ -56,7 +56,7 @@
         </figure>
 
         <!-- <audio src=""></audio>  Ejemplo placeholder como en el snippet original -->
-        <figure class="demo-box">
+        <figure class="demo-box" id="audio">
           <audio controls preload="auto">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
             Tu navegador no soporta audio HTML5
@@ -64,7 +64,7 @@
           <figcaption>Audio con <code>preload="auto"</code> (MP3).</figcaption>
         </figure>
 
-        <figure>
+        <figure id="yt">
           <iframe width="560" height="315"
             src="https://www.youtube.com/embed/BoIzwgBdTgw?start=61"
             title="YouTube video player" loading="lazy"

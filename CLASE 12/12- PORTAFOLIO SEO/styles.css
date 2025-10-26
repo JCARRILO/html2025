@@ -8,8 +8,22 @@
     nav[aria-label]{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px }
     nav a{ color:#184b62; text-decoration:none; padding:4px 8px; border-radius:8px }
     nav a:focus, nav a:hover{ background:#e6eef4 }
-    main{ padding:24px 0; display:grid; gap:20px; grid-template-columns: 1.18fr .82fr }
-    article, aside, section.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px }
+main.wrap{ padding:24px 0; display:grid; gap:20px; grid-template-columns: minmax(0,1fr) 300px }
+main:not(.wrap){ display:block }
+article, aside, section.card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px }
+.lesson-aside{ background:#f8fafc }
+.lesson-aside{ position:sticky; top:16px; height:fit-content; grid-column:2 }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+@media (max-width:1024px){ main.wrap{ display:flex; flex-direction:column } .lesson-aside{ position:static; order:99 } }
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem }
+.lesson-aside ul{ list-style:none; padding:0; margin:0 }
+.lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.dot-hero{ background:#6aa0e8 }
+.dot-proj{ background:#78c2a4 }
+.dot-cert{ background:#a884e5 }
+.dot-contact{ background:#f0c36d }
     .hero{ display:grid; gap:16px; grid-template-columns: 1.1fr .9fr; align-items:center }
     .hero h1{ margin:.2rem 0 .4rem; font-size:clamp(24px,4.5vw,38px); color:#254b5a }
     .meta{ font-size:.95rem; color:#6b7c86 }

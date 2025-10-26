@@ -27,3 +27,18 @@
 .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
 
 .fixed-600{ width:600px; max-width:100%; height:auto }
+/* Aside derecha + dots + resaltado */
+main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px }
+.lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2 }
+main.wrap > :not(.lesson-aside){ grid-column:1 }
+@media (max-width: 1024px){ main.wrap{ display:flex; flex-direction:column } .lesson-aside{ position:static; order:99 } }
+.lesson-aside h2{ margin:0 0 8px; font-size:1rem }
+.lesson-aside ul{ list-style:none; padding:0; margin:0 }
+.lesson-aside li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.lesson-aside a{ color:inherit; text-decoration:underline dotted }
+.dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
+.dot-img{ background:#6aa0e8 }
+.dot-srcset{ background:#78c2a4 }
+.dot-picture{ background:#f0c36d }
+.dot-perf{ background:#a884e5 }
+#sintaxis, #basicos, #combinadores, #pseudo, #especificidad {}
