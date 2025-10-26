@@ -12,7 +12,7 @@
 
   <header class="site">
     <div class="wrap">
-      <h1>Curso HTML</h1>
+      <h1>Curso De HTML y CSS</h1>
       <p class="muted">Clases 1–12 en una sola página. Un solo encabezado, estilos y componentes modulares.</p>
     </div>
   </header>
@@ -33,6 +33,12 @@
         <li><span class="dot c10" aria-hidden="true"></span><a href="#clase-10">Clase 10 — ARIA</a></li>
         <li><span class="dot c11" aria-hidden="true"></span><a href="#clase-11">Clase 11 — SEO semántico</a></li>
         <li><span class="dot c12" aria-hidden="true"></span><a href="#clase-12">Clase 12 — Portafolio</a></li>
+      </ol>
+      <h2 style="margin-top:12px">CSS</h2>
+      <ol>
+        <li><span class="dot cx1" aria-hidden="true"></span><a href="#css-1">CSS 1 — Fundamentos y Cascada</a></li>
+        <li><span class="dot cx2" aria-hidden="true"></span><a href="#css-2">CSS 2 — Selectores básicos</a></li>
+        <li><span class="dot cx3" aria-hidden="true"></span><a href="#css-3">CSS 3 — Pseudoclases y Pseudoelementos</a></li>
       </ol>
     </aside>
 
@@ -282,6 +288,93 @@
         <article class="card">
           <h3>Estructura base</h3>
           <p>Secciones típicas: Sobre mí, Proyectos, Certificación, Blog y Contacto. Usa semántica, meta y accesibilidad.</p>
+        </article>
+      </section>
+
+      <!-- CSS: Clase 1 -->
+      <section id="css-1" class="lesson" tabindex="-1">
+        <h2>CSS 1 — Fundamentos y Cascada</h2>
+        <article class="card">
+          <h3>¿Qué es CSS y cómo funciona la cascada?</h3>
+          <p><strong>CSS</strong> define la presentación. La <strong>cascada</strong> resuelve conflictos cuando varias reglas coinciden: la regla más específica o la última en orden gana si la especificidad empata.</p>
+          <ul>
+            <li>Planifica el orden de carga y evita duplicaciones.</li>
+            <li>Prefiere una hoja externa única para mantenimiento.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Tres formas de aplicar estilos</h3>
+          <ol>
+            <li><strong>Inline</strong> con <code>style="..."</code> (rápido, poco mantenible).</li>
+            <li><strong>En el documento</strong> con <code>&lt;style&gt;</code> (demo/prototipos).
+            </li>
+            <li><strong>Hoja externa</strong> con <code>&lt;link rel="stylesheet" href="CSS/app.css"&gt;</code> (recomendado).</li>
+          </ol>
+        </article>
+      </section>
+
+      <!-- CSS: Clase 2 -->
+      <section id="css-2" class="lesson" tabindex="-1">
+        <h2>CSS 2 — Selectores básicos</h2>
+        <article class="card">
+          <h3>Selectores comunes</h3>
+          <pre><code>/* Por etiqueta */
+p { margin: .5rem 0 }
+/* Por clase */
+.destacado { color: #2f6e93; font-weight: 700 }
+/* Por id */
+#principal { max-width: 70ch }
+/* Descendientes y agrupados */
+main p span, h2, h3 { font-style: normal }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Pseudoclases de enlace</h3>
+          <p>Usa <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:focus</code>, <code>:active</code> en este orden (LVHFA) para estados predecibles.</p>
+        </article>
+      </section>
+
+      <!-- CSS: Clase 3 -->
+      <section id="css-3" class="lesson css-c3" tabindex="-1">
+        <h2>CSS 3 — Pseudoclases y Pseudoelementos</h2>
+        <article class="card">
+          <h3>Estados: :focus</h3>
+          <div class="demo">
+            <label for="c3-f1" class="label">Nombre</label>
+            <input id="c3-f1" type="text" placeholder="Enfoca este campo" class="control">
+          </div>
+          <pre><code>input:focus {
+  outline: 2px solid #3498DB;
+  background-color: #E8F4F8;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Listas: :first-child y :last-child</h3>
+          <ul class="ej-lista">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Tablas: :nth-child(even)</h3>
+          <div class="table-wrap">
+            <table class="ej-tabla">
+              <thead><tr><th>Producto</th><th>Precio</th></tr></thead>
+              <tbody>
+                <tr><td>Teclado</td><td>$45</td></tr>
+                <tr><td>Mouse</td><td>$25</td></tr>
+                <tr><td>Pantalla</td><td>$199</td></tr>
+                <tr><td>Auriculares</td><td>$59</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Pseudoelementos ::before/::after</h3>
+          <p class="quotes">El CSS puede generar comillas u otros detalles visuales.</p>
+          <pre><code>.quotes::before { content: '"' }
+.quotes::after { content: '"' }</code></pre>
         </article>
       </section>
     </div>
