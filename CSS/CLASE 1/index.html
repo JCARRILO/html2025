@@ -1,25 +1,25 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS â€” Clase 1 Â· Fundamentos y Cascada</title>
+  <title>CSS — Clase 1 · Fundamentos y Cascada</title>
   <link rel="stylesheet" href="../common.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- Demo interna: reglas en <style> solo para mostrar el mÃ©todo (no recomendado para proyectos grandes) -->
+  <!-- Demo interna: reglas en <style> solo para mostrar el método (no recomendado para proyectos grandes) -->
   <style>
-    /* Ejemplo de estilos en head (solo demostraciÃ³n) */
+    /* Ejemplo de estilos en head (solo demostración) */
     .demo-head h2 { color: #2f6e93; }
   </style>
-  <meta name="description" content="QuÃ© es CSS, cÃ³mo funciona la cascada y tres formas de aplicar estilos: inline, style en head y hoja externa.">
+  <meta name="description" content="Qué es CSS, cómo funciona la cascada y tres formas de aplicar estilos: inline, style en head y hoja externa.">
 </head>
 <body>
   <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
 
   <header class="site">
     <div class="wrap">
-      <h1>CSS â€” Clase 1: Fundamentos</h1>
-      <p class="muted">QuÃ© es CSS, cÃ³mo opera la cascada y tres formas de aplicar estilos.</p>
+      <h1>CSS — Clase 1: Fundamentos</h1>
+      <p class="muted">Qué es CSS, cómo opera la cascada y tres formas de aplicar estilos.</p>
     </div>
   </header>
 
@@ -27,7 +27,7 @@
     <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-css-1">
       <h2 id="aside-title-css-1">En esta clase</h2>
       <ul>
-        <li><span class="dot dot-cascada" aria-hidden="true"></span><a href="#k-cascada">Â¿QuÃ© es CSS y la cascada?</a></li>
+        <li><span class="dot dot-cascada" aria-hidden="true"></span><a href="#k-cascada">¿Qué es CSS y la cascada?</a></li>
         <li><span class="dot dot-formas" aria-hidden="true"></span><a href="#k-formas">Tres formas de aplicar estilos</a></li>
         <li><span class="dot dot-inline" aria-hidden="true"></span><a href="#k-inline">Atributo style (inline)</a></li>
         <li><span class="dot dot-head" aria-hidden="true"></span><a href="#k-head">Etiqueta style en head</a></li>
@@ -37,8 +37,8 @@
     </aside>
 
     <section id="k-cascada" class="card" tabindex="-1">
-      <h2>Â¿QuÃ© es CSS y cÃ³mo funciona la cascada?</h2>
-      <p><strong>CSS</strong> significa <em>Cascading Style Sheets</em> (hojas de estilo en cascada). La <strong>cascada</strong> implica que, cuando varias reglas afectan al mismo elemento, la regla <em>mÃ¡s abajo</em> (definida despuÃ©s) prevalece si la especificidad empata.</p>
+      <h2>¿Qué es CSS y cómo funciona la cascada?</h2>
+      <p><strong>CSS</strong> significa <em>Cascading Style Sheets</em> (hojas de estilo en cascada). La <strong>cascada</strong> implica que, cuando varias reglas afectan al mismo elemento, la regla <em>más abajo</em> (definida después) prevalece si la especificidad empata.</p>
       <ul>
         <li>Los estilos posteriores sobrescriben a los anteriores si apuntan a lo mismo.</li>
         <li>Planifica el orden y el alcance de tus reglas para evitar conflictos.</li>
@@ -46,45 +46,45 @@
     </section>
 
     <section id="k-formas" class="card" tabindex="-1">
-      <h2>Â¿CuÃ¡les son las tres formas de agregar estilos?</h2>
+      <h2>¿Cuáles son las tres formas de agregar estilos?</h2>
       <ol>
         <li><strong>Inline</strong> con el atributo <code>style</code> en la etiqueta.</li>
         <li><strong>En el documento</strong> con <code>&lt;style&gt;</code> dentro de <code>&lt;head&gt;</code>.</li>
         <li><strong>Hoja externa</strong> enlazada con <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>.</li>
       </ol>
-      <p class="muted">RecomendaciÃ³n prÃ¡ctica: trabajar con <strong>archivo externo</strong> para mantenimiento, versionado y consistencia.</p>
+      <p class="muted">Recomendación práctica: trabajar con <strong>archivo externo</strong> para mantenimiento, versionado y consistencia.</p>
     </section>
 
     <section id="k-inline" class="card" tabindex="-1">
-      <h2>1) Â¿CÃ³mo se usa el atributo style en lÃ­nea?</h2>
+      <h2>1) ¿Cómo se usa el atributo style en línea?</h2>
       <p>Agrega el estilo directamente a la etiqueta. Es inmediato, pero <strong>poco mantenible</strong> en proyectos grandes.</p>
       <div class="demo">
-        <p style="color: blue;">Texto con color en lÃ­nea (inline).</p>
+        <p style="color: blue;">Texto con color en línea (inline).</p>
         <pre><code>&lt;p style="color: blue;"&gt;
-Texto con color en lÃ­nea.
+Texto con color en línea.
 &lt;/p&gt;</code></pre>
       </div>
       <ul>
-        <li><strong>Ventaja:</strong> cambio puntual rÃ¡pido.</li>
-        <li><strong>Desventaja:</strong> difÃ­cil de mantener y reutilizar.</li>
+        <li><strong>Ventaja:</strong> cambio puntual rápido.</li>
+        <li><strong>Desventaja:</strong> difícil de mantener y reutilizar.</li>
       </ul>
     </section>
 
     <section id="k-head" class="card demo-head" tabindex="-1">
-      <h2>2) Â¿CÃ³mo funciona la etiqueta style en el head?</h2>
-      <p>Define reglas en el documento. Es Ãºtil para demos o pÃ¡ginas pequeÃ±as, pero <strong>escala mal</strong> en equipos y proyectos grandes.</p>
+      <h2>2) ¿Cómo funciona la etiqueta style en el head?</h2>
+      <p>Define reglas en el documento. Es útil para demos o páginas pequeñas, pero <strong>escala mal</strong> en equipos y proyectos grandes.</p>
       <pre><code>&lt;head&gt;
   &lt;style&gt;
     h1 { color: blue; }
     h2 { color: green; }
   &lt;/style&gt;
 &lt;/head&gt;</code></pre>
-      <p class="muted">Este bloque de &lt;style&gt; en la cabecera de esta pÃ¡gina pinta este tÃ­tulo de secciÃ³n.</p>
+      <p class="muted">Este bloque de &lt;style&gt; en la cabecera de esta página pinta este título de sección.</p>
     </section>
 
     <section id="k-externa" class="card" tabindex="-1">
-      <h2>3) Â¿Por quÃ© conviene una hoja de estilos externa?</h2>
-      <p>Crea un archivo (por ejemplo <code>styles.css</code>) y enlÃ¡zalo con <code>&lt;link&gt;</code>. Es la <strong>buena prÃ¡ctica</strong> para mantener, versionar y escalar estilos.</p>
+      <h2>3) ¿Por qué conviene una hoja de estilos externa?</h2>
+      <p>Crea un archivo (por ejemplo <code>styles.css</code>) y enlázalo con <code>&lt;link&gt;</code>. Es la <strong>buena práctica</strong> para mantener, versionar y escalar estilos.</p>
       <pre><code>&lt;head&gt;
   &lt;link rel="stylesheet" href="styles.css" /&gt;
 &lt;/head&gt;
@@ -93,16 +93,16 @@ Texto con color en lÃ­nea.
 h1 { color: blue; }
 h2 { color: green; }</code></pre>
       <ul>
-        <li><strong>Ventaja:</strong> separaciÃ³n clara entre estructura y presentaciÃ³n.</li>
-        <li><strong>Ventaja:</strong> reutilizaciÃ³n y cambios globales simples.</li>
+        <li><strong>Ventaja:</strong> separación clara entre estructura y presentación.</li>
+        <li><strong>Ventaja:</strong> reutilización y cambios globales simples.</li>
       </ul>
     </section>
 
     <section id="k-selectores" class="card" tabindex="-1">
-      <h2>Â¿QuÃ© efectos verÃ¡s al aplicar estilos por etiqueta?</h2>
-      <p>Si seleccionas una etiqueta (por ejemplo, <code>p</code>), la regla afecta <strong>a todas</strong> las etiquetas <code>p</code> del documento. Sin embargo, un estilo <em>inline</em> especÃ­fico puede <strong>prevalecer</strong> por cascada y especificidad.</p>
+      <h2>¿Qué efectos verás al aplicar estilos por etiqueta?</h2>
+      <p>Si seleccionas una etiqueta (por ejemplo, <code>p</code>), la regla afecta <strong>a todas</strong> las etiquetas <code>p</code> del documento. Sin embargo, un estilo <em>inline</em> específico puede <strong>prevalecer</strong> por cascada y especificidad.</p>
       <div class="demo">
-        <p style="color: blue;">Este pÃ¡rrafo queda en azul por estilo inline.</p>
+        <p style="color: blue;">Este párrafo queda en azul por estilo inline.</p>
         <p>Este otro usa el color definido para &lt;p&gt; en la hoja externa.</p>
         <pre><code>/* styles.css */
 p { color: #5795D3; }
@@ -111,7 +111,7 @@ p { color: #5795D3; }
 &lt;p&gt;Usa el color de la hoja externa (#5795D3)&lt;/p&gt;</code></pre>
       </div>
       <ul>
-        <li>Seleccionar por etiqueta aplica cambios a mÃºltiples elementos.</li>
+        <li>Seleccionar por etiqueta aplica cambios a múltiples elementos.</li>
         <li>Un estilo inline puede sobrescribir la regla general de la hoja externa.</li>
         <li>La <strong>especificidad</strong> y el <strong>orden</strong> importan para evitar conflictos.</li>
       </ul>
@@ -120,8 +120,10 @@ p { color: #5795D3; }
 
   <footer class="site">
     <div class="wrap">
-      <small>CSS â€” Clase 1 Â· Fundamentos y Cascada</small>
+      <small>CSS — Clase 1 · Fundamentos y Cascada</small>
     </div>
   </footer>
+  <script src='../aside-scrollspy.js'></script>
 </body>
 </html>
+

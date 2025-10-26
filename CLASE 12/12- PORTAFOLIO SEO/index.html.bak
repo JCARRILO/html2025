@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -70,7 +70,7 @@
       <ul>
         <li><span class="dot dot-hero" aria-hidden="true"></span><a href="#about">Hero y estructura</a></li>
         <li><span class="dot dot-proj" aria-hidden="true"></span><a href="#proyectos-destacados">Proyectos</a></li>
-        <li><span class="dot dot-cert" aria-hidden="true"></span><a href="#certificacion">Certificación</a></li>
+        <li><span class="dot dot-cert" aria-hidden="true"></span><a href="#certificacion">CertificaciÃ³n</a></li>
         <li><span class="dot dot-contact" aria-hidden="true"></span><a href="#contacto">Contacto</a></li>
       </ul>
     </aside>
@@ -229,10 +229,8 @@
       setLang(init);
     })();
   </script>
-  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
-
 
 
 

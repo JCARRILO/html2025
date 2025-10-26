@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../CSS/common.css">
   <link rel="stylesheet" href="styles.css">
-<title>Clase 9 — Integración de Video y Audio en HTML</title>
+<title>Clase 9 â€” IntegraciÃ³n de Video y Audio en HTML</title>
   
 </head>
 <body>
   <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
   <header class="hero">
     <div class="wrap">
-      <h1>Clase 9 · Integración de video y audio</h1>
-      <p class="sub">Video y audio nativos con buenas prácticas: múltiples fuentes, póster, subtítulos, controles, autoplay/inline y ejemplos de accesibilidad.</p>
+      <h1>Clase 9 Â· IntegraciÃ³n de video y audio</h1>
+      <p class="sub">Video y audio nativos con buenas prÃ¡cticas: mÃºltiples fuentes, pÃ³ster, subtÃ­tulos, controles, autoplay/inline y ejemplos de accesibilidad.</p>
     </div>
   </header>
 
@@ -21,16 +21,16 @@
     <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-9">
       <h2 id="aside-title-clase-9">En esta clase</h2>
       <ul>
-        <li><span class="dot dot-video" aria-hidden="true"></span><a href="#v-basico">Video básico</a></li>
-        <li><span class="dot dot-audio" aria-hidden="true"></span><a href="#audio">Audio básico</a></li>
+        <li><span class="dot dot-video" aria-hidden="true"></span><a href="#v-basico">Video bÃ¡sico</a></li>
+        <li><span class="dot dot-audio" aria-hidden="true"></span><a href="#audio">Audio bÃ¡sico</a></li>
         <li><span class="dot dot-yt" aria-hidden="true"></span><a href="#yt">YouTube embebido</a></li>
-        <li><span class="dot dot-track" aria-hidden="true"></span><a href="#v-sub">Subtítulos (track)</a></li>
+        <li><span class="dot dot-track" aria-hidden="true"></span><a href="#v-sub">SubtÃ­tulos (track)</a></li>
       </ul>
     </aside>
-    <!-- 1) Video básico con múltiples fuentes + póster -->
+    <!-- 1) Video bÃ¡sico con mÃºltiples fuentes + pÃ³ster -->
     <section class="section">
       <div class="card">
-        <h2 class="title">1) Video básico (mp4/webm) + póster</h2>
+        <h2 class="title">1) Video bÃ¡sico (mp4/webm) + pÃ³ster</h2>
         <p class="muted">Incluye dos fuentes para mejor compatibilidad. Usa un <em>poster</em> (imagen de portada) antes de reproducir.</p>
         <figure>
           <video id="v-basico" controls preload="auto" autoplay muted playsinline poster="../../CLASE 3/3- IMAGENES/images/recorte-1200.png">
@@ -38,7 +38,7 @@
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
             Tu navegador no soporta el elemento video.
           </video>
-          <figcaption>Video CC0 de MDN. Controles nativos, <code>preload="metadata"</code>, <code>playsinline</code> y póster.</figcaption>
+          <figcaption>Video CC0 de MDN. Controles nativos, <code>preload="metadata"</code>, <code>playsinline</code> y pÃ³ster.</figcaption>
         </figure>
       </div>
     </section>
@@ -47,7 +47,7 @@
     <section class="section">
       <div class="card">
         <h2 class="title">8) Ejemplos estilo clase</h2>
-        <p class="muted">Patrón con <code>width/height</code> fijos, <code>poster</code>, múltiples fuentes y YouTube con inicio en tiempo.</p>
+        <p class="muted">PatrÃ³n con <code>width/height</code> fijos, <code>poster</code>, mÃºltiples fuentes y YouTube con inicio en tiempo.</p>
 
         <figure class="demo-box">
           <video width="600" height="400" controls poster="../../CLASE 3/3- IMAGENES/images/recorte-1200.png" preload="auto">
@@ -55,7 +55,7 @@
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
             Tu navegador no soporta formatos de video
           </video>
-          <figcaption>Video 600×400, póster y dos fuentes (MP4/WebM).</figcaption>
+          <figcaption>Video 600Ã—400, pÃ³ster y dos fuentes (MP4/WebM).</figcaption>
         </figure>
 
         <!-- <audio src=""></audio>  Ejemplo placeholder como en el snippet original -->
@@ -82,7 +82,7 @@
     <!-- 6b) YouTube: ejemplos proporcionados -->
     <section class="section">
       <div class="card">
-        <h2 class="title">6b) YouTube (ejemplo único)</h2>
+        <h2 class="title">6b) YouTube (ejemplo Ãºnico)</h2>
         <figure>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/wwTxzyS0wSc?si=fhiegyoqWHZKy-LD&autoplay=1&mute=1&playsinline=1&rel=0" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="embed"></iframe>
           <figcaption>Ejemplo 1: wwTxzyS0wSc</figcaption>
@@ -90,18 +90,18 @@
       </div>
     </section>
 
-    <!-- 2) Subtítulos (track VTT) -->
+    <!-- 2) SubtÃ­tulos (track VTT) -->
     <section class="section">
       <div class="card">
-        <h2 class="title">2) Subtítulos con <code>&lt;track kind="subtitles"&gt;</code></h2>
-        <p class="muted">Agrega archivos VTT para mejorar la accesibilidad y la comprensión.</p>
+        <h2 class="title">2) SubtÃ­tulos con <code>&lt;track kind="subtitles"&gt;</code></h2>
+        <p class="muted">Agrega archivos VTT para mejorar la accesibilidad y la comprensiÃ³n.</p>
         <figure>
           <video id="v-sub" controls preload="auto" autoplay muted playsinline poster="../../CLASE 3/3- IMAGENES/images/paisaje.png">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            <track src="media/captions-es.vtt" kind="subtitles" srclang="es" label="Español" default>
+            <track src="media/captions-es.vtt" kind="subtitles" srclang="es" label="EspaÃ±ol" default>
             Tu navegador no soporta el elemento video.
           </video>
-          <figcaption>Subtítulos en español (archivo VTT local en <code>media/captions-es.vtt</code>).</figcaption>
+          <figcaption>SubtÃ­tulos en espaÃ±ol (archivo VTT local en <code>media/captions-es.vtt</code>).</figcaption>
         </figure>
       </div>
     </section>
@@ -110,7 +110,7 @@
     <section class="section">
       <div class="card">
         <h2 class="title">3) Autoplay silencioso + controles list</h2>
-        <p class="muted">Los navegadores solo permiten <code>autoplay</code> cuando el video está <strong>muted</strong>. Se puede desactivar PiP y el menú de descarga.</p>
+        <p class="muted">Los navegadores solo permiten <code>autoplay</code> cuando el video estÃ¡ <strong>muted</strong>. Se puede desactivar PiP y el menÃº de descarga.</p>
         <figure>
           <video id="v-auto" muted autoplay loop playsinline controls controlslist="nodownload noplaybackrate" preload="auto" poster="../../CLASE 3/3- IMAGENES/images/recorte-600.png" disablepictureinpicture>
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
@@ -120,11 +120,11 @@
       </div>
     </section>
 
-    <!-- 4) Audio básico con múltiples fuentes -->
+    <!-- 4) Audio bÃ¡sico con mÃºltiples fuentes -->
     <section class="section">
       <div class="card">
-        <h2 class="title">4) Audio básico (mp3/ogg)</h2>
-        <p class="muted">Incluye varias fuentes para compatibilidad. Ajusta <code>preload</code> según el caso.</p>
+        <h2 class="title">4) Audio bÃ¡sico (mp3/ogg)</h2>
+        <p class="muted">Incluye varias fuentes para compatibilidad. Ajusta <code>preload</code> segÃºn el caso.</p>
         <figure>
           <audio id="a-basico" controls preload="auto">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
@@ -136,17 +136,17 @@
       </div>
     </section>
 
-    <!-- 5) Controles personalizados mínimos (JS) -->
+    <!-- 5) Controles personalizados mÃ­nimos (JS) -->
     <section class="section">
       <div class="card">
-        <h2 class="title">5) Controles personalizados mínimos</h2>
-        <p class="muted">Ejemplo básico para controlar un video con botones accesibles.</p>
+        <h2 class="title">5) Controles personalizados mÃ­nimos</h2>
+        <p class="muted">Ejemplo bÃ¡sico para controlar un video con botones accesibles.</p>
         <figure>
           <video id="v-custom" preload="auto" autoplay muted playsinline poster="../../CLASE 3/3- IMAGENES/images/recorte-1200.png">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
           </video>
           <div class="controls" role="group" aria-label="Controles de video">
-            <button id="btn-play" type="button" aria-label="Reproducir/Pausar">▶︎/❚❚</button>
+            <button id="btn-play" type="button" aria-label="Reproducir/Pausar">â–¶ï¸Ž/âšâš</button>
             <label class="note" for="rng-time">Progreso</label>
             <input id="rng-time" type="range" min="0" max="100" value="0" aria-label="Barra de progreso">
             <label class="note" for="rng-vol">Volumen</label>
@@ -166,16 +166,16 @@
           <iframe
             width="560" height="315"
             src="https://www.youtube.com/embed/wwTxzyS0wSc?si=fhiegyoqWHZKy-LD&autoplay=1&mute=1&playsinline=1&rel=0"
-            title="Demo de integración de video en HTML"
+            title="Demo de integraciÃ³n de video en HTML"
             loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen class="embed"></iframe>
-          <figcaption>Iframe con <code>loading="lazy"</code> y título descriptivo.</figcaption>
+          <figcaption>Iframe con <code>loading="lazy"</code> y tÃ­tulo descriptivo.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 7) Iframe avanzado: srcdoc, sandbox, name/target, políticas -->
+    <!-- 7) Iframe avanzado: srcdoc, sandbox, name/target, polÃ­ticas -->
     <section class="section">
       <div class="card">
         <h2 class="title">7) Iframe avanzado</h2>
@@ -188,8 +188,7 @@
             referrerpolicy="no-referrer"
             style="width:100%; aspect-ratio:16/9; height:360px; border:1px solid var(--border)"
             src="iframe-demo-a.html"
-            srcdoc='<!DOCTYPE html><html lang="es"><meta charset="utf-8"><body style="margin:0;font-family:system-ui"><header style="padding:12px;background:#eef3f6">Demo srcdoc</header><main style="padding:12px">Este contenido vive <strong>dentro</strong> del atributo <code>srcdoc</code>.</main>  <script src='../../CSS/aside-scrollspy.js'></script>
-</body></html>'>
+            srcdoc='<!DOCTYPE html><html lang="es"><meta charset="utf-8"><body style="margin:0;font-family:system-ui"><header style="padding:12px;background:#eef3f6">Demo srcdoc</header><main style="padding:12px">Este contenido vive <strong>dentro</strong> del atributo <code>srcdoc</code>.</main></body></html>'>
           </iframe>
           <figcaption>Uso de <code>srcdoc</code> con <code>loading="lazy"</code> y <code>referrerpolicy="no-referrer"</code>.</figcaption>
         </figure>
@@ -201,8 +200,7 @@
             loading="lazy"
             style="width:100%; aspect-ratio:16/9; height:360px; border:1px dashed var(--border)"
             src="iframe-demo-a.html"
-            srcdoc='<!DOCTYPE html><meta charset="utf-8"><body style="font-family:system-ui;padding:12px">Sandbox sin permisos: scripts/popups bloqueados.<script>document.body.append(" (script no debería ejecutarse)")</script>  <script src='../../CSS/aside-scrollspy.js'></script>
-</body>'>
+            srcdoc='<!DOCTYPE html><meta charset="utf-8"><body style="font-family:system-ui;padding:12px">Sandbox sin permisos: scripts/popups bloqueados.<script>document.body.append(" (script no deberÃ­a ejecutarse)")</script></body>'>
           </iframe>
           <figcaption><code>sandbox</code> sin tokens: restringe scripts, popups, etc.</figcaption>
         </figure>
@@ -214,8 +212,7 @@
             loading="lazy"
             style="width:100%; aspect-ratio:16/9; height:360px; border:1px dashed var(--border)"
             src="iframe-demo-b.html"
-            srcdoc='<!DOCTYPE html><meta charset="utf-8"><body style="font-family:system-ui;padding:12px">Sandbox con <code>allow-scripts allow-same-origin</code>.<script>document.body.append(" (script ejecutado)")</script>  <script src='../../CSS/aside-scrollspy.js'></script>
-</body>'>
+            srcdoc='<!DOCTYPE html><meta charset="utf-8"><body style="font-family:system-ui;padding:12px">Sandbox con <code>allow-scripts allow-same-origin</code>.<script>document.body.append(" (script ejecutado)")</script></body>'>
           </iframe>
           <figcaption><code>sandbox="allow-scripts allow-same-origin"</code>: permite JS manteniendo otras restricciones.</figcaption>
         </figure>
@@ -223,8 +220,8 @@
         <figure>
           <div class="row">
             <nav class="note">
-              <a href="iframe-demo-a.html" target="demo-ifr">Abrir página A</a> ·
-              <a href="iframe-demo-b.html" target="demo-ifr">Abrir página B</a>
+              <a href="iframe-demo-a.html" target="demo-ifr">Abrir pÃ¡gina A</a> Â·
+              <a href="iframe-demo-b.html" target="demo-ifr">Abrir pÃ¡gina B</a>
             </nav>
             <iframe name="demo-ifr" title="Iframe con name/target"
               loading="lazy" allow="fullscreen"
@@ -269,10 +266,8 @@
       videos.forEach(v=>io.observe(v));
     })();
   </script>
-  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
-
 
 
 

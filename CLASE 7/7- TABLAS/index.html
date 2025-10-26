@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -242,7 +242,7 @@
     // Utilidades: normalizar texto (para ordenamiento/filtrado)
     const norm = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').trim();
 
-    // Formatear nï¿½meros del cuerpo de la tabla 1 en es-ES
+    // Formatear n�meros del cuerpo de la tabla 1 en es-ES
     function formatVentasBodyES(){
       const table = document.getElementById('tabla-ventas');
       if(!table || !table.tBodies.length) return;
@@ -301,7 +301,7 @@
     }
     const statusEl = document.getElementById('ventas-status');
     if(statusEl){
-      statusEl.textContent = 'Totales visibles ï¿½ Norte: ' + fmt(sumsVis[0])
+      statusEl.textContent = 'Totales visibles � Norte: ' + fmt(sumsVis[0])
         + ', Sur: ' + fmt(sumsVis[1])
         + ', Este: ' + fmt(sumsVis[2])
         + ', Oeste: ' + fmt(sumsVis[3])
@@ -391,7 +391,7 @@
         recomputeTotalsAndStatus();
       }
     })();
-      // Filtro de filas por materia/dï¿½a en tabla 2 (horario)
+      // Filtro de filas por materia/d�a en tabla 2 (horario)
     (function(){
       const input = document.getElementById('filter-horario');
       const clear = document.getElementById('clear-horario');
@@ -426,8 +426,50 @@
       });
     })();</script>
 
+  <script>
+    // Scrollspy: resalta el conocimiento activo en el aside
+    (function(){
+      const aside = document.querySelector('.lesson-aside');
+      if(!aside) return;
+      const links = Array.from(aside.querySelectorAll('a[href^="#"]'));
+      if(!links.length) return;
+      const items = links.map(a => ({ id: a.getAttribute('href').slice(1), a, li: a.closest('li') }));
+      const targets = items.map(it => document.getElementById(it.id)).filter(Boolean);
+      function setActive(id){
+        items.forEach(it => {
+          const active = it.id === id;
+          it.a.setAttribute('aria-current', active ? 'true' : 'false');
+          if(it.li){ it.li.classList.toggle('is-active', active); }
+        });
+      }
+      // Fallback: activar el primero
+      setActive(items[0] && items[0].id);
+      if(!('IntersectionObserver' in window)) return;
+      const byId = new Map(items.map(it => [it.id, it]));
+      let current = null;
+      const io = new IntersectionObserver(entries => {
+        let top = null;
+        let ratio = 0;
+        entries.forEach(e => {
+          if(e.isIntersecting && e.intersectionRatio >= ratio){
+            top = e.target; ratio = e.intersectionRatio;
+          }
+        });
+        if(top){
+          const id = top.id;
+          if(id && id !== current && byId.has(id)){
+            current = id; setActive(id);
+          }
+        }
+      }, { rootMargin: '0px 0px -40% 0px', threshold: [0.4, 0.6, 0.8] });
+      targets.forEach(t => io.observe(t));
+    })();
+  </script>
+
+  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
+
 
 
 

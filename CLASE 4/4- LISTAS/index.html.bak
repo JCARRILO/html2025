@@ -1,18 +1,18 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="../../CSS/common.css" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Listas — Ejemplos</title>
+    <title>Listas â€” Ejemplos</title>
     
 </head>
 <body>
     <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
     <header>
         <h1>Listas en HTML</h1>
-        <p>Ejemplos básicos: lista desordenada, ordenada, anidada y de definiciones.</p>
+        <p>Ejemplos bÃ¡sicos: lista desordenada, ordenada, anidada y de definiciones.</p>
     </header>
 
     <main id="contenido" class="wrap">
@@ -53,8 +53,8 @@
                 <li>Frutas
                     <ul>
                         <li>Manzana</li>
-                        <li>Plátano</li>
-                        <li>Melón</li>
+                        <li>PlÃ¡tano</li>
+                        <li>MelÃ³n</li>
                     </ul>
                 </li>
                 <li>Verduras
@@ -72,7 +72,7 @@
         <div class="example" aria-label="Ejemplo de lista de definiciones">
             <dl>
                 <dt>HTML</dt>
-                <dd>Lenguaje de marcado para estructurar páginas web.</dd>
+                <dd>Lenguaje de marcado para estructurar pÃ¡ginas web.</dd>
 
                 <dt>CSS</dt>
                 <dd>Hojas de estilo para presentar el contenido HTML.</dd>
@@ -130,7 +130,7 @@
             </ul>
 
             <p class="small-note">
-                Si al hacer clic no aparece la ventana de redacción, probablemente no tengas configurado un cliente de correo predeterminado en Windows.
+                Si al hacer clic no aparece la ventana de redacciÃ³n, probablemente no tengas configurado un cliente de correo predeterminado en Windows.
                 Para usar webmail (Gmail, Outlook.com) necesitas extensiones o configuraciones del navegador que asocien mailto con ese servicio.
             </p>
         </div>
@@ -139,9 +139,7 @@
     <footer>
         <p>Prueba a editar y crear tus propias listas.</p>
     </footer>
-  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
-
 
 

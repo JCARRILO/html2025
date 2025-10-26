@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS — Clase 2 — Sintaxis y selectores</title>
+  <title>CSS â€” Clase 2 â€” Sintaxis y selectores</title>
   <link rel="stylesheet" href="../common.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,11 +12,11 @@
 
   <header class="site">
     <div class="wrap">
-      <h1>CSS — Clase 2</h1>
-      <p class="muted">Sintaxis de reglas y selectores: básicos, descendientes, pseudoclases y especificidad.</p>
-      <nav aria-label="Índice">
+      <h1>CSS â€” Clase 2</h1>
+      <p class="muted">Sintaxis de reglas y selectores: bÃ¡sicos, descendientes, pseudoclases y especificidad.</p>
+      <nav aria-label="Ãndice">
         <a href="#sintaxis">Sintaxis</a>
-        <a href="#basicos">Selectores básicos</a>
+        <a href="#basicos">Selectores bÃ¡sicos</a>
         <a href="#descendientes">Descendientes</a>
         <a href="#pseudoclases">Pseudoclases</a>
         <a href="#especificidad">Especificidad</a>
@@ -55,36 +55,36 @@ selector {
       </code></pre>
       <ul>
         <li>Los puntos y comas separan declaraciones.</li>
-        <li>Los nombres de propiedades son en minúsculas y con guiones.</li>
+        <li>Los nombres de propiedades son en minÃºsculas y con guiones.</li>
         <li>Evita <code>!important</code> salvo excepciones; aprende especificidad.</li>
       </ul>
     </section>
 
     <section id="basicos" class="card">
-      <h2>2) Selectores básicos</h2>
-      <p>Elemento, clase e ID. Evita estilos inline como práctica habitual.</p>
+      <h2>2) Selectores bÃ¡sicos</h2>
+      <p>Elemento, clase e ID. Evita estilos inline como prÃ¡ctica habitual.</p>
       <div id="demo-basicos" class="ejemplo-selectores">
         <p>Selector de etiqueta (p) aplica a todos los p.</p>
         <p class="rojo">Clase reutilizable .rojo</p>
-        <p id="unico">ID único #unico</p>
+        <p id="unico">ID Ãºnico #unico</p>
       </div>
       <pre><code>/* Selector de etiqueta */
 p { margin-bottom: 30px; }
 /* Clase reutilizable */
 .rojo { color: red; }
-/* ID único */
+/* ID Ãºnico */
 #unico { background: yellow; }
       </code></pre>
     </section>
 
     <section id="descendientes" class="card">
       <h2>3) Descendientes y contenedores</h2>
-      <p>Usa un contenedor con clase para limitar el alcance y evitar “pisarse” entre estilos.</p>
+      <p>Usa un contenedor con clase para limitar el alcance y evitar â€œpisarseâ€ entre estilos.</p>
       <div class="contenedor demo-contenedor">
         <h3>Contenedor .contenedor</h3>
         <p>Este p se pinta solo dentro de .contenedor</p>
         <div>
-          <p>También afecta a p anidados dentro del contenedor.</p>
+          <p>TambiÃ©n afecta a p anidados dentro del contenedor.</p>
         </div>
       </div>
       <pre><code>/* Estilo del contenedor */
@@ -96,10 +96,10 @@ p { margin-bottom: 30px; }
 
     <section id="pseudoclases" class="card">
       <h2>4) Pseudoclases (hover, link, visited)</h2>
-      <button class="demo-btn">Botón (hover)</button>
+      <button class="demo-btn">BotÃ³n (hover)</button>
       <p>
         <a href="https://example.com" target="_blank" rel="noopener">Enlace externo</a>
-        · <a href="#sintaxis">Enlace interno</a>
+        Â· <a href="#sintaxis">Enlace interno</a>
       </p>
       <pre><code>button:hover { background: lightblue; cursor: pointer; }
 a:link { color: green; }
@@ -109,7 +109,7 @@ a:visited { color: goldenrod; }
 
     <section id="especificidad" class="card">
       <h2>5) Especificidad (ejercicio)</h2>
-      <p>Elementos: 1 · Clases: 10 · ID: 100 · Inline: 1000 · <code>!important</code> (último recurso).</p>
+      <p>Elementos: 1 Â· Clases: 10 Â· ID: 100 Â· Inline: 1000 Â· <code>!important</code> (Ãºltimo recurso).</p>
       <button id="cta" class="btn primary">Probar</button>
       <pre><code>.btn.primary { background:#2f6e93 }
 #cta { background:#184b62 }
@@ -122,7 +122,7 @@ a:visited { color: goldenrod; }
       <p>Propiedades de texto (color, font-family, font-size, text-align, font-style) se heredan a hijos. Otras como margin/border no.</p>
       <div class="contenedor demo-herencia">
         <p>Este texto hereda el color del contenedor.</p>
-        <div><span>Span interno también hereda.</span></div>
+        <div><span>Span interno tambiÃ©n hereda.</span></div>
       </div>
       <pre><code>/* El color se hereda a los hijos */
 .contenedor { color: blue; }
@@ -132,11 +132,9 @@ a:visited { color: goldenrod; }
 
   <footer class="site">
     <div class="wrap">
-      <small>CSS — Clase 2</small>
+      <small>CSS â€” Clase 2</small>
     </div>
   </footer>
-  <script src='../aside-scrollspy.js'></script>
 </body>
 </html>
-
 

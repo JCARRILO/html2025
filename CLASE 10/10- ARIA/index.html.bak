@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../CSS/common.css">
   <link rel="stylesheet" href="styles.css">
-<title>Clase 10 — ARIA en la práctica</title>
+<title>Clase 10 â€” ARIA en la prÃ¡ctica</title>
   
 </head>
 <body>
   <header class="hero">
     <div class="wrap">
-      <h1>Clase 10 · ARIA en la práctica</h1>
-      <p class="sub">Regla de oro: usa primero HTML semántico; aplica ARIA solo cuando sea necesario para expresar nombre, rol y estado.</p>
+      <h1>Clase 10 Â· ARIA en la prÃ¡ctica</h1>
+      <p class="sub">Regla de oro: usa primero HTML semÃ¡ntico; aplica ARIA solo cuando sea necesario para expresar nombre, rol y estado.</p>
     </div>
   </header>
 
@@ -21,9 +21,9 @@
       <h2 id="aside-title-clase-10">En esta clase</h2>
       <ul>
         <li><span class="dot dot-nombre" aria-hidden="true"></span><a href="#k-nombre">Nombre accesible</a></li>
-        <li><span class="dot dot-acc" aria-hidden="true"></span><a href="#acc-faq">Acordeón accesible</a></li>
+        <li><span class="dot dot-acc" aria-hidden="true"></span><a href="#acc-faq">AcordeÃ³n accesible</a></li>
         <li><span class="dot dot-tabs" aria-hidden="true"></span><a href="#demo-tabs">Tabs</a></li>
-        <li><span class="dot dot-dialog" aria-hidden="true"></span><a href="#dialog">Diálogo modal</a></li>
+        <li><span class="dot dot-dialog" aria-hidden="true"></span><a href="#dialog">DiÃ¡logo modal</a></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="#live-polite">Regiones en vivo</a></li>
       </ul>
     </aside>
@@ -34,8 +34,8 @@
         <p class="muted">Comparativa entre <code>aria-label</code>, <code>aria-labelledby</code> y <code>aria-describedby</code>.</p>
         <div class="grid">
           <div>
-            <button aria-label="Abrir carrito" class="btn">🛒</button>
-            <p class="muted">Botón con <code>aria-label</code>.</p>
+            <button aria-label="Abrir carrito" class="btn">ðŸ›’</button>
+            <p class="muted">BotÃ³n con <code>aria-label</code>.</p>
           </div>
           <div>
             <span id="lbl-buscar">Buscar productos</span>
@@ -55,24 +55,24 @@
     <!-- 2) Accordion accesible -->
     <section class="section">
       <div class="card acc" id="acc-faq">
-        <h2 class="title">2) Acordeón accesible</h2>
-        <p class="muted">Gestiona <code>aria-expanded</code>, <code>aria-controls</code> y <code>aria-labelledby</code>. Teclado: ↑/↓ para moverse; Enter/Espacio para abrir.</p>
+        <h2 class="title">2) AcordeÃ³n accesible</h2>
+        <p class="muted">Gestiona <code>aria-expanded</code>, <code>aria-controls</code> y <code>aria-labelledby</code>. Teclado: â†‘/â†“ para moverse; Enter/Espacio para abrir.</p>
         <div>
           <h3 class="visually-hidden" id="acc-title">Preguntas frecuentes</h3>
           <div>
-            <button class="acc-btn" aria-expanded="false" aria-controls="p1" id="h1">¿Qué es ARIA?</button>
+            <button class="acc-btn" aria-expanded="false" aria-controls="p1" id="h1">Â¿QuÃ© es ARIA?</button>
             <div class="panel hidden" id="p1" role="region" aria-labelledby="h1">
-              Mejora la accesibilidad exponiendo nombre, rol y estado cuando HTML por sí solo no alcanza.
+              Mejora la accesibilidad exponiendo nombre, rol y estado cuando HTML por sÃ­ solo no alcanza.
             </div>
           </div>
           <div>
-            <button class="acc-btn" aria-expanded="false" aria-controls="p2" id="h2">¿Cuándo usarlo?</button>
+            <button class="acc-btn" aria-expanded="false" aria-controls="p2" id="h2">Â¿CuÃ¡ndo usarlo?</button>
             <div class="panel hidden" id="p2" role="region" aria-labelledby="h2">
-              Después de usar la mejor etiqueta semántica disponible. ARIA no cambia el comportamiento por sí mismo.
+              DespuÃ©s de usar la mejor etiqueta semÃ¡ntica disponible. ARIA no cambia el comportamiento por sÃ­ mismo.
             </div>
           </div>
           <div>
-            <button class="acc-btn" aria-expanded="false" aria-controls="p3" id="h3">¿Qué evitar?</button>
+            <button class="acc-btn" aria-expanded="false" aria-controls="p3" id="h3">Â¿QuÃ© evitar?</button>
             <div class="panel hidden" id="p3" role="region" aria-labelledby="h3">
               No ocultes contenido enfocable con <code>aria-hidden</code>; sincroniza siempre los estados ARIA con el DOM visual.
             </div>
@@ -81,36 +81,36 @@
       </div>
     </section>
 
-    <!-- 3) Tabs (pestañas) -->
+    <!-- 3) Tabs (pestaÃ±as) -->
     <section class="section">
       <div class="card tabs" id="demo-tabs">
-        <h2 class="title">3) Pestañas (Tabs)</h2>
-        <p class="muted">Roles: <code>tablist</code>, <code>tab</code>, <code>tabpanel</code>. Teclado: ←/→, Home/End, Enter/Espacio.</p>
+        <h2 class="title">3) PestaÃ±as (Tabs)</h2>
+        <p class="muted">Roles: <code>tablist</code>, <code>tab</code>, <code>tabpanel</code>. Teclado: â†/â†’, Home/End, Enter/Espacio.</p>
         <div role="tablist" aria-label="Secciones de contenido" class="tablist">
           <button role="tab" id="t-1" class="tabbtn" aria-selected="true" aria-controls="tp-1" tabindex="0">General</button>
           <button role="tab" id="t-2" class="tabbtn" aria-selected="false" aria-controls="tp-2" tabindex="-1">Detalles</button>
           <button role="tab" id="t-3" class="tabbtn" aria-selected="false" aria-controls="tp-3" tabindex="-1">Accesibilidad</button>
         </div>
         <div id="tp-1" role="tabpanel" tabindex="0" aria-labelledby="t-1" class="tabpanel">Contenido general.</div>
-        <div id="tp-2" role="tabpanel" tabindex="0" aria-labelledby="t-2" class="tabpanel hidden">Información de detalles.</div>
-        <div id="tp-3" role="tabpanel" tabindex="0" aria-labelledby="t-3" class="tabpanel hidden">Buenas prácticas de accesibilidad.</div>
+        <div id="tp-2" role="tabpanel" tabindex="0" aria-labelledby="t-2" class="tabpanel hidden">InformaciÃ³n de detalles.</div>
+        <div id="tp-3" role="tabpanel" tabindex="0" aria-labelledby="t-3" class="tabpanel hidden">Buenas prÃ¡cticas de accesibilidad.</div>
       </div>
     </section>
 
-    <!-- 4) Diálogo modal accesible -->
+    <!-- 4) DiÃ¡logo modal accesible -->
     <section class="section">
       <div class="card">
-        <h2 class="title">4) Diálogo modal</h2>
-        <p class="muted">Usa <code>role="dialog"</code>, <code>aria-modal="true"</code>, nombre/descripción y gestión de foco. Tecla Esc para cerrar.</p>
-        <button id="open-dialog" class="btn primary">Abrir diálogo</button>
+        <h2 class="title">4) DiÃ¡logo modal</h2>
+        <p class="muted">Usa <code>role="dialog"</code>, <code>aria-modal="true"</code>, nombre/descripciÃ³n y gestiÃ³n de foco. Tecla Esc para cerrar.</p>
+        <button id="open-dialog" class="btn primary">Abrir diÃ¡logo</button>
         <div class="backdrop" id="backdrop" aria-hidden="true">
           <div role="dialog" aria-modal="true" aria-labelledby="dlg-title" aria-describedby="dlg-desc" class="dialog" id="dialog">
             <header>
-              <h3 id="dlg-title" style="margin:0">Confirmar acción</h3>
-              <button class="btn" id="close-dialog" aria-label="Cerrar">✕</button>
+              <h3 id="dlg-title" style="margin:0">Confirmar acciÃ³n</h3>
+              <button class="btn" id="close-dialog" aria-label="Cerrar">âœ•</button>
             </header>
             <main id="dlg-desc">
-              ¿Deseas continuar con la operación? Esta acción es reversible.
+              Â¿Deseas continuar con la operaciÃ³n? Esta acciÃ³n es reversible.
             </main>
             <footer>
               <button class="btn" id="cancel-dialog">Cancelar</button>
@@ -125,7 +125,7 @@
     <section class="section">
       <div class="card">
         <h2 class="title">5) Regiones en vivo</h2>
-        <p class="muted">Anuncia cambios dinámicos con <code>aria-live</code>. <em>polite</em> espera; <em>assertive</em> interrumpe.</p>
+        <p class="muted">Anuncia cambios dinÃ¡micos con <code>aria-live</code>. <em>polite</em> espera; <em>assertive</em> interrumpe.</p>
         <div class="grid">
           <div>
             <div id="live-polite" aria-live="polite" class="tabpanel" style="min-height:42px">(anuncios suaves)</div>
@@ -143,7 +143,7 @@
     <section class="section">
       <div class="card">
         <h2 class="title">6) Formularios con ARIA</h2>
-        <p class="muted">Demostración de <code>aria-invalid</code>, <code>aria-required</code>, <code>aria-errormessage</code> y enfoque del error.</p>
+        <p class="muted">DemostraciÃ³n de <code>aria-invalid</code>, <code>aria-required</code>, <code>aria-errormessage</code> y enfoque del error.</p>
         <form id="demo-form" novalidate>
           <div class="field">
             <label for="f-nombre">Nombre</label>
@@ -154,8 +154,8 @@
           <div class="field">
             <label for="f-edad">Edad</label>
             <input id="f-edad" name="edad" inputmode="numeric" pattern="^[0-9]{1,3}$" aria-describedby="dsc-edad" />
-            <div id="dsc-edad" class="muted">Introduce solo números (0–120).</div>
-            <div id="err-edad" class="error visually-hidden" role="alert">La edad debe ser un número válido.</div>
+            <div id="dsc-edad" class="muted">Introduce solo nÃºmeros (0â€“120).</div>
+            <div id="err-edad" class="error visually-hidden" role="alert">La edad debe ser un nÃºmero vÃ¡lido.</div>
           </div>
           <button class="btn primary" type="submit">Enviar</button>
         </form>
@@ -264,7 +264,7 @@
         polite.textContent = 'Actualizado: ' + new Date().toLocaleTimeString();
       });
       document.getElementById('btn-assertive')?.addEventListener('click', ()=>{
-        assertive.textContent = '¡Atención! ' + new Date().toLocaleTimeString();
+        assertive.textContent = 'Â¡AtenciÃ³n! ' + new Date().toLocaleTimeString();
       });
     })();
 
@@ -293,10 +293,8 @@
       });
     })();
   </script>
-  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
-
 
 
 

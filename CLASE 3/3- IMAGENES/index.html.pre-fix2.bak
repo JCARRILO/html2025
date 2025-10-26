@@ -18,12 +18,12 @@
     <aside class="lesson-aside" role="complementary" aria-labelledby="aside-title-clase-3">
       <h2 id="aside-title-clase-3">En esta clase</h2>
       <ul>
-        <li><span class="dot dot-img" aria-hidden="true"></span><a href="#k-galeria">Imágenes (img + alt)</a></li>
+        <li><span class="dot dot-img" aria-hidden="true"></span><a href="#k-galeria">Im�genes (img + alt)</a></li>
         <li><span class="dot dot-figure" aria-hidden="true"></span><a href="#k-galeria">figure + figcaption</a></li>
         <li><span class="dot dot-bg" aria-hidden="true"></span><a href="#k-bg">Fondo con CSS</a></li>
       </ul>
     </aside>
-    <section id="k-galeria" class="gallery" aria-label="Galería de imágenes" tabindex="-1">
+    <section id="k-galeria" class="gallery" aria-label="Galer�a de im�genes" tabindex="-1">
 
         <div class="card">
             <figure>
@@ -76,10 +76,8 @@
         <!-- Consejo: comprime las imágenes (por ejemplo con https://tinypng.com) para reducir su peso sin perder calidad. -->
     </section>
     </main>
-  <script src='../../CSS/aside-scrollspy.js'></script>
 </body>
 </html>
-
 
 
 

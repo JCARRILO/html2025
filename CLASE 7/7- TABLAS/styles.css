@@ -123,6 +123,10 @@
 .lesson-aside a{ color:inherit; text-decoration:underline dotted }
 .lesson-aside a:hover, .lesson-aside a:focus{ text-decoration:underline }
 
+/* Estado activo al hacer scroll/navegar */
+.lesson-aside li.is-active a{ font-weight:700; text-decoration:underline }
+.lesson-aside li.is-active .dot{ box-shadow:0 0 0 3px rgba(0,0,0,.08) }
+
 /* Layout: contenido + aside derecho */
 main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
 .lesson-aside{ position:sticky; top:16px; height:fit-content; grid-column:2; grid-row:1; align-self:start }
