@@ -92,10 +92,21 @@ audio.responsive{ width:100% }
 }
 
 /* Override portada: usar gradiente y mostrar imagen <img.site-cover> */
-header.site{ background:linear-gradient(var(--grad-blue-1), var(--grad-blue-2) 42%, var(--bg) 42%) !important }
-.site-cover{ display:block; height:auto; margin:0 auto 12px }
-@media (min-width:1024px){ .site-cover{ width:900px; max-width:100% } }
-@media (max-width:1023.98px){ .site-cover{ width:100%; max-width:100% } }
+/* Portada como background sin deformarse y layout flexible */
+header.site{
+  background-image:
+    linear-gradient(180deg, rgba(207,224,234,.85), rgba(223,232,238,.85)),
+    url('../assets/images/portadadeheader.jpeg') !important;
+  background-repeat:no-repeat; background-position:center top; background-size:contain;
+  display:flex; align-items:flex-end;
+}
+@media (min-width:1024px){ header.site{ min-height:320px } }
+@media (max-width:1023.98px){ header.site{ min-height:220px } }
+
+/* Grid robusto para evitar solapamiento del TOC en desktop */
+main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; align-items:start }
+.toc{ grid-column:2; position:sticky; top:16px; z-index:0 }
+.content{ grid-column:1; min-width:0 }
 
 /* Responsive */
 @media (max-width:1024px){
