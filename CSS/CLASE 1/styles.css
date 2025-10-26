@@ -1,4 +1,4 @@
-:root{
+﻿:root{
   --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --card:#f7f9fb; --border:#e6ebef; --brand:#2f6e93;
   --k-cascada:#6aa0e8; --k-formas:#78c2a4; --k-inline:#f0c36d; --k-head:#a884e5; --k-externa:#84c5a3; --k-selectores:#f2a6a6;
 }
@@ -42,4 +42,5 @@ html{ scroll-behavior:smooth }
 /* Regla externa para la demo de selectores por etiqueta */
 p{ color:#5795D3 }
 .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
+
 

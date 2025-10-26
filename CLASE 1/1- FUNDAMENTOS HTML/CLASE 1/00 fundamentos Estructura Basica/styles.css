@@ -1,22 +1,22 @@
-/*
+﻿/*
   Nota (Clase 1 - CSS)
   ---------------------
-  Refactor de estilos realizado en todas las clases (1–12):
-  - Se creó y enlazó un archivo externo `styles.css` en cada carpeta de clase.
+  Refactor de estilos realizado en todas las clases (1â€“12):
+  - Se creÃ³ y enlazÃ³ un archivo externo `styles.css` en cada carpeta de clase.
   - Se movieron todas las reglas de los bloques <style> embebidos a su `styles.css` correspondiente.
   - Se eliminaron estilos inline (atributo style="...") del HTML y se reemplazaron por clases
     utilitarias definidas en CSS (ej.: `.visually-hidden`, `.brand`, `.header-inner`, `.embed`, etc.).
-  - Se agregó/estandarizó la clase `.visually-hidden` para el enlace de “Saltar al contenido”,
+  - Se agregÃ³/estandarizÃ³ la clase `.visually-hidden` para el enlace de â€œSaltar al contenidoâ€,
     mejorando accesibilidad sin estilos incrustados.
   - Ajustes puntuales por clase (resumen):
-      • Clase 3: `.spaced`, `.bg-example` (con background-image), `.note`.
-      • Clase 5: `.header-inner`, `.brand`, `img.logo`, `.title-center`.
-      • Clase 8: `.fixed-600` para imágenes con ancho fijo responsivo.
-      • Clase 9: `.embed` para iframes 16:9 sin borde.
-      • Clase 11: `.page-title` para márgenes del título principal.
-  - Se mantuvo la semántica HTML y se limpiaron duplicaciones visuales.
+      â€¢ Clase 3: `.spaced`, `.bg-example` (con background-image), `.note`.
+      â€¢ Clase 5: `.header-inner`, `.brand`, `img.logo`, `.title-center`.
+      â€¢ Clase 8: `.fixed-600` para imÃ¡genes con ancho fijo responsivo.
+      â€¢ Clase 9: `.embed` para iframes 16:9 sin borde.
+      â€¢ Clase 11: `.page-title` para mÃ¡rgenes del tÃ­tulo principal.
+  - Se mantuvo la semÃ¡ntica HTML y se limpiaron duplicaciones visuales.
 
-  Buenas prácticas a seguir:
+  Buenas prÃ¡cticas a seguir:
   - Evitar `style="..."` en HTML; crear/usar clases en CSS.
   - Centralizar utilidades repetidas en este archivo si aplican a la clase.
   - Nombrar clases de forma clara y reutilizable.
@@ -47,3 +47,5 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 #estructura{ border-left:4px solid #6aa0e8; padding-left:8px }
 #ejemplo{ border-left:4px solid #a884e5; padding-left:8px }
 html{ scroll-behavior:smooth }
+
+

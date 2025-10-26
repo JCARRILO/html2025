@@ -39,7 +39,8 @@
     </div>
   </section>
 
-  <main id="contenido">`r`n  <section class="grid" aria-label="Elementos y demo">
+  <main id="contenido">
+  <section class="grid" aria-label="Elementos y demo">
     <div class="panel">
       <h2 class="heading">Elementos clave de un formulario HTML</h2>
       <ul class="bullets">
@@ -51,7 +52,8 @@
     </div>
 
     <aside class="form-card" aria-labelledby="demo-title">
-      <h3 id="demo-title">Demo de formulario</h3>`r`n      <div id="form-status" aria-live="polite" class="help" style="margin:10px 0"></div>
+      <h3 id="demo-title">Demo de formulario</h3>
+      <div id="form-status" aria-live="polite" class="help" style="margin:10px 0"></div>
       <form action="#" method="post" novalidate>
         <div class="field">
           <label for="name">Nombre</label>
@@ -359,7 +361,10 @@
     })();
   </script>
 
-</main>`r`n</body>
+</main>
+</body>
 </html>
+
+
 
 

@@ -43,3 +43,4 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 .dot-perf{ background:#a884e5 }
 #sintaxis, #basicos, #combinadores, #pseudo, #especificidad {}
 
+
