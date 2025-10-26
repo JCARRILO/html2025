@@ -102,6 +102,7 @@ header.site{
   display:flex; align-items:flex-end;
   max-width:var(--cover-desktop-width); /* ancho igual a la portada en desktop */
   margin:0 auto; /* centrar */
+  padding:0 !important; /* sin padding superior/inferior */
 }
 @media (min-width:1024px){ header.site{ min-height:320px } }
 @media (max-width:1023.98px){ header.site{ min-height:220px; max-width:100% } }
