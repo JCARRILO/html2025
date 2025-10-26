@@ -107,19 +107,19 @@
         <article class="card gallery">
           <h3>Galería con <code>figure</code> y <code>figcaption</code></h3>
           <figure>
-            <img src="CLASE 3/3- IMAGENES/images/paisaje.png" alt="Paisaje con montañas y lago" class="responsive">
+            <img src="assets/images/paisaje.png" alt="Paisaje con montañas y lago" class="responsive">
             <figcaption>Paisaje local</figcaption>
           </figure>
           <figure>
-            <img src="CLASE 3/3- IMAGENES/images/logo.png" alt="Logo del curso" class="responsive">
+            <img src="assets/images/logo.png" alt="Logo del curso" class="responsive">
             <figcaption>Logo del sitio</figcaption>
           </figure>
         </article>
         <article class="card">
           <h3>Responsive con <code>srcset</code></h3>
           <img
-            src="CLASE 3/3- IMAGENES/images/recorte-600.png"
-            srcset="CLASE 3/3- IMAGENES/images/recorte-600.png 600w, CLASE 3/3- IMAGENES/images/recorte-1200.png 1200w"
+            src="assets/images/recorte-600.png"
+            srcset="assets/images/recorte-600.png 600w, assets/images/recorte-1200.png 1200w"
             sizes="(max-width:600px) 100vw, 300px"
             alt="Detalle recortado"
             class="responsive">
@@ -214,9 +214,9 @@
         <article class="card">
           <h3>srcset + sizes</h3>
           <figure>
-            <img srcset="CLASE 3/3- IMAGENES/images/recorte-600.png 600w, CLASE 3/3- IMAGENES/images/recorte-1200.png 1200w"
+            <img srcset="assets/images/recorte-600.png 600w, assets/images/recorte-1200.png 1200w"
                  sizes="(max-width:700px) 100vw, 700px"
-                 src="CLASE 3/3- IMAGENES/images/recorte-600.png"
+                 src="assets/images/recorte-600.png"
                  alt="Paisaje recortado" class="responsive">
             <figcaption>Usa 600w en móvil y 1200w en pantallas grandes.</figcaption>
           </figure>
@@ -225,9 +225,9 @@
           <h3>picture (art direction)</h3>
           <figure>
             <picture>
-              <source media="(max-width: 600px)" srcset="CLASE 3/3- IMAGENES/images/recorte-600.png">
-              <source media="(max-width: 1200px)" srcset="CLASE 3/3- IMAGENES/images/recorte-1200.png">
-              <img src="CLASE 3/3- IMAGENES/images/paisaje.png" alt="Paisaje completo" class="responsive">
+              <source media="(max-width: 600px)" srcset="assets/images/recorte-600.png">
+              <source media="(max-width: 1200px)" srcset="assets/images/recorte-1200.png">
+              <img src="assets/images/paisaje.png" alt="Paisaje completo" class="responsive">
             </picture>
           </figure>
         </article>
@@ -237,7 +237,7 @@
         <article class="card">
           <h3>Video básico</h3>
           <figure>
-            <video controls preload="metadata" playsinline poster="CLASE 3/3- IMAGENES/images/recorte-1200.png" class="responsive">
+            <video controls preload="metadata" playsinline poster="assets/images/recorte-1200.png" class="responsive">
               <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
               <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
             </video>
@@ -298,3 +298,4 @@
   <script src="JS/app.js"></script>
 </body>
 </html>
+
