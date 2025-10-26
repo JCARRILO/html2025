@@ -2,6 +2,7 @@
   --c1:#6aa0e8; --c2:#78c2a4; --c3:#a884e5; --c4:#f0c36d; --c5:#84c5a3; --c6:#f2a6a6;
   --cx1:#5795D3; --cx2:#7ABF9D; --cx3:#3B82F6;
   --avatar-size:72px;
+  --cover-desktop-width:900px;
 }
 
 /* Layout principal (reutiliza common.css) */
@@ -99,9 +100,11 @@ header.site{
     url('../assets/images/portadadeheader.jpeg') !important;
   background-repeat:no-repeat; background-position:center top; background-size:contain;
   display:flex; align-items:flex-end;
+  max-width:var(--cover-desktop-width); /* ancho igual a la portada en desktop */
+  margin:0 auto; /* centrar */
 }
 @media (min-width:1024px){ header.site{ min-height:320px } }
-@media (max-width:1023.98px){ header.site{ min-height:220px } }
+@media (max-width:1023.98px){ header.site{ min-height:220px; max-width:100% } }
 
 /* Grid robusto para evitar solapamiento del TOC en desktop */
 main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; align-items:start }
