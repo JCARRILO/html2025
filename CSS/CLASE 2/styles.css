@@ -1,7 +1,7 @@
-:root{
+﻿:root{
   --bg:#ffffff; --ink:#1a1a1a; --muted:#5b6b75; --card:#f7f9fb; --border:#e6ebef; --brand:#2f6e93;
   /* Colores suaves para asociar temas */
-  --k-sintaxis:#78c2a4; --k-basicos:#6aa0e8; --k-combinadores:#f0c36d; --k-pseudo:#a884e5; --k-especificidad:#f0b45b;
+  --k-sintaxis:#78c2a4; --k-basicos:#6aa0e8; --k-desc:#f0c36d; --k-pseudo:#a884e5; --k-especificidad:#f0b45b; --k-herencia:#84c5a3;
 }
 *{ box-sizing:border-box }
 body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
@@ -19,15 +19,17 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 .dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
 .dot-sintaxis{ background:var(--k-sintaxis) }
 .dot-basicos{ background:var(--k-basicos) }
-.dot-combinadores{ background:var(--k-combinadores) }
+.dot-desc{ background:var(--k-desc) }
 .dot-pseudo{ background:var(--k-pseudo) }
 .dot-especificidad{ background:var(--k-especificidad) }
+.dot-herencia{ background:var(--k-herencia) }
 /* Resaltado suave por tema */
 #sintaxis.card{ border-left:4px solid var(--k-sintaxis) }
 #basicos.card{ border-left:4px solid var(--k-basicos) }
-#combinadores.card{ border-left:4px solid var(--k-combinadores) }
-#pseudo.card{ border-left:4px solid var(--k-pseudo) }
+#descendientes.card{ border-left:4px solid var(--k-desc) }
+#pseudoclases.card{ border-left:4px solid var(--k-pseudo) }
 #especificidad.card{ border-left:4px solid var(--k-especificidad) }
+#herencia.card{ border-left:4px solid var(--k-herencia) }
 html{ scroll-behavior:smooth }
 
 /* Accesibilidad */
@@ -42,19 +44,24 @@ header nav a:hover, header nav a:focus{ background:#e6eef4 }
 pre{ background:#eef3f6; border:1px solid var(--border); border-radius:10px; padding:10px; overflow:auto }
 code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95em }
 
-/* 1) Selectores básicos */
+/* 1) Selectores básicos (demo) */
 #demo-basicos p{ background:#eef3f6; padding:6px 10px; border-radius:8px }
-#demo-basicos .destacado{ background:#ffe9b3 }
-#demo-basicos #unico{ background:#ffd1d1 }
+.ejemplo-selectores .rojo{ color:red }
+.ejemplo-selectores #unico{ background:yellow }
 
-/* 2) Combinadores */
-.parent{ border:1px dashed #c6d3db; padding:10px; border-radius:10px }
-.parent > p{ border-left:4px solid #9ecae0; padding-left:8px }
-.parent .box p{ color:#184b62; font-weight:600 }
-.parent .hermano + p{ text-decoration:underline dotted }
-.parent p ~ p{ opacity:.9 }
+/* 3) Descendientes/Contenedores */
+.demo-contenedor{ padding:10px; border-radius:10px; border:1px dashed #c6d3db }
+.contenedor{ border:2px solid blue }
+.contenedor p{ color:blue }
 
-/* 3) Pseudo‑clases y pseudo‑elementos */
+/* 4) Pseudoclases */
+.btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
+.btn:hover, .btn:focus{ background:#e6eef4 }
+.btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
+button.demo-btn{ border:1px solid var(--border); background:#fff; padding:8px 10px; border-radius:10px }
+button.demo-btn:hover{ background:lightblue; cursor:pointer }
+a:link{ color:green }
+a:visited{ color:goldenrod }
 .btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
 .btn:hover, .btn:focus{ background:#e6eef4 }
 .btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
@@ -66,3 +73,4 @@ code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 #cta{ /* 100 puntos */ }
 .btn.primary{ /* 10 + 10 = 20 puntos */ }
 button{ /* 1 punto */ }
+
