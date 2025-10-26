@@ -1,66 +1,46 @@
-# Curso HTML 2025 ï¿½ Pï¿½gina ï¿½nica (SPA)
+# Curso HTML 2025 — Página Única (SPA)
 
-Este repositorio fue unificado en una sola pï¿½gina HTML para evitar duplicaciï¿½n de HTML/CSS/JS y simplificar el mantenimiento.
+Este repositorio fue unificado en una sola página HTML para evitar duplicación de HTML/CSS/JS y simplificar el mantenimiento.
 
 ## Estructura
 
-- `index.html` ï¿½ Pï¿½gina ï¿½nica con todas las clases (1ï¿½12) como secciones `#clase-N`.
+- `index.html` — Página única con todas las clases (1–12) como secciones `#clase-N`.
 - `CSS/`
-  - `common.css` ï¿½ Base, layout, header/footer modulares, utilidades comunes.
-  - `app.css` ï¿½ Estilos de la SPA: TOC (ï¿½ndice lateral), cards, demos (galerï¿½a, formularios, tablas), utilidades.
-  - `aside-scrollspy.js` ï¿½ Mï¿½dulo de scrollspy para resaltar el ï¿½ndice lateral/aside.
+  - `common.css` — Base, layout, header/footer modulares, utilidades comunes.
+  - `app.css` — Estilos de la SPA: TOC (índice lateral), cards, demos (galería, formularios, tablas), utilidades.
+  - `aside-scrollspy.js` — Módulo de scrollspy para resaltar el índice lateral/aside.
 - `JS/`
-  - `app.js` ï¿½ Scrollspy del TOC principal y utilidades de la SPA.
+  - `app.js` — Scrollspy del TOC principal y utilidades de la SPA.
 - `assets/`
-  - `images/` ï¿½ Imï¿½genes reutilizadas por las demos.
-  - `docs/` ï¿½ Documentos auxiliares (por ejemplo `CV.html`).
+  - `images/` — Imágenes reutilizadas por las demos.
+  - `docs/` — Documentos auxiliares (por ejemplo `CV.html`).
 
 ## Componentes modulares
 
 - Header y Footer (`header.site`, `footer.site`) con gradientes azules y contenido centrado mediante `.wrap`.
-- ï¿½ndice lateral (TOC) con puntos de color y scrollspy para marcar la secciï¿½n activa.
+- Índice lateral (TOC) con puntos de color y scrollspy para marcar la sección activa.
 - Secciones `lesson` con `card` reusables y utilidades (`.grid`, `.responsive`, `.table-wrap`).
 
-## Navegaciï¿½n
+## Navegación
 
-- Usa el TOC para saltar a `#clase-1` ï¿½ `#clase-12`.
-- Scroll suave activo; el TOC marca la secciï¿½n visible.
+- Usa el TOC para saltar a `#clase-1` … `#clase-12`.
+- Scroll suave activo; el TOC marca la sección visible.
 
-## Aï¿½adir contenido o nuevas secciones
+## Añadir contenido o nuevas secciones
 
 1. En `index.html`, agrega un bloque `<section id="clase-N" class="lesson">` con su contenido.
-2. Si necesitas estilos especï¿½ficos, intenta reutilizar utilidades de `CSS/app.css`. Evita crear archivos CSS por clase.
-3. Si agregas imï¿½genes nuevas, colï¿½calas en `assets/images/` y referencia rutas relativas desde `index.html`.
+2. Si necesitas estilos específicos, intenta reutilizar utilidades de `CSS/app.css`. Evita crear archivos CSS por clase.
+3. Si agregas imágenes nuevas, colócalas en `assets/images/` y referencia rutas relativas desde `index.html`.
 
 ## Imprimible / CV
 
-- CV standalone en `assets/docs/CV.html`. Opcional: enlazar desde `index.html` (Clase 12) como ï¿½Descargar CVï¿½.
+- CV standalone en `assets/docs/CV.html`. Opcional: enlazar desde `index.html` (Clase 12) como “Descargar CV”.
 
 ## Convenciones
 
-- Un solo `h1` global en la pï¿½gina; el resto de secciones usan `h2`/`h3`.
-- Accesibilidad: incluye `aria-label/aria-labelledby`, texto alternativo en imï¿½genes (`alt`) y estructura semï¿½ntica.
+- Un solo `h1` global en la página; el resto de secciones usan `h2`/`h3`.
+- Accesibilidad: incluye `aria-label/aria-labelledby`, texto alternativo en imágenes (`alt`) y estructura semántica.
 
 ## Historia de cambios (resumen)
 
-- v1.0.0 ï¿½ Unificaciï¿½n a SPA: migraciï¿½n de clases 1ï¿½12 a `index.html`, centralizaciï¿½n de assets y eliminaciï¿½n de pï¿½ginas antiguas.
-## VerificaciÃ³n de codificaciÃ³n (UTFâ€‘8) y mojibake
-
-Se incluye un verificador para impedir commits con caracteres rotos o archivos sin UTFâ€‘8:
-
-- Script: 	ools/check-encoding.ps1
-- Hook de Git: .githooks/pre-commit
-
-ActivaciÃ³n del hook (una sola vez):
-
-`
-git config core.hooksPath .githooks
-`
-
-EjecuciÃ³n manual del chequeo:
-
-`
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/check-encoding.ps1
-`
-
-El hook analiza los archivos HTML/CSS staged y falla el commit si detecta mojibake comÃºn (ej. Ãƒ, Ã‚, ï¿½) o si falta meta charset="utf-8" en los HTML.
+- v1.0.0 — Unificación a SPA: migración de clases 1–12 a `index.html`, centralización de assets y eliminación de páginas antiguas.

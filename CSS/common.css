@@ -15,16 +15,7 @@ body{ margin:0; color:var(--ink); background:var(--bg); font:16px/1.6 system-ui,
 .card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
 .btn{ display:inline-block; border:1px solid var(--border); background:#fff; color:#184b62; padding:8px 10px; border-radius:10px; text-decoration:none }
 .btn:hover, .btn:focus{ background:#e6eef4 }
-header.site{ 
-  background-image: 
-    linear-gradient(180deg, rgba(207,224,234,.85), rgba(223,232,238,.85)),
-    url('../assets/images/portadadeheader.jpeg');
-  /* Mantener tamaño original de la imagen sin estirarla */
-  background-size: auto; 
-  background-position: center top; 
-  background-repeat: no-repeat; 
-  padding:36px 0 20px !important 
-}
+header.site{ background:linear-gradient(var(--grad-blue-1), var(--grad-blue-2) 42%, var(--bg) 42%) !important; padding:36px 0 20px !important }
 header.site h1{ margin:6px 0 4px; font-weight:800; line-height:1.1; color:var(--site-heading) }
 header.site .muted{ color:var(--muted) }
 footer.site{ background:linear-gradient(var(--bg), var(--grad-blue-2) 58%, var(--grad-blue-1)) !important; padding:16px 0 !important; border-top:1px solid var(--border) }
