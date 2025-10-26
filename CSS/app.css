@@ -30,9 +30,17 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 /* Demo: evitar confusión con único h1 */
 .only-demo{ font-size:1rem; opacity:.6 }
 
+/* Clase 3: imágenes */
+.gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px }
+.gallery figure{ background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:0 }
+.gallery figcaption{ padding:8px 10px; font-size:.9rem; color:#44525b; border-top:1px solid var(--border); background:#fafcfe }
+.responsive{ width:100%; height:auto; display:block }
+
+/* Clase 4: listas */
+.cols{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
+
 /* Responsive */
 @media (max-width:1024px){
   main.wrap{ display:flex; flex-direction:column }
   .toc{ position:static; order:99; margin:16px 0 }
 }
-
