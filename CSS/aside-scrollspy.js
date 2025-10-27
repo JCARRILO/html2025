@@ -1,7 +1,7 @@
-// Scrollspy for lesson-aside: highlights the active knowledge item while scrolling
+// Scrollspy for .toc: highlight active lesson while scrolling
 (function(){
   try{
-    var aside = document.querySelector('.lesson-aside');
+    var aside = document.querySelector('.toc');
     if(!aside) return;
     var links = Array.prototype.slice.call(aside.querySelectorAll('a[href^="#"]'));
     if(!links.length) return;
@@ -20,6 +20,13 @@
     }
     // Default to first item
     setActive(items[0].id);
+    // Update on click for instant feedback
+    aside.addEventListener('click', function(e){
+      var a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      var id = (a.getAttribute('href')||'').slice(1);
+      if(id) setActive(id);
+    });
     if(!('IntersectionObserver' in window)) return;
     var byId = new Map(items.map(function(it){ return [it.id, it]; }));
     var current = null;
@@ -38,4 +45,3 @@
     targets.forEach(function(t){ io.observe(t) });
   }catch(e){ /* no-op */ }
 })();
-

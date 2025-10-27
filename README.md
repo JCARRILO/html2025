@@ -44,3 +44,9 @@ Este repositorio fue unificado en una sola página HTML para evitar duplicación d
 ## Historia de cambios (resumen)
 
 - v1.0.0 — Unificación a SPA: migración de clases 1–12 a `index.html`, centralización de assets y eliminación de páginas antiguas.
+- v1.1.0 - Mobile-first + TOC en sección final, scrollspy mejorado, portada responsive, avatar flotante y bloque CSS (1–8)
+  - Layout mobile-first: `main.wrap` en 1 columna por defecto; gradiente de header continuo.
+  - Índice final con generación dinámica, scroll suave y estado “Clase actual”.
+  - Portada adaptativa (img en móvil, hero en desktop) y botón avatar hacia `#indice`.
+  - Clases CSS añadidas y ordenadas: CSS 1–7 + CSS 8 (unidades) con demos y hero 100vw/100vh.
+  - Colores de secciones y puntos del TOC por número; mejoras de accesibilidad.

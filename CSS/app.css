@@ -1,23 +1,52 @@
 :root{
+.units-grid .box{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px }
+
+/* Colores para secciones CSS (cicla la paleta 1..6) */
+#css-1{ border-left:4px solid var(--c1); padding-left:8px }
+#css-2{ border-left:4px solid var(--c2); padding-left:8px }
+#css-3{ border-left:4px solid var(--c3); padding-left:8px }
+#css-4{ border-left:4px solid var(--c4); padding-left:8px }
+#css-5{ border-left:4px solid var(--c5); padding-left:8px }
+#css-6{ border-left:4px solid var(--c6); padding-left:8px }
+#css-7{ border-left:4px solid var(--c1); padding-left:8px }
+#css-8{ border-left:4px solid var(--c2); padding-left:8px }:root{
   --c1:#6aa0e8; --c2:#78c2a4; --c3:#a884e5; --c4:#f0c36d; --c5:#84c5a3; --c6:#f2a6a6;
 }
 
-/* Layout principal (reutiliza common.css) */
-main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
+/* Layout: mobile-first; el contenedor principal es 1 columna por defecto */
+.content{ min-width:0 }
 .content > .lesson{ margin:28px 0 }
 .card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; margin:16px 0 }
 
 /* TOC lateral (modular) */
-.toc{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2; grid-row:1 }
+.toc{
+  grid-area:toc;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  height:fit-content;
+  position:sticky;
+  top:16px;
+  align-self:start;
+  z-index:0;
+}
 .toc h2{ margin:0 0 8px; font-size:1rem }
 .toc ol{ margin:0; padding:0; list-style:none }
 .toc li{ display:flex; gap:8px; align-items:center; margin:6px 0 }
+.toc .list-group .list-group-item{ margin:0 }
 .toc a{ color:inherit; text-decoration:underline dotted }
 .toc .dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
 .toc .c1{ background:var(--c1) } .toc .c2{ background:var(--c2) } .toc .c3{ background:var(--c3) }
 .toc .c4{ background:var(--c4) } .toc .c5{ background:var(--c5) } .toc .c6{ background:var(--c6) }
+.toc .c7{ background:var(--c1) } .toc .c8{ background:var(--c2) } .toc .c9{ background:var(--c3) }
+.toc .c10{ background:var(--c4) } .toc .c11{ background:var(--c5) } .toc .c12{ background:var(--c6) }
 .toc li.is-active a{ font-weight:700; text-decoration:underline }
 .toc li.is-active .dot{ box-shadow:0 0 0 3px rgba(0,0,0,.08) }
+
+/* Variante como sección al final (no sticky) */
+.toc.toc--section{ position:static; top:auto; margin:16px 0 0 }
+.toc-status{ margin:8px 12px 0; color:#5b6b75; font-size:.9rem }
 
 /* Asociación color por clase (borde izquierdo) */
 #clase-1{ border-left:4px solid var(--c1); padding-left:8px }
@@ -26,6 +55,12 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 #clase-4{ border-left:4px solid var(--c4); padding-left:8px }
 #clase-5{ border-left:4px solid var(--c5); padding-left:8px }
 #clase-6{ border-left:4px solid var(--c6); padding-left:8px }
+#clase-7{ border-left:4px solid var(--c1); padding-left:8px }
+#clase-8{ border-left:4px solid var(--c2); padding-left:8px }
+#clase-9{ border-left:4px solid var(--c3); padding-left:8px }
+#clase-10{ border-left:4px solid var(--c4); padding-left:8px }
+#clase-11{ border-left:4px solid var(--c5); padding-left:8px }
+#clase-12{ border-left:4px solid var(--c6); padding-left:8px }
 
 /* Demo: evitar confusión con único h1 */
 .only-demo{ font-size:1rem; opacity:.6 }
@@ -35,6 +70,8 @@ main.wrap{ display:grid; grid-template-columns: minmax(0,1fr) 320px; gap:24px }
 .gallery figure{ background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:0 }
 .gallery figcaption{ padding:8px 10px; font-size:.9rem; color:#44525b; border-top:1px solid var(--border); background:#fafcfe }
 .responsive{ width:100%; height:auto; display:block }
+/* Asegura buen anclaje al hacer scroll hacia secciones */
+.lesson{ scroll-margin-top: 16px }
 
 /* Clase 4: listas */
 .cols{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
@@ -61,8 +98,15 @@ audio.responsive{ width:100% }
 
 /* Responsive */
 @media (max-width:1024px){
-  main.wrap{ display:flex; flex-direction:column }
-  .toc{ position:static; order:99; margin:16px 0 }
+  main.wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "content"
+      "toc";
+    gap:16px;
+  }
+  .toc{ position:static; margin:16px 0 0 }
 }
 
 /* CSS 5: Position CSS demos */
@@ -114,3 +158,54 @@ audio.responsive{ width:100% }
 .css-c5 .capa-1::before{ content:"z:1" }
 .css-c5 .capa-2::before{ content:"z:2" }
 .css-c5 .capa-3::before{ content:"z:3" }
+
+/* CSS 8: Unidades de medida - demo */
+.units-grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)) }
+.units-grid .box{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px }
+.units-grid .box-pixel{ border-color:#e57373; width:200px }
+.units-grid .box-percent{ border-color:#e57373; width:50% }
+.units-grid .box-rem{ border-color:#e57373; width:15rem }
+.units-grid .box-em{ border-color:#e57373; width:1em }
+.units-grid .box-vw{ border-color:#e57373; width:30vw }
+.units-grid .box-vh{ border-color:#e57373; height:20vh }
+
+/* Demo hero: mobile-first */
+.hero-demo{
+  width:100%;
+  min-height:60vh; /* fallback */
+  min-height:60svh; /* usa viewport pequeño en móviles */
+  padding-block: calc(16px + env(safe-area-inset-top, 0px)) calc(16px + env(safe-area-inset-bottom, 0px));
+  padding-inline:16px;
+  background:linear-gradient(135deg, #2f6e93, #6aa0e8);
+  color:#fff; display:flex; align-items:center; justify-content:center; text-align:center;
+  border-radius:12px; box-shadow:0 10px 28px rgba(0,0,0,.15);
+}
+.hero-demo__content{ font-size:clamp(1.2rem, 5.5vw, 2.2rem); font-weight:800 }
+
+/* En desktop: ocupar pantalla completa y full-bleed */
+@media (min-width:1024px){
+  .hero-demo{
+    width:100vw; height:100vh; height:100dvh; /* d*vh corrige barras del navegador */
+    margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+    padding:0;
+  }
+}
+
+/* Si el hero está dentro de una .card: manténlo contenido y usa vw/vh adaptados */
+.card .hero-demo{
+  width:100%;
+  height:min(60svh, 70vw);
+  min-height:clamp(220px, 60svh, 520px);
+  margin:0;
+  border-radius:12px;
+}
+@media (min-width:1024px){
+  .card .hero-demo{
+    width:100%;
+    height:min(80vh, 60vw);
+    margin:0; /* evita full-bleed dentro de la card */
+  }
+}
+
+/* Tipografía fluida */
+.fluid-text{ font-size:clamp(1.1rem, 5vw, 2.4rem); font-weight:800; margin:8px 0 }
