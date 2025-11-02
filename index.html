@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Curso HTML — Clases unificadas</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/common.css" />
   <link rel="stylesheet" href="CSS/app.css" />
 </head>
@@ -19,6 +22,23 @@
   </header>
 
   <main id="contenido" class="wrap">
+    <section id="certificados" class="lesson full-bleed" tabindex="-1" aria-labelledby="certs-title">
+      <h2 id="certs-title">Certificados</h2>
+      <article class="card">
+        <div class="grid certs-grid">
+          <figure>
+            <img src="assets/images/certificadocursohtmlplatzioctubredel2025.png" alt="Certificado Curso de HTML (Platzi, Octubre 2025)" class="responsive" loading="lazy">
+            <figcaption class="muted">Curso de HTML — Oct 2025</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/images/certificadocursofundamentosdeCSSplatzinoviembredel2025.jpeg" alt="Certificado Fundamentos de CSS (Platzi, Noviembre 2025)" class="responsive" loading="lazy">
+            <figcaption class="muted">Fundamentos de CSS — Nov 2025</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    
     <!-- aside original eliminado: índice se movió al final
       <h2 id="toc-title">Clases</h2>
       <ol>
@@ -91,6 +111,50 @@
           </ol>
         </article>
       </section>
+      <!-- <section id="css-11" class="lesson" tabindex="-1">
+        <h2>CSS 11 — Alineación y transformaciones de texto</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Controla tu tipografía con precisión usando <code>text-align</code>, <code>text-transform</code>, <code>text-decoration</code> y <code>text-indent</code>. Aplica estos cambios con clases simples y consistentes.</p>
+        </article>
+        <article class="card">
+          <h3>Alineación con text-align</h3>
+          <pre><code>.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.justify { text-align: justify; }</code></pre>
+          <div class="css-demo">
+            <p class="ta-left">Left: alineación por defecto a la izquierda.</p>
+            <p class="ta-center">Center: centra el texto dentro del ancho disponible.</p>
+            <p class="ta-right">Right: empuja el texto hacia la derecha.</p>
+            <p class="ta-justify">Justify: distribuye espacios para ocupar el ancho completo en cada línea con suficiente contenido.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Transformaciones (text-transform)</h3>
+          <pre><code>.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }</code></pre>
+          <div class="css-demo">
+            <p class="tt-uppercase">Uppercase: convierte todo a mayúsculas.</p>
+            <p class="tt-lowercase">Lowercase: transforma a minúsculas.</p>
+            <p class="tt-capitalize">Capitalize: capitaliza cada palabra.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Decoración e indentación</h3>
+          <pre><code>.underline { text-decoration: underline; }
+.through { text-decoration: line-through; }
+.no-underline { text-decoration: none; color: red; }
+.indent { text-indent: 2rem; }</code></pre>
+          <div class="css-demo">
+            <p class="td-underline">Underline: añade una línea inferior a cualquier elemento.</p>
+            <p class="td-through">Line-through: tacha el texto (útil para estados).</p>
+            <p><a href="#" class="td-none" onclick="return false">Enlace sin subrayado y en rojo</a></p>
+            <p class="ti-2">Text-indent: aplica sangría de primera línea con 2rem.</p>
+          </div>
+        </article>
+      </section> -->
 
       <!-- Clases 3–12: espacio para migrar contenido -->
       <section id="clase-3" class="lesson" tabindex="-1">
@@ -283,7 +347,1715 @@
           <p>Secciones típicas: Sobre mí, Proyectos, Certificación, Blog y Contacto. Usa semántica, meta y accesibilidad.</p>
         </article>
       </section>
-      <!-- Índice de clases como sección al final --><section id="indice" class="lesson toc toc--section card" role="complementary" aria-labelledby="toc-title">
+      <!-- Fundamentos de CSS: 1..8 -->
+      <section id="css-1" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 1 - De la idea al estilo</h2>
+        <article class="card"><h3>Concepto</h3><p>Del diseño a reglas mantenibles: paleta, tipografías, espaciados, componentes y utilidades. Enfoque <em>mobile-first</em> y semántica para accesibilidad.</p></article>
+      </section>
+      <section id="css-2" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 2 - Qué es y cómo aplicarlo</h2>
+        <article class="card"><h3>3 formas de aplicar estilos</h3><pre><code>&lt;!-- 1) En línea (evitar globalmente) --&gt;
+&lt;h1 style="color:#2f6e93"&gt;Título&lt;/h1&gt;
+
+&lt;!-- 2) En el head --&gt;
+&lt;style&gt; h1{ color:#2f6e93 } &lt;/style&gt;
+
+&lt;!-- 3) Hoja externa (recomendado) --&gt;
+&lt;link rel="stylesheet" href="CSS/app.css"&gt;</code></pre></article>
+      </section>
+      <section id="css-3" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 3 - Selectores y Especificidad</h2>
+        <article class="card"><h3>Ejemplos y regla</h3><ul class="cols"><li>Tipo: <code>p</code>, <code>h1</code></li><li>Clase: <code>.card</code>, <code>.btn.primary</code></li><li>ID: <code>#contenido</code></li><li>Atributo: <code>a[target="_blank"]</code></li><li>Jerarquía: <code>.card a</code> y <code>.card &gt; h3</code></li></ul><p><strong>Especificidad</strong>: ID &gt; clase/atributo/pseudoclase &gt; tipo. Evita <code>!important</code>.</p></article>
+      </section>
+      <section id="css-4" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 4 - Pseudo-clases y Pseudo-elementos</h2>
+        <article class="card"><h3>Uso común</h3><ul class="cols"><li>Pseudo-clases: <code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>:nth-child()</code></li><li>Pseudo-elementos: <code>::before</code>, <code>::after</code>, <code>::marker</code>, <code>::selection</code></li></ul></article>
+      </section>
+      <section id="css-5" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 5 - Box Model</h2>
+        <article class="card"><h3>Recordatorio</h3><p>Cada elemento es una caja: contenido, padding, border y margin. Usa <code>box-sizing: border-box</code>.</p><pre><code>*{ box-sizing: border-box }
+.demo-box{ width:200px; padding:12px; border:2px solid #2f6e93; margin:8px 0 }</code></pre></article>
+      </section>
+      <section id="css-6" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 6 - Position</h2>
+        <article class="card"><h3>Tipos de position</h3><ul><li><code>static</code>, <code>relative</code> (desplaza sin sacar del flujo)</li><li><code>absolute</code> (respecto al contenedor posicionado)</li><li><code>fixed</code> (anclado a la ventana), <code>sticky</code> (se pega al scroll)</li></ul></article>
+      </section>
+      <section id="css-7" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 7 - Organización BEM</h2>
+        <article class="card"><h3>Bloque, Elemento, Modificador</h3><pre><code>&lt;article class="product product--featured"&gt;
+  &lt;h3 class="product__title"&gt;Auriculares&lt;/h3&gt;
+  &lt;button class="btn btn--primary product__cta"&gt;Comprar&lt;/button&gt;
+&lt;/article&gt;
+
+/* BEM */
+.product{ }
+.product__title{ }
+.product__cta{ }
+.product--featured{ }</code></pre></article>
+      </section>
+      <section id="css-8" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 8 - Unidades de medida</h2>
+        <article class="card"><h3>Tipos y ejemplos</h3><ul class="cols"><li>Absolutas: <code>px</code></li><li>Relativas tipográficas: <code>em</code>, <code>rem</code>, <code>ch</code></li><li>Relativas al contenedor: <code>%</code></li><li>Relativas a la ventana: <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code></li></ul><div class="css-demo"><p class="monospace">1rem texto</p><p class="monospace">40vw ancho</p></div></article>
+      </section>
+      <section id="css-9" class="lesson" tabindex="-1">
+        <h2>CSS 9 — Fuentes Web</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Elegir y configurar fuentes web en CSS define la legibilidad y el estilo de una interfaz. Usaremos familias del navegador, crearemos un font stack con fallback y cargaremos Poppins e Inter desde Google Fonts, con pesos bien seleccionados para títulos y textos.</p>
+        </article>
+        <article class="card">
+          <h3>Familias tipográficas</h3>
+          <ul>
+            <li><strong>Serif</strong>: con remates. Clásica/editorial.</li>
+            <li><strong>Sans-serif</strong>: sin remates. Limpia y moderna.</li>
+            <li><strong>Monospace</strong>: ancho fijo. Ideal para código.</li>
+            <li><strong>Cursive</strong>: simula escritura a mano.</li>
+            <li><strong>Fantasy</strong>: decorativa y expresiva.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Cuándo usar monospace</h3>
+          <ul>
+            <li>Resaltar funciones, variables y fragmentos de código.</li>
+            <li>Mejorar lectura de ejemplos técnicos.</li>
+            <li>Diferenciar texto técnico con fondo claro y padding.</li>
+          </ul>
+          <div class="css-demo">
+            <p class="monospace">const saludar = () =&gt; 'Hola';</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Definir font-family y tamaño</h3>
+          <pre><code>.serif { font-family: serif; font-size: 20px; }
+.sans { font-family: sans-serif; font-size: 20px; }
+.monospace { font-family: monospace; font-size: 20px; background: #f0f0f0; padding: 5px; }</code></pre>
+          <div class="css-demo">
+            <p class="serif">Texto de ejemplo serif.</p>
+            <p class="sans">Texto de ejemplo sans-serif.</p>
+            <p class="monospace">Texto de ejemplo monospace.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Errores típicos a evitar</h3>
+          <ul>
+            <li>Olvidar el <code>#</code> en colores hexadecimales.</li>
+            <li>Escribir <code>font</code> en lugar de <code>font-size</code>.</li>
+            <li>No verificar en el inspector qué fuente se renderiza.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Font stack y Google Fonts con fallback</h3>
+          <pre><code>/* Stack con genérica al final */
+.code-label { font-family: "Courier New", Courier, monospace; }</code></pre>
+          <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"&gt;</code></pre>
+          <pre><code>.google-title { font-family: "Poppins", sans-serif; } /* títulos */
+.google-text  { font-family: "Inter", sans-serif; }  /* párrafos */</code></pre>
+          <div class="font-demo">
+            <p class="google-title w700">Título con Poppins 700</p>
+            <p class="google-text">Párrafo con Inter 400</p>
+            <p class="google-text w600">Párrafo destacado con Inter 600</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>System font stack</h3>
+          <div class="font-demo">
+            <p class="system-stack">Texto con system font stack para rendimiento y consistencia.</p>
+          </div>
+        </article>
+      </section>
+      <section id="css-10" class="lesson" tabindex="-1">
+        <h2>CSS 10 — Propiedades tipográficas</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Mejora la legibilidad y accesibilidad dominando <code>font-size</code> con <strong>rem</strong>, <code>font-weight</code>, <code>line-height</code> y <code>font-style</code>. Con pequeños ajustes, el texto se vuelve más claro y consistente en distintos dispositivos.</p>
+        </article>
+        <article class="card">
+          <h3>Tamaño con rem</h3>
+          <p><code>1rem</code> equivale a 16px por defecto y escala si la persona aumenta el tamaño de fuente en su sistema.</p>
+          <pre><code>.normal { font-size: 1rem; }</code></pre>
+          <div class="type-demo">
+            <p class="normal">Texto a 1rem (16px por defecto).</p>
+            <p class="fs-1-2">Texto a 1.2rem (escala accesible).</p>
+            <p class="fs-2">Texto a 2rem (títulos más visibles).</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Peso tipográfico (font-weight)</h3>
+          <p>El rango va de 100 a 900; no todas las familias incluyen todos los pesos. La diferencia es más notoria desde 600 en adelante.</p>
+          <pre><code>.light { font-weight: 300; }
+.bold  { font-weight: 900; }</code></pre>
+          <div class="type-demo">
+            <p class="light">Peso 300 (light) para textos largos.</p>
+            <p class="w600">Peso 600 (semibold) para énfasis moderado.</p>
+            <p class="bold">Peso 900 (negrita fuerte) para alto énfasis.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Interlineado (line-height)</h3>
+          <p>Usa valores numéricos sin unidad. Un valor bajo compacta el texto; uno alto añade “aire” y mejora la lectura.</p>
+          <pre><code>.compact { line-height: 1; }
+.space   { line-height: 2; }</code></pre>
+          <div class="type-demo">
+            <p class="compact">Texto compacto con line-height 1. <br>Segunda línea para comparar.</p>
+            <p class="space">Texto con mucho aire (2). <br>Segunda línea para comparar.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Estilo (font-style)</h3>
+          <p>Tres opciones: <code>normal</code>, <code>italic</code> y <code>oblique</code>. <em>Oblique</em> inclina artificialmente cuando no hay cursiva nativa.</p>
+          <pre><code>.italic  { font-style: italic; }
+.oblique { font-style: oblique; }
+.normal  { font-style: normal; }</code></pre>
+          <div class="type-demo">
+            <p class="italic">Texto en italic (si la familia lo soporta).</p>
+            <p class="oblique">Texto oblique (inclinación artificial).</p>
+            <p class="normal">Texto con estilo normal (roman).</p>
+          </div>
+        </article>
+      </section>
+
+    </div>
+    <div class="content">
+      <section id="css-11" class="lesson" tabindex="-1">
+        <h2>CSS 11 - Control de texto</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Controla tu tipografía con precisión usando <code>text-align</code>, <code>text-transform</code>, <code>text-decoration</code> y <code>text-indent</code>. Aplica estos cambios con clases simples y consistentes.</p>
+        </article>
+        <article class="card">
+          <h3>Alineación con text-align</h3>
+          <pre><code>.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.justify { text-align: justify; }</code></pre>
+          <div class="css-demo">
+            <p class="ta-left">Left: alineación por defecto a la izquierda.</p>
+            <p class="ta-center">Center: centra el texto dentro del ancho disponible.</p>
+            <p class="ta-right">Right: empuja el texto hacia la derecha.</p>
+            <p class="ta-justify">Justify: distribuye espacios para ocupar el ancho completo en cada línea con suficiente contenido.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Transformaciones (text-transform)</h3>
+          <pre><code>.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }</code></pre>
+          <div class="css-demo">
+            <p class="tt-uppercase">Uppercase: convierte todo a mayúsculas.</p>
+            <p class="tt-lowercase">Lowercase: transforma a minúsculas.</p>
+            <p class="tt-capitalize">Capitalize: capitaliza cada palabra.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Decoración e indentación</h3>
+          <pre><code>.underline { text-decoration: underline; }
+.through { text-decoration: line-through; }
+.no-underline { text-decoration: none; color: red; }
+.indent { text-indent: 2rem; }</code></pre>
+          <div class="css-demo">
+            <p class="td-underline">Underline: añade una línea inferior a cualquier elemento.</p>
+            <p class="td-through">Line-through: tacha el texto (útil para estados).</p>
+            <p><a href="#" class="td-none" onclick="return false">Enlace sin subrayado y en rojo</a></p>
+            <p class="ti-2">Text-indent: aplica sangría de primera línea con 2rem.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+      <!-- Índice de clases como sección al final -->
+      <section id="css-12" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 12 - Sistemas de Color</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Domina cómo aplicar color en CSS con hexadecimal, RGB, HSL, alfa (RGBA) y nombres de color. Verás cómo estos sistemas controlan <code>background-color</code>, el texto y los bordes, con ejemplos claros para lograr tonos exactos.</p>
+        </article>
+        <article class="card">
+          <h3>¿Qué formatos usar?</h3>
+          <ul>
+            <li><strong>Hexadecimal</strong> (<code>#RRGGBB</code>): 0–9 y A–F; dos dígitos por canal.</li>
+            <li><strong>RGB</strong> (<code>rgb(r, g, b)</code>): 0–255 por canal.</li>
+            <li><strong>HSL</strong> (<code>hsl(h, s%, l%)</code>): tono 0–360, saturación y luminosidad 0–100%.</li>
+            <li><strong>Alfa (RGBA)</strong>: cuarto valor 0–1 para transparencia.</li>
+            <li><strong>Nombres de color</strong>: <code>green</code>, <code>gold</code>, etc.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Hexadecimal</h3>
+          <p>El formato <code>#RRGGBB</code> combina rojo, verde y azul. <code>#000000</code> es negro, <code>#FFFFFF</code> es blanco.</p>
+          <pre><code>/* Blanco y negro */
+.box-blanco { background-color: #FFFFFF; }
+.box-negro  { background-color: #000000; }
+
+/* Rojo con R alto */
+.box-rojo   { background-color: #FF5733; }</code></pre>
+          <p class="muted">Claves: empieza con <code>#</code>; siempre seis dígitos; <code>FF</code> es máximo, <code>00</code> mínimo.</p>
+        </article>
+        <article class="card">
+          <h3>RGB y RGBA</h3>
+          <pre><code>/* Primarios */
+.box-negro  { background-color: rgb(0, 0, 0); }
+.box-rojo   { background-color: rgb(255, 0, 0); }
+.box-verde  { background-color: rgb(0, 255, 0); }
+.box-azul   { background-color: rgb(0, 0, 255); }
+
+/* Azul verdoso medio */
+.box-azul-tenue { background-color: rgb(52, 152, 219); }
+
+/* Transparencia con alfa */
+.box-solida { background-color: rgba(231, 76, 60, 1); }
+.box-media  { background-color: rgba(231, 76, 60, 0.5); }
+.box-tenue  { background-color: rgba(231, 76, 60, 0.25); }</code></pre>
+          <p class="muted">Guía rápida: alfa 1 = sólido; 0.5 = semitransparente; 0.25 = tenue.</p>
+        </article>
+        <article class="card">
+          <h3>HSL</h3>
+          <p>Tono (<code>h</code>) 0–360, saturación (<code>s</code>) y luminosidad (<code>l</code>) 0–100%.</p>
+          <pre><code>/* Rojo con saturación y luminosidad medias */
+.box-hsl { background-color: hsl(0, 50%, 50%); }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Nombres de color</h3>
+          <pre><code>.titulo    { color: green; }
+.destacado { background-color: gold; }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Habilidades clave</h3>
+          <ul>
+            <li>Identificar canales R, G y B en hex, rgb y rgba.</li>
+            <li>Usar rangos correctos en cada formato.</li>
+            <li>Ajustar saturación y luminosidad en HSL.</li>
+            <li>Controlar alfa para superposiciones y fondos.</li>
+            <li>Cambiar <code>background-color</code>, <code>color</code> y <code>border</code>.</li>
+            <li>Elegir formato según necesidad: hex, rgb, hsl, rgba o nombres.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Demostración visual</h3>
+          <div class="grid">
+            <div class="box" style="background-color:#FF5733;color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">Hex #FF5733</div>
+            <div class="box" style="background-color:#000000;color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">Hex #000000</div>
+            <div class="box" style="background-color:#FFFFFF;color:#111;min-height:80px;display:flex;align-items:center;justify-content:center">Hex #FFFFFF</div>
+
+            <div class="box" style="background-color:rgb(52,152,219);color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">rgb(52, 152, 219)</div>
+            <div class="box" style="background-color:rgba(231,76,60,1);color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">rgba(231, 76, 60, 1)</div>
+            <div class="box" style="background-color:rgba(231,76,60,0.5);color:#111;min-height:80px;display:flex;align-items:center;justify-content:center">rgba(231, 76, 60, 0.5)</div>
+
+            <div class="box" style="background-color:hsl(0,50%,50%);color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">hsl(0, 50%, 50%)</div>
+            <div class="box" style="background-color:hsl(210,70%,50%);color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">hsl(210, 70%, 50%)</div>
+
+            <div class="box" style="background-color:gold;color:#111;min-height:80px;display:flex;align-items:center;justify-content:center">gold</div>
+            <div class="box" style="background-color:green;color:#fff;min-height:80px;display:flex;align-items:center;justify-content:center">green</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Texto y bordes</h3>
+          <div class="grid">
+            <div class="box" style="min-height:60px">
+              <p style="margin:0;color:green"><strong>Texto</strong> con <code>color: green</code></p>
+            </div>
+            <div class="box" style="min-height:60px;border-width:4px;border-style:solid;border-color:rgb(231,76,60)">
+              <p style="margin:0"><strong>Borde</strong> con <code>border-color: rgb(231, 76, 60)</code></p>
+            </div>
+            <div class="box" style="min-height:60px;border-width:4px;border-style:solid;border-color:hsl(45,100%,50%)">
+              <p style="margin:0"><strong>Borde</strong> con <code>border-color: hsl(45, 100%, 50%)</code></p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-13" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 13 - Variables CSS</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Las variables de CSS permiten asegurar consistencia visual, acelerar cambios globales y evitar repetición. Con <code>:root</code> y <code>var()</code> centralizas colores, espacios y tipografías para escalar proyectos sin dolor.</p>
+        </article>
+        <article class="card">
+          <h3>¿Por qué usarlas?</h3>
+          <ul>
+            <li>Reducen repetición de estilos y errores humanos.</li>
+            <li>Mantienen colores y fuentes consistentes.</li>
+            <li>Permiten cambios globales desde un solo lugar.</li>
+            <li>Mejoran el mantenimiento en proyectos grandes.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Declaración en <code>:root</code></h3>
+          <pre><code>:root {
+  --color-primary: #3498db;
+  --color-secondary: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-dark: #2c3e50;
+  --color-light: #ecf0f1;
+  --space: 20px;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Aplicación en componentes</h3>
+          <pre><code>button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-primary { background: var(--color-primary); }
+.button-secondary { background: var(--color-secondary); }
+.button-danger   { background: var(--color-danger); }
+
+.card {
+  background: var(--color-light);
+  color: var(--color-dark);
+  padding: var(--space);
+  margin: 10px 0;
+  border-radius: 5px;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Override por componente</h3>
+          <pre><code>/* card base usa var(--color-light) y var(--color-dark) */
+.card {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* Variante que reescribe variables sólo en ese contexto */
+.card.card-dark {
+  --color-light: blue;  /* fondo local */
+  --color-dark: white;  /* texto local */
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demo visual</h3>
+          <!-- Scope local de variables para la demo -->
+          <div class="css-demo" style="--color-primary:#3498db; --color-secondary:#2ecc71; --color-danger:#e74c3c; --color-dark:#2c3e50; --color-light:#ecf0f1; --space:20px">
+            <div>
+              <button class="btn" style="background:var(--color-primary); color:#fff; border-color:transparent">Primario</button>
+              <button class="btn" style="background:var(--color-secondary); color:#fff; border-color:transparent">Secundario</button>
+              <button class="btn" style="background:var(--color-danger); color:#fff; border-color:transparent">Peligro</button>
+            </div>
+            <div class="grid">
+              <div class="card" style="background:var(--color-light); color:var(--color-dark); padding:var(--space)">
+                <strong>Card base</strong>
+                <p style="margin:.5rem 0 0">Usa <code>var(--color-light)</code> y <code>var(--color-dark)</code>.</p>
+              </div>
+              <div class="card card-dark" style="--color-light:#2f6e93; --color-dark:#ffffff; background:var(--color-light); color:var(--color-dark); padding:var(--space)">
+                <strong>Card dark (override)</strong>
+                <p style="margin:.5rem 0 0">Reescribe variables localmente sin afectar otras cards.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-14" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 14 - Degradados</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Aprende a crear <strong>backgrounds con degradados</strong> en CSS de forma clara y rápida: <code>linear-gradient</code> y <code>radial-gradient</code> con dirección, posición y múltiples colores. Ejemplos prácticos y listos para copiar.</p>
+        </article>
+        <article class="card">
+          <h3>Preparar contenedores</h3>
+          <p>Usa el background del elemento como lienzo y asegúrate de la legibilidad.</p>
+          <pre><code>.demo {
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  padding: 20px;
+  color: #fff;
+  display: inline-block; /* en línea, con propiedades de bloque */
+  text-align: center;
+  line-height: 60px;
+}</code></pre>
+          <p class="muted">Claves: <code>inline-block</code> coloca elementos en línea y respeta ancho/alto; si no hay espacio, bajan de línea.</p>
+        </article>
+        <article class="card">
+          <h3>Ejemplos visuales</h3>
+          <style>
+            /* Estilos locales, listos para copiar */
+            #css-14 .demo{ width:100%; height:120px; margin:0; padding:16px; color:#fff; display:flex; align-items:center; justify-content:center; text-align:center; border-radius:12px }
+            #css-14 .linear-simple{ background: linear-gradient(#3498DB, #9B59B6); }
+            #css-14 .linear-direction{ background: linear-gradient(to right, #E74C3C, #F39C12); }
+            #css-14 .linear-diagonal{ background: linear-gradient(to bottom right, #2ECC71, #3498DB); }
+            #css-14 .radial-simple{ background: radial-gradient(circle, #F39C12, #E74C3C); }
+            #css-14 .radial-position{ background: radial-gradient(circle at top left, #E74C3C, #3498DB); }
+            #css-14 .multiple{ background: linear-gradient(to right, red, orange, yellow, green, blue); }
+          </style>
+          <div class="grid">
+            <div class="demo linear-simple">linear simple</div>
+            <div class="demo linear-direction">to right</div>
+            <div class="demo linear-diagonal">diagonal</div>
+            <div class="demo radial-simple">radial</div>
+            <div class="demo radial-position">radial pos</div>
+            <div class="demo multiple">múltiples</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>CSS de referencia</h3>
+          <h4>linear-gradient</h4>
+          <pre><code>/* Por defecto, vertical de arriba a abajo */
+.linear-simple {
+  background: linear-gradient(#3498DB, #9B59B6);
+}
+
+/* Dirección a la derecha */
+.linear-direction {
+  background: linear-gradient(to right, #E74C3C, #F39C12);
+}
+
+/* Diagonal */
+.linear-diagonal {
+  background: linear-gradient(to bottom right, #2ECC71, #3498DB);
+}</code></pre>
+          <h4>radial-gradient</h4>
+          <pre><code>/* Circular desde el centro */
+.radial-simple {
+  background: radial-gradient(circle, #F39C12, #E74C3C);
+}
+
+/* Posicionar el centro */
+.radial-position {
+  background: radial-gradient(circle at top left, #E74C3C, #3498DB);
+}</code></pre>
+          <h4>Múltiples colores</h4>
+          <pre><code>.multiple {
+  background: linear-gradient(to right, red, orange, yellow, green, blue);
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Buenas prácticas y usos</h3>
+          <ul>
+            <li>Úsalos en <em>heroes</em> o contenedores para profundidad.</li>
+            <li>Contraste: texto blanco para máxima legibilidad.</li>
+            <li>Escala: combina dirección y posición según el diseño.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="css-15" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 15 - Sombras y bordes CSS</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Domina <code>box-shadow</code>, <code>text-shadow</code> y <code>border-radius</code> para crear contenedores y textos más atractivos. Incluye trucos con el inspector del navegador y cómo evitar errores comunes de sintaxis.</p>
+        </article>
+        <article class="card">
+          <h3>Estilos base para contenedores</h3>
+          <pre><code>div, p {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  background: #fff;
+  min-width: 100px;
+  text-align: center;
+}</code></pre>
+          <p class="muted">Claves: <code>inline-block</code> coloca en línea respetando ancho/alto; <code>min-width</code> evita colapsos; <code>background:#fff</code> garantiza legibilidad.</p>
+        </article>
+        <article class="card">
+          <h3>Demos base</h3>
+          <style>
+            /* Scope local para no afectar el resto del sitio */
+            #css-15 .demo{ background:#fff; border:1px solid var(--border); border-radius:12px; min-height:80px; display:flex; align-items:center; justify-content:center }
+            #css-15 .grid.demo-grid{ grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)) }
+            #css-15 .shadow-simple{ box-shadow: 5px 5px gray; }
+            #css-15 .shadow-inset{ box-shadow: inset 0 0 10px gray; }
+            #css-15 .text-shadow{ text-shadow: 2px 2px 5px gray; font-size:1.15rem; }
+            #css-15 .radius-small{ border: 2px solid #333; border-radius: 5px; }
+            #css-15 .radius-15{ border: 2px solid #333; border-radius: 15px; }
+            #css-15 .circle{ width:100px; height:100px; border-radius:50%; border:2px solid #333; background:#fff; margin:auto }
+            #css-15 .card-soft{ border-radius:12px; box-shadow: 0 8px 20px rgba(0,0,0,.12); padding:20px; }
+          </style>
+          <div class="grid demo-grid">
+            <div class="demo shadow-simple">box-shadow simple</div>
+            <div class="demo shadow-inset">box-shadow inset</div>
+            <div class="demo"><span class="text-shadow">text-shadow sutil</span></div>
+            <div class="demo radius-small">borde + radius 5px</div>
+            <div class="demo radius-15">radius 15px</div>
+            <div class="demo" style="display:flex; align-items:center; justify-content:center"><div class="circle">50%</div></div>
+            <div class="demo card-soft">Tarjeta (radius + sombra suave)</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Box-shadow e inset</h3>
+          <pre><code>/* Sombra externa simple */
+.shadow-simple {
+  box-shadow: 5px 5px gray;
+}
+
+/* Sombra interna (inset) con difuminado */
+.shadow-inset {
+  box-shadow: inset 0 0 10px gray;
+}</code></pre>
+          <p class="muted">Tip: usa el inspector para arrastrar X/Y, aumentar <code>blur</code> y moderar <code>spread</code>. Copia los valores finales.</p>
+        </article>
+        <article class="card">
+          <h3>Text-shadow y bordes redondeados</h3>
+          <pre><code>/* Sombra de texto sutil */
+.text-shadow {
+  text-shadow: 2px 2px 5px gray;
+}
+
+/* Tarjeta con borde y esquinas suaves */
+.radius-small {
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+/* Convertir en círculo */
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Esquinas más redondeadas */
+.radius-15 { border-radius: 15px; }</code></pre>
+        </article>
+      </section>
+
+      <section id="css-16" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 16 - Introducción a Flexbox</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>La alineación en CSS dejó de ser un dolor de cabeza con Flexbox. Activa el modelo flexible con <code>display: flex</code> y usa sus propiedades para centrar y distribuir elementos sin trucos.</p>
+        </article>
+        <article class="card">
+          <h3>¿Qué problema resuelve y cómo activarlo?</h3>
+          <p>Flexbox simplifica reacomodar y centrar elementos dentro de un contenedor. Al cambiar el <em>display</em>, los hijos se vuelven <em>items flex</em> y responden a un eje principal y uno transversal.</p>
+          <pre><code>.container {
+  display: flex; /* Activa Flexbox */
+  background: #f0f0f0; /* gris claro */
+  padding: 10px; /* espacio interno */
+  margin-bottom: 20px; /* separación entre contenedores */
+  min-height: 100px; /* altura mínima */
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Items y estilos base</h3>
+          <pre><code>.item {
+  background: #3498db; /* azul */
+  color: white; /* contraste */
+  margin: 5px; /* separación */
+  text-align: center; /* centra el texto */
+  padding: 20px; /* espacio interno */
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Ejemplos visuales</h3>
+          <style>
+            /* Estilos locales para la demo */
+            #css-16 .flex-demo{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
+            #css-16 .container{ display:flex; background:#f0f0f0; padding:10px; min-height:100px; border:1px solid var(--border); border-radius:12px }
+            #css-16 .item{ background:#3498db; color:#fff; margin:5px; text-align:center; padding:20px; border-radius:8px }
+            #css-16 .column{ flex-direction:column }
+            #css-16 .center-main{ justify-content:center }
+            #css-16 .space-between{ justify-content:space-between }
+            #css-16 .align-center{ align-items:center; min-height:140px }
+            #css-16 .align-start{ align-items:flex-start; min-height:140px }
+          </style>
+          <div class="flex-demo">
+            <div class="container">
+              <div class="item">1</div>
+              <div class="item">2</div>
+              <div class="item">3</div>
+            </div>
+            <div class="container column">
+              <div class="item">A</div>
+              <div class="item">B</div>
+              <div class="item">C</div>
+            </div>
+            <div class="container center-main">
+              <div class="item">centro</div>
+              <div class="item">principal</div>
+            </div>
+            <div class="container space-between">
+              <div class="item">izq</div>
+              <div class="item">medio</div>
+              <div class="item">der</div>
+            </div>
+            <div class="container align-center">
+              <div class="item">eje transversal centrado</div>
+              <div class="item">min-height 140px</div>
+            </div>
+            <div class="container column center-main align-start">
+              <div class="item">columna</div>
+              <div class="item">principal centrado</div>
+              <div class="item">transversal inicio</div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Dirección, distribución y alineación</h3>
+          <h4>flex-direction</h4>
+          <pre><code>.column {
+  display: flex;
+  flex-direction: column; /* apila en columna */
+}</code></pre>
+          <h4>justify-content (eje principal)</h4>
+          <pre><code>.center {
+  display: flex;
+  justify-content: center; /* centra en el eje principal */
+}</code></pre>
+          <h4>align-items (eje transversal)</h4>
+          <pre><code>.align {
+  display: flex;
+  align-items: center; /* centra en el eje transversal */
+}</code></pre>
+          <p class="muted">Palabras clave frecuentes: <code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code>.</p>
+        </article>
+      </section>
+
+      <section id="css-17" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 17 - Flexbox Avanzado</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Domina Flexbox con ejemplos prácticos: activa el contenedor con <code>display:flex</code>, centra contenido, controla crecimiento con <code>flex-grow</code> y el atajo <code>flex</code>, y alinea elementos con <code>align-self</code>.</p>
+        </article>
+        <article class="card">
+          <h3>Contenedor e items</h3>
+          <pre><code>.container {
+  display: flex;
+  min-height: 100px;
+  /* margin-bottom: ...; */
+  /* padding: ...; */
+  /* background: ... (gris utilizado previamente) */
+}
+
+.item {
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+  background: #3498db;
+  color: white;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Ejemplos visuales</h3>
+          <style>
+            /* Estilos locales para la demo */
+            #css-17 .flex-demo{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
+            #css-17 .container{ display:flex; background:#f0f0f0; padding:10px; min-height:100px; border:1px solid var(--border); border-radius:12px; gap:10px; flex-wrap:wrap }
+            #css-17 .item{ background:#3498db; color:#fff; margin:5px; text-align:center; padding:20px; border-radius:8px; min-width:120px }
+            /* flex-grow */
+            #css-17 .grow-0{ flex-grow:0 }
+            #css-17 .grow-1{ flex-grow:1 }
+            #css-17 .grow-2{ flex-grow:2 }
+            /* shorthand flex */
+            #css-17 .sh-1{ flex:1 }
+            #css-17 .sh-2{ flex:2 }
+            /* align-self */
+            #css-17 .align-zone{ align-items:center; min-height:160px; justify-content:space-between }
+            #css-17 .self-start{ align-self:flex-start }
+            #css-17 .self-end{ align-self:flex-end }
+            /* Proporciones más claras: que todos partan desde 0 de base */
+            #css-17 .grow-demo .item{ flex-basis:0 }
+            #css-17 .sh-demo .item{ flex-basis:0 }
+          </style>
+          <div class="flex-demo">
+            <div class="container grow-demo" aria-label="flex-grow">
+              <div class="item grow-0">grow 0</div>
+              <div class="item grow-1">grow 1</div>
+              <div class="item grow-2">grow 2</div>
+            </div>
+            <div class="container sh-demo" aria-label="shorthand flex">
+              <div class="item sh-1">flex:1</div>
+              <div class="item sh-2">flex:2</div>
+              <div class="item">auto</div>
+            </div>
+            <div class="container align-zone" aria-label="align-self">
+              <div class="item self-start">self start</div>
+              <div class="item">centro (align-items)</div>
+              <div class="item self-end">self end</div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Crecimiento con flex-grow</h3>
+          <pre><code>/* Proporción de crecimiento */
+.grow-0 { flex-grow: 0; } /* no crece */
+.grow-1 { flex-grow: 1; } /* crece 1x */
+.grow-2 { flex-grow: 2; } /* crece 2x */
+/* Si hay espacio libre, 2 crece el doble que 1 */</code></pre>
+        </article>
+        <article class="card">
+          <h3>Atajo flex</h3>
+          <pre><code>.sh-1 { flex: 1; }
+.sh-2 { flex: 2; }
+/* flex:1 equivale a crecimiento proporcional similar a flex-grow:1 */</code></pre>
+        </article>
+        <article class="card">
+          <h3>Alineación por item</h3>
+          <pre><code>.self-start { align-self: flex-start; }
+.self-end   { align-self: flex-end; }
+/* Útil para sobrescribir la alineación del contenedor en el eje cruzado */</code></pre>
+        </article>
+      </section>
+
+      <section id="css-18" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 18 - Grid Básico</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Con CSS Grid posicionas contenido en dos ejes a la vez. Actívalo con <code>display: grid</code>, define columnas con <code>grid-template-columns</code> usando fracciones <code>fr</code>, automatiza con <code>repeat()</code> y controla el espacio con <code>gap</code>.</p>
+        </article>
+        <article class="card">
+          <h3>¿Qué lo diferencia de Flexbox?</h3>
+          <ul>
+            <li>Grid distribuye en columnas y filas simultáneamente.</li>
+            <li>Flexbox trabaja sobre un eje (principal) a la vez.</li>
+            <li>La unidad <code>fr</code> permite repartir proporciones fácilmente.</li>
+          </ul>
+          <p class="muted">Si necesitas estructuras bidimensionales (p. ej., 2 columnas por varias filas), usa Grid. Para un solo eje, usa Flexbox.</p>
+        </article>
+        <article class="card">
+          <h3>Demos visuales</h3>
+          <style>
+            /* Estilos locales de la clase */
+            #css-18 .g-wrap{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+            #css-18 .panel{ background:#f0f2f5; border:1px solid var(--border); border-radius:12px; padding:12px }
+            #css-18 .g{ display:grid; gap:8px; }
+            #css-18 .g .cell{ background:#3498db; color:#fff; padding:20px; text-align:center; border-radius:10px }
+            #css-18 .g.simple{ grid-template-columns:1fr 1fr }
+            #css-18 .g.fraccion{ grid-template-columns:1fr 2fr 1fr }
+            #css-18 .g.gap{ grid-template-columns:repeat(3, 1fr); gap:20px }
+          </style>
+          <div class="g-wrap">
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Grid 2 × 2</h4>
+              <div class="g simple">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">1fr 2fr 1fr</h4>
+              <div class="g fraccion">
+                <div class="cell">1fr</div>
+                <div class="cell">2fr</div>
+                <div class="cell">1fr</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">repeat(3, 1fr) + gap</h4>
+              <div class="g gap">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        <article class="card">
+          <h3>Código de referencia</h3>
+          <h4>Grid 2 × 2</h4>
+          <pre><code>.grid.simple {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item {
+  background: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 3px; /* con Grid, suele preferirse gap */
+}</code></pre>
+          <h4>Proporciones con fr</h4>
+          <pre><code>.grid.fraccion {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}</code></pre>
+          <h4>repeat() y gap</h4>
+          <pre><code>.grid.gap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</code></pre>
+          <p class="muted">Usa <code>gap</code> para separar celdas sin alterar el tamaño interior de los elementos; evita usar <code>margin</code> cuando ya trabajas con Grid.</p>
+        </article>
+        
+      </section>
+
+      <section id="css-19" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 19 - Grid Avanzado</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Domina CSS Grid con tres técnicas clave: <strong>grid areas</strong>, <strong>span</strong> y <strong>grid lines</strong>. Define layouts completos, extiende elementos por columnas o filas y posiciónalos con precisión desde CSS.</p>
+        </article>
+        <article class="card">
+          <h3>Grid areas: layout por nombre</h3>
+          <p>Activa Grid en el contenedor y declara un <em>template</em> visual con <code>grid-template-areas</code>. Luego enlaza cada bloque con <code>grid-area</code>.</p>
+          <pre><code>.grid-areas {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilos base compartidos */
+header, .sidebar, .content, footer {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}</code></pre>
+          <pre><code>header { grid-area: header; background: #2ECC71; }
+.sidebar { grid-area: sidebar; background: #E74C3C; }
+.content { grid-area: content; background: #3498DB; }
+footer { grid-area: footer; background: purple; }</code></pre>
+          <style>
+            /* Demo local de grid areas */
+            #css-19 .ga{ display:grid; grid-template-areas:"header header" "sidebar content" "footer footer"; grid-template-columns:200px 1fr; gap:10px; margin-bottom:20px; }
+            #css-19 .ga header, #css-19 .ga .sidebar, #css-19 .ga .content, #css-19 .ga footer{ padding:20px; text-align:center; color:#fff; border-radius:10px }
+            #css-19 .ga header{ grid-area:header; background:#2ECC71 }
+            #css-19 .ga .sidebar{ grid-area:sidebar; background:#E74C3C }
+            #css-19 .ga .content{ grid-area:content; background:#3498DB }
+            #css-19 .ga footer{ grid-area:footer; background:purple }
+          </style>
+          <div class="ga">
+            <header>header</header>
+            <aside class="sidebar">sidebar</aside>
+            <main class="content">content</main>
+            <footer>footer</footer>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Span: extender columnas/filas</h3>
+          <p>Usa <code>grid-column: span N</code> o <code>grid-row: span N</code> para extender un elemento sin recalcular fracciones.</p>
+          <pre><code>.grid-span {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Extender un elemento por 2 columnas */
+.item--span-2 { grid-column: span 2; }</code></pre>
+          <style>
+            #css-19 .gs{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:20px }
+            #css-19 .gs .cell{ background:#3498db; color:#fff; padding:20px; text-align:center; border-radius:10px }
+            #css-19 .gs .item--span-2{ grid-column:span 2; background:#2ecc71 }
+          </style>
+          <div class="gs">
+            <div class="cell">1</div>
+            <div class="cell item--span-2">span 2</div>
+            <div class="cell">3</div>
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Grid lines: por líneas</h3>
+          <p>Posiciona por líneas: <code>grid-column: 1 / 3</code> ocupa desde la línea 1 hasta la 3 (dos columnas de ancho). Igual con <code>grid-row</code> para filas.</p>
+          <pre><code>.grid-lines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Por columnas: de la línea 1 a la 3 */
+.box-1 { grid-column: 1 / 3; background: red; }
+
+/* Por filas: de la línea 1 a la 3 */
+.box-2 { grid-row: 1 / 3; background: green; }</code></pre>
+          <style>
+            #css-19 .gl{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:20px; grid-auto-rows:80px }
+            #css-19 .gl .cell{ background:#9aa9b4; color:#fff; padding:10px; text-align:center; border-radius:10px }
+            #css-19 .gl .box-1{ grid-column:1 / 3; background:#ef4444 }
+            #css-19 .gl .box-2{ grid-row:1 / 3; background:#22c55e }
+          </style>
+          <div class="gl">
+            <div class="cell box-1">col 1 / 3</div>
+            <div class="cell box-2">row 1 / 3</div>
+            <div class="cell">C</div>
+            <div class="cell">D</div>
+            <div class="cell">E</div>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-20" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 20 - Media Querys</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Diseña interfaces responsive con enfoque <em>mobile first</em>. Prioriza contenido en pantallas pequeñas y escala con <code>flexbox</code> y <code>media queries</code> a 768px (tablet) y 1024px (desktop). Ajusta tipografías con <code>rem</code> y controla visibilidad por dispositivo sin perder accesibilidad.</p>
+        </article>
+        <article class="card">
+          <h3>Base: mobile first</h3>
+          <pre><code>/* Base: mobile first */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.box {
+  background: #3498DB;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.nav {
+  background: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-list a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Visibilidad por dispositivo */
+.visibility { margin-bottom: 20px; }
+.mobile { background: red; color: white; padding: 10px; }
+.tablet { display: none; }
+.desktop { display: none; }
+
+/* Tipografía base */
+.responsive.title { font-size: 1.5rem; }
+.responsive.text { font-size: 1rem; }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Tablet y Desktop</h3>
+          <pre><code>@media (min-width: 768px) {
+  .container { flex-direction: row; }
+  .box { flex: 1; }
+  .nav-list { flex-direction: row; }
+
+  .mobile { display: none; }
+  .tablet {
+    display: block;
+    background: #F39C12;
+    color: white;
+    padding: 10px;
+  }
+
+  .responsive.title { font-size: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .tablet { display: none; }
+  .desktop {
+    display: block;
+    background: green;
+    color: white;
+    padding: 10px;
+  }
+
+  .responsive.title { font-size: 3rem; }
+  .responsive.text { font-size: 1.2rem; }
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Scoped demo styles (no afectan fuera de esta sección) */
+            #css-20 .container{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px }
+            #css-20 .box{ background:#3498DB; color:#fff; padding:20px; text-align:center; border-radius:10px }
+            #css-20 .nav{ background:#2c3e50; margin-bottom:20px; border-radius:10px }
+            #css-20 .nav-list{ list-style:none; display:flex; flex-direction:column; padding:0; margin:0 }
+            #css-20 .nav-list a{ display:block; color:#fff; padding:10px 12px; text-decoration:none }
+            #css-20 .nav-list a:hover{ background:rgba(255,255,255,.1) }
+            #css-20 .visibility{ margin-bottom:20px; display:grid; gap:8px }
+            #css-20 .mobile{ background:#e74c3c; color:#fff; padding:10px; border-radius:8px }
+            #css-20 .tablet{ display:none; background:#F39C12; color:#fff; padding:10px; border-radius:8px }
+            #css-20 .desktop{ display:none; background:#22c55e; color:#fff; padding:10px; border-radius:8px }
+            #css-20 .responsive.title{ font-size:1.5rem }
+            #css-20 .responsive.text{ font-size:1rem }
+            #css-20 .demo-wrap{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+            #css-20 .panel{ background:#f0f2f5; border:1px solid var(--border); border-radius:12px; padding:12px }
+
+            @media (min-width:768px){
+              #css-20 .container{ flex-direction:row }
+              #css-20 .box{ flex:1 }
+              #css-20 .nav-list{ flex-direction:row }
+              #css-20 .mobile{ display:none }
+              #css-20 .tablet{ display:block }
+              #css-20 .responsive.title{ font-size:2rem }
+            }
+            @media (min-width:1024px){
+              #css-20 .tablet{ display:none }
+              #css-20 .desktop{ display:block }
+              #css-20 .responsive.title{ font-size:3rem }
+              #css-20 .responsive.text{ font-size:1.2rem }
+            }
+          </style>
+          <div class="demo-wrap">
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Layout</h4>
+              <div class="container">
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Navegación</h4>
+              <nav class="nav">
+                <ul class="nav-list">
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Cursos</a></li>
+                  <li><a href="#">Contacto</a></li>
+                </ul>
+              </nav>
+              <div class="visibility">
+                <div class="mobile">Mobile visible</div>
+                <div class="tablet">Tablet visible</div>
+                <div class="desktop">Desktop visible</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Tipografía</h4>
+              <p class="responsive title" style="margin:.2rem 0">Título responsive</p>
+              <p class="responsive text" style="margin:.2rem 0">Texto responsive con <code>rem</code>.</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Puntos clave</h3>
+          <ul>
+            <li>Viewport guía <code>min-width</code>: 768px (tablet) y 1024px (desktop).</li>
+            <li><code>flexbox</code> alterna columna/fila según el espacio.</li>
+            <li>Visibilidad por dispositivo con <code>display</code> y clases dedicadas.</li>
+            <li>Tipografías en <code>rem</code> para respetar preferencias del usuario.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="css-21" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 21 - Diseño Fluido</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>El diseño fluido potencia el responsive design haciendo que el layout se adapte entre breakpoints. Con <strong>porcentajes</strong>, <strong>vw/vh</strong>, <strong>rem</strong> y la función <strong>clamp()</strong> puedes crear contenedores, grillas, imágenes y tipografías que fluyen sin depender solo de media queries.</p>
+        </article>
+        <article class="card">
+          <h3>Contenedor fluido</h3>
+          <pre><code>.fluid-container {
+  width: 90%;
+  max-width: 1000px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  background: blue;
+  color: white;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Grid e imágenes fluidas y tipografía con clamp()</h3>
+          <pre><code>.fluids-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.image-contained {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image-box {
+  width: 100%;
+  height: 200px;
+  background: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fluid-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 10px;
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Estilos locales de la clase (scopeados) */
+            #css-21 .demo-wrap{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+            #css-21 .panel{ background:#f0f2f5; border:1px solid var(--border); border-radius:12px; padding:12px }
+            #css-21 .fluid-container{ width:90%; max-width:1000px; min-width:320px; margin:0 auto; padding:20px; background:blue; color:#fff; border-radius:10px }
+            #css-21 .fluids-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-bottom:20px }
+            #css-21 .cell{ background:#3498db; color:#fff; padding:16px; text-align:center; border-radius:10px }
+            #css-21 .image-contained{ width:100%; max-width:800px; margin:0 auto }
+            #css-21 .image-box{ width:100%; height:200px; background:red; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:10px }
+            #css-21 .fluid-title{ font-size:clamp(1.5rem, 4vw, 3rem); margin:.2rem 0 10px }
+            #css-21 .fluid-text{ font-size:clamp(1rem, 1.8vw, 1.25rem); margin:.2rem 0 }
+          </style>
+          <div class="demo-wrap">
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Contenedor fluido</h4>
+              <div class="fluid-container">width 90% · min 320px · max 1000px</div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Grid adaptable</h4>
+              <div class="fluids-grid">
+                <div class="cell">Tarjeta 1</div>
+                <div class="cell">Tarjeta 2</div>
+                <div class="cell">Tarjeta 3</div>
+                <div class="cell">Tarjeta 4</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Imagen flexible</h4>
+              <div class="image-contained">
+                <div class="image-box">Caja de imagen 100% × 200px</div>
+              </div>
+            </div>
+            <div class="panel">
+              <h4 style="margin:0 0 8px">Tipografía fluida</h4>
+              <p class="fluid-title">Título con clamp(1.5rem, 4vw, 3rem)</p>
+              <p class="fluid-text">Texto fluido con clamp(1rem, 1.8vw, 1.25rem).</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-22" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 22 - Mobile First</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Diseñar sitios responsive exige priorizar objetivos del usuario y rendimiento: arranca con <em>mobile first</em>, carga solo lo esencial y escala el layout con CSS hacia tablet y desktop. Aplica flexbox, tipografías en <code>rem</code> y patrones de navegación simples para una experiencia fluida en cualquier pantalla.</p>
+        </article>
+        <article class="card">
+          <h3>Prácticas clave</h3>
+          <ul>
+            <li>Carga esencial en móvil; añade mejoras progresivas según capacidades.</li>
+            <li>Prioriza el objetivo del usuario y elimina distracciones.</li>
+            <li>Ajusta por dispositivo: usa datos reales de tus usuarios.</li>
+            <li>Usa <code>rem</code> y buen contraste para legibilidad.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Patrones: navegación, hero, cartas y formularios</h3>
+          <pre><code>/* Base: mobile first */
+.mf-container{ display:flex; flex-direction:column; gap:12px }
+.mf-card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px }
+
+/* Navegación progresiva con &lt;details&gt; (accesible) */
+.mf-nav summary{ list-style:none; cursor:pointer; padding:10px 12px; background:#2c3e50; color:#fff; border-radius:10px }
+.mf-nav ul{ margin:8px 0 0; padding:0; list-style:none; display:flex; flex-direction:column }
+.mf-nav a{ display:block; padding:10px 12px; color:#fff; text-decoration:none; background:#3b5568; border-radius:8px }
+
+/* Hero: contenido primero; la imagen puede omitirse en móvil */
+.mf-hero{ display:flex; flex-direction:column; gap:10px }
+.mf-hero .media{ display:none }
+
+/* Cartas y formularios: columna en móvil */
+.mf-grid{ display:grid; gap:12px; grid-template-columns:1fr }
+.mf-form{ display:grid; grid-template-columns:1fr; gap:10px }
+.mf-form input, .mf-form button{ padding:12px; border-radius:10px; border:1px solid var(--border); font:inherit }
+.mf-btn{ display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:10px 14px; border-radius:10px; background:#2f6e93; color:#fff; border:0 }
+
+/* Tablet ≥ 768px: distribuir mejor el espacio */
+@media (min-width:768px){
+  .mf-nav ul{ flex-direction:row; gap:8px }
+  .mf-hero{ flex-direction:row; align-items:center }
+  .mf-hero .media{ display:block; width:45%; min-height:160px; background:#dfe8ee; border-radius:12px }
+  .mf-hero .content{ flex:1 }
+  .mf-grid{ grid-template-columns:repeat(2, minmax(0,1fr)) }
+  .mf-form{ grid-template-columns:1fr 1fr }
+}
+
+/* Desktop ≥ 1024px: más aire y columnas */
+@media (min-width:1024px){
+  .mf-grid{ grid-template-columns:repeat(3, minmax(0,1fr)) }
+}
+
+/* Tipografía y espaciados touch */
+.mf-title{ font-size:1.5rem }
+.mf-text{ font-size:1rem; line-height:1.6 }
+@media (min-width:768px){ .mf-title{ font-size:2rem } }
+@media (min-width:1024px){ .mf-title{ font-size:3rem }; .mf-text{ font-size:1.125rem } }
+</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <div class="mf-container">
+            <details class="mf-nav">
+              <summary>☰ Menú</summary>
+              <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </details>
+
+            <section class="mf-hero mf-card">
+              <div class="content">
+                <h4 class="mf-title" style="margin:0 0 6px">Acción principal</h4>
+                <p class="mf-text" style="margin:0 0 10px">Prioriza el objetivo del usuario y evita ruido visual en móvil.</p>
+                <button class="mf-btn">Llamada a la acción</button>
+              </div>
+              <div class="media mf-card" aria-hidden="true"></div>
+            </section>
+
+            <section class="mf-grid">
+              <article class="mf-card">Carta 1</article>
+              <article class="mf-card">Carta 2</article>
+              <article class="mf-card">Carta 3</article>
+            </section>
+
+            <form class="mf-form mf-card" onsubmit="return false">
+              <input type="text" placeholder="Nombre" aria-label="Nombre">
+              <input type="email" placeholder="Email" aria-label="Email">
+              <button class="mf-btn" type="submit">Enviar</button>
+            </form>
+
+            <section class="mf-card">
+              <h4 style="margin:0 0 6px">Usabilidad táctil</h4>
+              <ul style="margin:0; padding-left:16px">
+                <li>Touch targets ≥ 44×44 px.</li>
+                <li>Tipografías ≥ 1rem y contraste suficiente.</li>
+                <li>Interlineado de ~1.6 para textos largos.</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-23" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 23 - Transformaciones</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Domina <code>transform</code> con ejemplos de <strong>translate</strong>, <strong>rotate</strong> y <strong>scale</strong>. Usa <code>hover</code> como disparador y <code>transition</code> para suavizar cambios, dentro de un layout flexible con <code>flexbox</code>.</p>
+        </article>
+        <article class="card">
+          <h3>Base con Flex y estilos</h3>
+          <pre><code>.container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #f0f0f0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: #3498DD;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Suavizado */
+.box { transition: transform 0.3s; }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Estilos locales (scopeados) */
+            #css-23 .panel{ background:#f0f2f5; border:1px solid var(--border); border-radius:12px; padding:12px }
+            #css-23 .container{ display:flex; flex-wrap:wrap; gap:30px; margin-bottom:20px; padding:20px; background:#f0f0f0; border-radius:12px }
+            #css-23 .box{ width:clamp(72px, 10vw, 100px); height:clamp(72px, 10vw, 100px); background:#3498DD; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:12px; transition:transform .3s }
+            /* Translates */
+            #css-23 .translate-x:hover{ transform: translateX(30px) }
+            #css-23 .translate-y:hover{ transform: translateY(-30px) }
+            #css-23 .translate-xy:hover{ transform: translate(20px, 20px) }
+            /* Rotates */
+            #css-23 .rotate-45:hover{ transform: rotate(45deg) }
+            #css-23 .rotate-90:hover{ transform: rotate(90deg) }
+            #css-23 .rotate-180:hover{ transform: rotate(180deg) }
+            /* Scales */
+            #css-23 .scale-small:hover{ transform: scale(.5) }
+            #css-23 .scale-medium:hover{ transform: scale(1.5) }
+            #css-23 .scale-2x:hover{ transform: scale(2) }
+          </style>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Translate (hover)</h4>
+            <div class="container">
+              <div class="box translate-x">X +30</div>
+              <div class="box translate-y">Y -30</div>
+              <div class="box translate-xy">XY</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Rotate (hover)</h4>
+            <div class="container">
+              <div class="box rotate-45">45°</div>
+              <div class="box rotate-90">90°</div>
+              <div class="box rotate-180">180°</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Scale (hover)</h4>
+            <div class="container">
+              <div class="box scale-small">0.5x</div>
+              <div class="box scale-medium">1.5x</div>
+              <div class="box scale-2x">2x</div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Snippets clave</h3>
+          <pre><code>/* Translate */
+.translate-x:hover { transform: translateX(30px); }
+.translate-y:hover { transform: translateY(-30px); }
+.translate-xy:hover { transform: translate(20px, 20px); }
+
+/* Rotate */
+.rotate-45:hover { transform: rotate(45deg); }
+.rotate-90:hover { transform: rotate(90deg); }
+.rotate-180:hover { transform: rotate(180deg); }
+
+/* Scale */
+.scale-small:hover  { transform: scale(0.5); }
+.scale-medium:hover { transform: scale(1.5); }
+.scale-2x:hover     { transform: scale(2); }
+
+/* Suavizado */
+.box { transition: transform 0.3s; }</code></pre>
+        </article>
+      </section>
+
+      <section id="css-24" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 24 - Transiciones</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Las <strong>transiciones</strong> suavizan cambios de color, tamaño y posición. Verás cómo aplicar <code>transition</code> a botones y cajas, combinar con <code>transform</code> y controlar la velocidad con <code>linear</code>, <code>ease</code> y <code>ease-in-out</code>, además de un caso común de depuración en la cascada.</p>
+        </article>
+        <article class="card">
+          <h3>Botones: base y transiciones</h3>
+          <pre><code>/* Contenedor de botones */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+/* Botón base */
+.button {
+  padding: 12px 24px;
+  font-size: 16px; /* o 1rem */
+  cursor: pointer;
+  background: #3498DB;
+  color: #fff;
+  border: 0;
+}
+
+/* Transición del color de fondo */
+.button-color { transition: background-color 0.3s ease; }
+.button-color:hover { background-color: #E74C3C; }
+
+/* Transición de tamaño */
+.button-size { transition: transform 0.3s ease; }
+.button-size:hover { transform: scale(1.1); }
+
+/* Varios cambios al hover */
+.button-all { transition: all 0.3s ease; }
+.button-all:hover {
+  background-color: #2ECC71;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  transform: scale(1.1);
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Scoped styles para esta sección */
+            #css-24 .buttons{ display:flex; gap:12px; margin-bottom:40px; flex-wrap:wrap }
+            #css-24 .button{ padding:12px 24px; font-size:16px; cursor:pointer; background:#3498DB; color:#fff; border:0; border-radius:10px }
+            #css-24 .button-color{ transition: background-color .3s ease }
+            #css-24 .button-color:hover,
+            #css-24 .button-color:focus-visible{ background-color:#E74C3C }
+            #css-24 .button-size{ transition: transform .3s ease }
+            #css-24 .button-size:hover,
+            #css-24 .button-size:focus-visible{ transform:scale(1.1) }
+            #css-24 .button-all{ transition: all .3s ease }
+            #css-24 .button-all:hover,
+            #css-24 .button-all:focus-visible{ background-color:#2ECC71; box-shadow:0 5px 15px rgba(0,0,0,.3); transform:scale(1.1) }
+
+            #css-24 .timing-container{ display:flex; gap:20px; margin-bottom:40px; flex-wrap:wrap }
+            #css-24 .box{ width:clamp(72px, 10vw, 100px); height:clamp(72px, 10vw, 100px); background:#9B59B6; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:12px }
+            #css-24 .timing-linear{ transition: transform 1s linear }
+            #css-24 .timing-ease{ transition: transform 1s ease }
+            #css-24 .timing-ease-in-out{ transition: transform 1s ease-in-out }
+            #css-24 .box:hover,
+            #css-24 .box:focus-visible{ transform: translateX(200px) }
+
+            #css-24 .note{ background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:10px; color:#44525b }
+
+            /* Cards interactivas */
+            #css-24 .cards{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) }
+            #css-24 .i-card{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease; cursor:pointer }
+            #css-24 .i-card:hover,
+            #css-24 .i-card:focus-visible{ transform: translateY(-6px); box-shadow:0 10px 24px rgba(0,0,0,.12); border-color:#d0d7de }
+            #css-24 .i-card:focus-visible{ outline:3px solid #99c1da; outline-offset:3px }
+            #css-24 .i-card.color:hover,
+            #css-24 .i-card.color:focus-visible{ background:#f0f9ff; border-color:#b6e3ff }
+            #css-24 .i-card.scale:hover,
+            #css-24 .i-card.scale:focus-visible{ transform: translateY(-4px) scale(1.03) }
+            #css-24 .i-card.translate:hover,
+            #css-24 .i-card.translate:focus-visible{ transform: translateX(8px) }
+
+            /* Transition-delay (secuencia) */
+            #css-24 .delay-wrap{ display:flex; align-items:center; gap:12px; border:1px solid var(--border); border-radius:12px; padding:12px; background:#fff; max-width:520px }
+            #css-24 .delay-wrap .d{ width:18px; height:18px; border-radius:50%; background:#3498DB; transition: transform .35s ease }
+            #css-24 .delay-wrap .d:nth-child(1){ transition-delay:0s }
+            #css-24 .delay-wrap .d:nth-child(2){ transition-delay:.08s }
+            #css-24 .delay-wrap .d:nth-child(3){ transition-delay:.16s }
+            #css-24 .delay-wrap:hover .d,
+            #css-24 .delay-wrap:focus-within .d{ transform: translateX(180px) }
+          </style>
+          <div class="buttons">
+            <button class="button button-color">Color</button>
+            <button class="button button-size">Tamaño</button>
+            <button class="button button-all">Todo</button>
+          </div>
+          <h4 style="margin:0 0 8px">Secuencia con transition-delay</h4>
+          <div class="delay-wrap">
+            <button class="button" type="button">Activar</button>
+            <div class="d" aria-hidden="true"></div>
+            <div class="d" aria-hidden="true"></div>
+            <div class="d" aria-hidden="true"></div>
+          </div>
+          <div class="timing-container">
+            <div class="box timing-linear">linear</div>
+            <div class="box timing-ease">ease</div>
+            <div class="box timing-ease-in-out">ease-in-out</div>
+          </div>
+          <h4 style="margin:0 0 8px">Cards interactivas (hover/focus)</h4>
+          <div class="cards">
+            <div class="i-card" tabindex="0">
+              <strong>Elevación suave</strong>
+              <p class="muted" style="margin:.3rem 0 0">translateY + sombra</p>
+            </div>
+            <div class="i-card color" tabindex="0">
+              <strong>Color + borde</strong>
+              <p class="muted" style="margin:.3rem 0 0">background y border-color</p>
+            </div>
+            <div class="i-card scale" tabindex="0">
+              <strong>Escala ligera</strong>
+              <p class="muted" style="margin:.3rem 0 0">scale(1.03) + lift</p>
+            </div>
+            <div class="i-card translate" tabindex="0">
+              <strong>Desplazar X</strong>
+              <p class="muted" style="margin:.3rem 0 0">translateX(8px)</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Depuración y cascada</h3>
+          <div class="note">
+            <p style="margin:.2rem 0"><strong>Evita múltiples transform en el mismo selector</strong>: una regla sobrescribe a otra. Combina en una sola:</p>
+            <pre style="margin:0"><code>.btn:hover { transform: translateY(-5px) scale(1.1); /* OK */ }
+/* No hagas: */
+.btn:hover { transform: translateY(-5px); }
+.btn:hover { transform: scale(1.1); } /* esta pisa la anterior */</code></pre>
+            <p style="margin:.4rem 0 0">Usa el inspector para forzar <em>:hover</em> y revisar qué reglas están activas.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-25" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 25 - Transiciones aplicadas</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Aplica transiciones coherentes a una tarjeta para lograr microinteracciones claras: <code>hover</code> eleva la card con <code>translate</code>, añade <code>box-shadow</code> y refuerza el foco con cambio de <code>border-color</code>. El contenido interno reacciona con un pequeño <em>delay</em> para marcar jerarquía.</p>
+        </article>
+        <article class="card">
+          <h3>Estilos base (referencia)</h3>
+          <pre><code>.card {
+  width: 300px;
+  padding: 30px;
+  background: white;
+  border: 2px solid #ecf0f1; /* gris claro */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  border-color: #3498db;
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  transition: color .3s ease;
+}
+.card h3:hover { color: #3498db; }
+
+.card p {
+  color: #7f8c8d;
+  transition: transform .3s ease .1s; /* delay de 0.1s */
+}
+.card:hover p { transform: translateX(10px); }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Scope local para no interferir con .card global del sitio */
+            #css-25 .deck{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+            #css-25 .tcard{ width:300px; max-width:100%; padding:30px; background:#fff; border:2px solid #ecf0f1; border-radius:10px; cursor:pointer; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease }
+            #css-25 .tcard:hover, #css-25 .tcard:focus-visible{ transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,.2); border-color:#3498db }
+            #css-25 .tcard h3{ color:#2c3e50; margin:0 0 10px; transition: color .3s ease }
+            #css-25 .tcard:hover h3, #css-25 .tcard:focus-visible h3{ color:#3498db }
+            #css-25 .tcard p{ color:#7f8c8d; margin:0; transition: transform .3s ease .1s }
+            #css-25 .tcard:hover p, #css-25 .tcard:focus-visible p{ transform:translateX(10px) }
+
+            /* Variante con delays escalonados (stagger) */
+            #css-25 .tcard.stagger .stg-title{ color:#2c3e50; margin:0 0 8px; transition: transform .3s ease 0s, color .3s ease 0s }
+            #css-25 .tcard.stagger .stg-text{ color:#7f8c8d; margin:0 0 12px; transition: transform .3s ease .05s }
+            #css-25 .tcard.stagger .stg-btn{ display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:10px 14px; border-radius:10px; background:#2f6e93; color:#fff; border:0; transition: transform .3s ease .1s, box-shadow .3s ease .1s, background-color .3s ease .1s }
+            #css-25 .tcard.stagger:hover .stg-title, #css-25 .tcard.stagger:focus-visible .stg-title{ transform:translateY(-2px); color:#3498db }
+            #css-25 .tcard.stagger:hover .stg-text, #css-25 .tcard.stagger:focus-visible .stg-text{ transform:translateY(-2px) }
+            #css-25 .tcard.stagger:hover .stg-btn, #css-25 .tcard.stagger:focus-visible .stg-btn{ transform:translateY(-2px) scale(1.03); box-shadow:0 6px 18px rgba(0,0,0,.18); background:#2b6282 }
+            /* Stagger inverso: primero botón, luego texto, al final título */
+            #css-25 .tcard.stagger-rev .stg-title{ color:#2c3e50; margin:0 0 8px; transition: transform .3s ease .1s, color .3s ease .1s }
+            #css-25 .tcard.stagger-rev .stg-text{ color:#7f8c8d; margin:0 0 12px; transition: transform .3s ease .05s }
+            #css-25 .tcard.stagger-rev .stg-btn{ display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:10px 14px; border-radius:10px; background:#2f6e93; color:#fff; border:0; transition: transform .3s ease 0s, box-shadow .3s ease 0s, background-color .3s ease 0s }
+            #css-25 .tcard.stagger-rev:hover .stg-title, #css-25 .tcard.stagger-rev:focus-visible .stg-title{ transform:translateY(-2px); color:#3498db }
+            #css-25 .tcard.stagger-rev:hover .stg-text, #css-25 .tcard.stagger-rev:focus-visible .stg-text{ transform:translateY(-2px) }
+            #css-25 .tcard.stagger-rev:hover .stg-btn, #css-25 .tcard.stagger-rev:focus-visible .stg-btn{ transform:translateY(-2px) scale(1.03); box-shadow:0 6px 18px rgba(0,0,0,.18); background:#2b6282 }
+          </style>
+          <div class="deck">
+            <article class="tcard" tabindex="0">
+              <h3>Curso de Transiciones</h3>
+              <p>Microinteracciones fluidas con transform, sombra y delay.</p>
+            </article>
+            <article class="tcard" tabindex="0">
+              <h3>Estado interactivo</h3>
+              <p>La tarjeta se eleva y el texto entra con retraso.</p>
+            </article>
+            <article class="tcard stagger" tabindex="0">
+              <h3 class="stg-title">Secuencia (stagger)</h3>
+              <p class="stg-text">Título, texto y botón se animan con delays 0s / 0.05s / 0.1s.</p>
+              <button class="stg-btn" type="button">Acción</button>
+            </article>
+            <article class="tcard stagger-rev" tabindex="0">
+              <h3 class="stg-title">Stagger inverso</h3>
+              <p class="stg-text">Botón entra primero, luego texto y por último el título.</p>
+              <button class="stg-btn" type="button">Acción</button>
+            </article>
+          </div>
+        </article>
+      </section>
+
+      <section id="css-26" class="lesson full-bleed" tabindex="-1">
+        <h2>CSS 26 - Animaciones</h2>
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>Las animaciones en CSS se ejecutan por sí mismas con <code>@keyframes</code> y <code>animation</code>, sin depender de <em>hover</em>. Controla nombre, duración, curva de tiempo y repetición para mover, escalar y rotar elementos. Incluye un spinner de <em>loading</em> listo para usar.</p>
+        </article>
+        <article class="card">
+          <h3>Base y keyframes</h3>
+          <pre><code>.box {
+  width: 100px; height: 100px; background: #3498DB; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin: 20px; border-radius: 10px;
+}
+
+@keyframes pulse { 0% { transform: scale(1) } 50% { transform: scale(1.2) } 100% { transform: scale(1) } }
+@keyframes rotate { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
+@keyframes bounce { 0%,100% { transform: translateY(0) } 25% { transform: translateY(-30px) } 50% { transform: translateY(-15px) } 75% { transform: translateY(-5px) } }
+
+.box.pulse  { animation: pulse 2s ease-in-out infinite }
+.box.rotate { animation: rotate 3s linear infinite }
+.box.bounce { animation: bounce 2s ease infinite }
+
+.spinner { width:50px; height:50px; border:5px solid #f3f3f3; border-top:5px solid #3498DB; border-radius:50%; margin:20px; animation: spin 1s linear infinite }
+@keyframes spin { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }</code></pre>
+        </article>
+        <article class="card">
+          <h3>Demostración</h3>
+          <style>
+            /* Estilos scopeados a esta sección */
+            #css-26 .panel{ background:#f0f2f5; border:1px solid var(--border); border-radius:12px; padding:12px }
+            #css-26 .stage{ display:flex; flex-wrap:wrap; align-items:center; gap:12px }
+            #css-26 .box{ width:clamp(72px, 10vw, 100px); height:clamp(72px, 10vw, 100px); background:#3498DB; color:#fff; display:flex; align-items:center; justify-content:center; margin:12px 0; border-radius:10px }
+            @keyframes css26-pulse { 0%{ transform:scale(1) } 50%{ transform:scale(1.2) } 100%{ transform:scale(1) } }
+            @keyframes css26-rotate { 0%{ transform:rotate(0deg) } 100%{ transform:rotate(360deg) } }
+            @keyframes css26-bounce { 0%,100%{ transform:translateY(0) } 25%{ transform:translateY(-30px) } 50%{ transform:translateY(-15px) } 75%{ transform:translateY(-5px) } }
+            #css-26 .pulse  { animation: css26-pulse 2s ease-in-out infinite }
+            #css-26 .rotate { animation: css26-rotate 3s linear infinite }
+            #css-26 .bounce { animation: css26-bounce 2s ease infinite }
+            #css-26 .spinner{ width:50px; height:50px; border:5px solid #f3f3f3; border-top:5px solid #3498DB; border-radius:50%; margin:12px 0; animation: css26-spin 1s linear infinite }
+            #css-26 .spinner-conic{ width:50px; aspect-ratio:1; border-radius:50%; margin:12px 0; background: conic-gradient(#3498DB 0 25%, #e5e7eb 25%); -webkit-mask: radial-gradient(farthest-side, rgba(0,0,0,0) 60%, #000 61%); mask: radial-gradient(farthest-side, transparent 60%, #000 61%); animation: css26-spin 1s linear infinite }
+            @keyframes css26-spin { 0%{ transform:rotate(0deg) } 100%{ transform:rotate(360deg) } }
+            /* Avanzado: delay, alternate y play-state */
+            @keyframes css26-slide { 0%{ transform:translateX(0) } 100%{ transform:translateX(160px) } }
+            #css-26 .adv{ width:clamp(72px, 10vw, 100px); height:clamp(72px, 10vw, 100px); background:#0ea5e9; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:10px; margin:12px 0; }
+            #css-26 .adv-run{ animation: css26-slide 1.2s ease-in-out infinite alternate }
+            #css-26 .adv-run:hover, #css-26 .adv-run:focus-visible{ animation-play-state: paused }
+            #css-26 .adv-start{ animation: css26-slide 1.2s ease-in-out infinite alternate; animation-play-state: paused }
+            #css-26 .adv-start:hover, #css-26 .adv-start:focus-visible{ animation-play-state: running }
+            #css-26 .adv-delay{ animation: css26-slide 1.2s ease-in-out .5s infinite alternate }
+            #css-26 .col{ display:flex; flex-direction:column; align-items:center; gap:6px; max-width:180px }
+          </style>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Pulse, Rotate, Bounce</h4>
+            <div class="stage">
+              <div class="col">
+                <div class="box pulse">pulse</div>
+                <small class="muted">Escala 1 → 1.2 → 1 (ease-in-out).</small>
+              </div>
+              <div class="col">
+                <div class="box rotate">rotate</div>
+                <small class="muted">Gira 360° constante (linear).</small>
+              </div>
+              <div class="col">
+                <div class="box bounce">bounce</div>
+                <small class="muted">Rebote con traslaciones decrecientes.</small>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Spinner de loading</h4>
+            <div class="stage">
+              <div class="col">
+                <div class="spinner" aria-label="Cargando" role="status"></div>
+                <small class="muted">Anillo con borde superior que rota (1s linear infinite).</small>
+              </div>
+              <div class="col">
+                <div class="spinner-conic" aria-label="Cargando" role="status"></div>
+                <small class="muted">Donut con conic-gradient + mask; mismo giro.</small>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <h4 style="margin:0 0 8px">Control avanzado</h4>
+            <div class="stage">
+              <div class="col">
+                <div class="adv adv-run" tabindex="0" title="Pausa al hover/focus">pausa</div>
+                <small class="muted">Se pausa al pasar el mouse o enfocar.</small>
+              </div>
+              <div class="col">
+                <div class="adv adv-start" tabindex="0" title="Inicia al hover/focus">inicia</div>
+                <small class="muted">Está detenida y empieza en hover/focus.</small>
+              </div>
+              <div class="col">
+                <div class="adv adv-delay" tabindex="0" title="Delay .5s">delay</div>
+                <small class="muted">Arranca con un retraso de 0.5s.</small>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="indice" class="lesson toc toc--section card" role="complementary" aria-labelledby="toc-title">
         <h2 id="toc-title" class="card-header h5 mb-0">Clases</h2>
         <ol class="toc-list list-group list-group-flush">
           <li><span class="dot c1" aria-hidden="true"></span><a href="#clase-1">Clase 1 �?" Fundamentos HTML</a></li>
@@ -301,7 +2073,6 @@
         </ol>
         <div class="toc-status" aria-live="polite">Clase actual: <span id="toc-current">—</span></div>
       </section>
-    </div>
   </main>
 
   <footer class="site">

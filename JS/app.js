@@ -3,7 +3,7 @@
   'use strict';
   try{
     var toc = document.querySelector('.toc');
-    if(!toc) return;
+    if(!toc || toc.hasAttribute('hidden')) return;
 
     var list = toc.querySelector('ol');
     if(!list){ list = document.createElement('ol'); list.className='toc-list'; toc.appendChild(list); }
@@ -45,11 +45,27 @@
       if(io){ try{ io.disconnect() }catch(_e){} io=null }
       items = [];
       list.innerHTML = '';
-      var sections = Array.prototype.slice.call(document.querySelectorAll('.content > section.lesson[id]:not(#indice)'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('main .lesson[id]:not(#indice)'));
+      // 1) Deduplicate by id (in case duplicates remain in DOM)
+      var seen = new Set();
+      sections = sections.filter(function(sec){ if(seen.has(sec.id)) return false; seen.add(sec.id); return true; });
+      // 2) Sort by group (clase-* first, then css-*) and numeric order
+      sections.sort(function(a,b){
+        function key(s){
+          var id = s.id || '';
+          var m = id.match(/(clase|css)-(\d+)/i) || [];
+          var grp = (m[1] && m[1].toLowerCase()==='clase') ? 0 : 1;
+          var num = m[2] ? parseInt(m[2],10) : 0;
+          return [grp, num];
+        }
+        var ka = key(a), kb = key(b);
+        return (ka[0]-kb[0]) || (ka[1]-kb[1]);
+      });
       function colorIndexFromId(id, idx){
         var m = (id||'').match(/(?:clase|css)-(\d+)/i);
-        if(m){ var n = parseInt(m[1],10) || 1; return ((n-1) % 6) + 1; }
-        return (idx % 6) + 1;
+        var span = 12; // usar 12 colores; del 7 al 12 emplean gradientes
+        if(m){ var n = parseInt(m[1],10) || 1; return ((n-1) % span) + 1; }
+        return (idx % span) + 1;
       }
       sections.forEach(function(sec, idx){
         var id = sec.id;
@@ -79,6 +95,8 @@
         li.appendChild(dot);
         li.appendChild(a);
         list.appendChild(li);
+        // Asociar color también a la sección para estilizar su título
+        try{ sec.classList.add('c' + colorIndex); }catch(_e){}
         items.push({ id:id, a:a, li:li });
       });
 
@@ -100,6 +118,16 @@
 
     // Actualizar el índice si se agregan nuevas secciones dinámicamente
     var content = document.querySelector('.content');
+    if(content){
+      // If no #indice, insert CSS defs before the first existing CSS section, or append.
+      try{
+        var idxSection = document.getElementById('indice');
+        var firstCss = document.querySelector('.content > section.lesson[id^="css-"]');
+        var anchor = firstCss || idxSection;
+        // Rewire defs insertion to use anchor/fallback
+        // Monkey-patch local helper if present
+      }catch(_e){}
+    }
     if(content && 'MutationObserver' in window){
       var mo = new MutationObserver(function(mutations){
         var changed = mutations.some(function(m){
@@ -157,7 +185,7 @@
       if(!content) return;
       // 1) Inyectar secciones CSS vistas si no existen
       var idxSection = document.getElementById('indice');
-      if(idxSection && !document.getElementById('css-1')){
+      if(!document.getElementById('css-1')){
         var defs = [
           { id:'css-1', title:'CSS 1 — De la idea al estilo', html:'<article class="card"><h3>Concepto</h3><p>Del diseño a reglas mantenibles: paleta, tipografías, espaciados, componentes y utilidades.</p><ul><li>Variables CSS para colores y espaciado.</li><li>Sistema tipográfico y tarjetas reutilizables.</li><li>Enfoque mobile‑first.</li></ul></article>' },
           { id:'css-2', title:'CSS 2 — Qué es y cómo aplicarlo', html:'<article class="card"><h3>3 formas de aplicar estilos</h3><pre><code>&lt;!-- 1) En línea (evitar globalmente) --&gt;\n&lt;h1 style=&quot;color:#2f6e93&quot;&gt;Título&lt;/h1&gt;\n\n&lt;!-- 2) En el head --&gt;\n&lt;style&gt; h1{ color:#2f6e93 } &lt;/style&gt;\n\n&lt;!-- 3) Hoja externa (recomendado) --&gt;\n&lt;link rel=&quot;stylesheet&quot; href=&quot;CSS/app.css&quot;&gt;</code></pre></article>' },
@@ -176,7 +204,11 @@
             sec.tabIndex = -1;
             var h2 = document.createElement('h2'); h2.textContent = def.title; sec.appendChild(h2);
             var container = document.createElement('div'); container.innerHTML = def.html; while(container.firstChild){ sec.appendChild(container.firstChild) }
-            idxSection.parentNode.insertBefore(sec, idxSection);
+            var contentEl = document.querySelector('.content');
+            var firstCss = document.querySelector('.content > section.lesson[id^="css-"]');
+            var anchor = firstCss || idxSection;
+            var parent = (anchor && anchor.parentNode) || contentEl;
+            if(parent){ if(anchor){ parent.insertBefore(sec, anchor); } else { parent.appendChild(sec); } }
           }
         });
 
@@ -239,7 +271,12 @@
         });
         // Insertar en orden justo antes del índice
         if(idxSection){
-          cssSecs.forEach(function(sec){ idxSection.parentNode.insertBefore(sec, idxSection); });
+          var firstCss = document.querySelector('.content > section.lesson[id^="css-"]');
+          var anchor = firstCss || null;
+          cssSecs.forEach(function(sec){
+            if(anchor && anchor.parentNode){ anchor.parentNode.insertBefore(sec, anchor); }
+            else { content.appendChild(sec); }
+          });
         }
       }
     });

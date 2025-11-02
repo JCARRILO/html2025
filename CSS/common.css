@@ -9,6 +9,26 @@
 *{ box-sizing:border-box }
 html{ scroll-behavior:smooth }
 html, body{ width:100%; overflow-x:hidden }
+/* Fondo animado global */
+html{
+  background: linear-gradient(120deg, #3498DB, #9B59B6);
+  background-size: 300% 300%;
+  animation: bg-shift 20s ease infinite;
+}
+/* Aplica también al body para sobreescribir el fondo blanco inicial */
+body{
+  background: linear-gradient(120deg, #3498DB, #9B59B6);
+  background-size: 300% 300%;
+  animation: bg-shift 20s ease infinite;
+}
+@keyframes bg-shift{
+  0%{ background-position: 0% 50% }
+  50%{ background-position: 100% 50% }
+  100%{ background-position: 0% 50% }
+}
+
+/* Deja ver el gradiente global detrás del header y footer */
+header.site, footer.site{ background: transparent !important }
 body{ margin:0; color:var(--ink); background:var(--bg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial }
 .wrap{ max-width:1100px; margin:0 auto; padding:24px 16px }
 .visually-hidden, .visualmente-oculto{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
@@ -64,6 +84,9 @@ footer.site p, footer.site small{ margin:0; color:var(--muted) }
 
 /* Layout: contenido + aside (desktop) */
 main.wrap{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:24px; grid-auto-flow:dense }
+.full-bleed{ }
+/* Hacer que ciertos bloques abarquen ambas columnas del grid principal */
+main.wrap > .full-bleed{ grid-column:1 / -1 }
 .lesson-aside{ background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:12px; height:fit-content; position:sticky; top:16px; grid-column:2; grid-row:1; align-self:start }
 main.wrap > :not(.lesson-aside){ grid-column:1 }
 .lesson-aside li.is-active a{ font-weight:700; text-decoration:underline }
@@ -74,7 +97,7 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
   .wrap{ max-width:100%; padding-left:12px; padding-right:12px }
   main.wrap{ display:flex; flex-direction:column }
   main.wrap > *{ width:100% }
-  .lesson-aside{ position:static; order:99; margin:16px 0 }
+  .lesson-aside{ display:none }
 }
 
 /* En pantallas pequeñas: mostrar imagen completa sin recorte */
@@ -89,8 +112,10 @@ main.wrap > :not(.lesson-aside){ grid-column:1 }
 }
 
 /* Mobile-first overrides */
-/* 1) Layout: base 1 columna */
-main.wrap{ display:block !important }
+@media (max-width:1024px){
+  /* 1) Layout: base 1 columna */
+  main.wrap{ display:block }
+}
 
 /* 2) Portada: mostrar <img> por defecto; usar hero en desktop */
 .header-cover{ display:block !important; width:100%; max-width:100%; height:auto }
@@ -98,3 +123,24 @@ main.wrap{ display:block !important }
   header.site::after{ display:block }
   .header-cover{ display:none !important }
 }
+
+/* Aplica también el fondo animado al contenedor principal para mayor cobertura */
+main.wrap{
+  background: linear-gradient(120deg, #3498DB, #9B59B6);
+  background-size: 300% 300%;
+  animation: bg-shift 20s ease infinite;
+  border-radius: 0;
+}
+
+/* Suaviza tarjetas para que se perciba el fondo sin perder legibilidad */
+.card{ background: rgba(255,255,255,.96) }
+
+/* Responsive helpers */
+.auto-grid{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)) }
+@media (max-width:480px){ .auto-grid{ gap:10px } }
+.demo-square{ width:clamp(72px, 10vw, 100px); height:clamp(72px, 10vw, 100px) }
+
+/* Certificados grid */
+.certs-grid figure{ margin:0 }
+.certs-grid img{ width:100%; height:auto; display:block; border-radius:12px }
+.certs-grid figcaption{ padding:6px 4px 0; color:#5b6b75; font-size:.9rem }

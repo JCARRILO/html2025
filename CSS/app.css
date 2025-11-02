@@ -12,6 +12,47 @@
 #css-8{ border-left:4px solid var(--c2); padding-left:8px }:root{
   --c1:#6aa0e8; --c2:#78c2a4; --c3:#a884e5; --c4:#f0c36d; --c5:#84c5a3; --c6:#f2a6a6;
 }
+/* CSS 9: Fuentes Web */
+#css-9{ border-left:4px solid var(--c3); padding-left:8px }
+.box{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px }
+.font-demo{ display:grid; gap:8px }
+/* Estandarización de demos: usar .css-demo (con alias para .font-demo y .type-demo) */
+.css-demo, .font-demo, .type-demo{ display:grid; gap:8px }
+.serif{ font-family: serif; font-size:20px }
+.sans{ font-family: sans-serif; font-size:20px }
+.monospace{ font-family: monospace; font-size:20px; background:#f5f7fa; padding:6px 8px; border-radius:8px }
+.system-stack{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Cantarell, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif }
+.google-title{ font-family: "Poppins", sans-serif }
+.google-text{ font-family: "Inter", sans-serif }
+.w400{ font-weight:400 }
+/* Pesos estandarizados (.fw-*) con alias a clases previas */
+.css-demo .fw-300{ font-weight:300 }
+.css-demo .fw-600, .w600{ font-weight:600 }
+.css-demo .fw-700, .w700{ font-weight:700 }
+.css-demo .fw-900{ font-weight:900 }
+/* Tamaños estandarizados (rem) */
+.css-demo .fs-1{ font-size:1rem }
+.css-demo .fs-1-2{ font-size:1.2rem }
+.css-demo .fs-2{ font-size:2rem }
+/* Interlineado estandarizado (unitless) */
+.css-demo .lh-1{ line-height:1 }
+.css-demo .lh-2{ line-height:2 }
+/* Estilo estandarizado */
+.css-demo .fst-normal{ font-style:normal }
+.css-demo .fst-italic{ font-style:italic }
+.css-demo .fst-oblique{ font-style:oblique }
+/* CSS 10: Propiedades tipográficas */
+#css-10{ border-left:4px solid var(--c4); padding-left:8px }
+/* Compatibilidad con la versión anterior (.type-demo) */
+.type-demo .normal{ font-size:1rem; font-style:normal }
+.type-demo .fs-1-2{ font-size:1.2rem }
+.type-demo .fs-2{ font-size:2rem }
+.type-demo .light{ font-weight:300 }
+.type-demo .bold{ font-weight:900 }
+.type-demo .compact{ line-height:1 }
+.type-demo .space{ line-height:2 }
+.type-demo .italic{ font-style:italic }
+.type-demo .oblique{ font-style:oblique }
 
 /* Layout: mobile-first; el contenedor principal es 1 columna por defecto */
 .content{ min-width:0 }
@@ -39,10 +80,32 @@
 .toc .dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
 .toc .c1{ background:var(--c1) } .toc .c2{ background:var(--c2) } .toc .c3{ background:var(--c3) }
 .toc .c4{ background:var(--c4) } .toc .c5{ background:var(--c5) } .toc .c6{ background:var(--c6) }
-.toc .c7{ background:var(--c1) } .toc .c8{ background:var(--c2) } .toc .c9{ background:var(--c3) }
-.toc .c10{ background:var(--c4) } .toc .c11{ background:var(--c5) } .toc .c12{ background:var(--c6) }
+/* Gradientes para ampliar la paleta */
+.toc .c7{ background:linear-gradient(135deg, var(--c1), var(--c3)) }
+.toc .c8{ background:linear-gradient(135deg, var(--c2), var(--c4)) }
+.toc .c9{ background:linear-gradient(135deg, var(--c3), var(--c5)) }
+.toc .c10{ background:linear-gradient(135deg, var(--c4), var(--c6)) }
+.toc .c11{ background:linear-gradient(135deg, var(--c5), var(--c1)) }
+.toc .c12{ background:linear-gradient(135deg, var(--c6), var(--c2)) }
 .toc li.is-active a{ font-weight:700; text-decoration:underline }
 .toc li.is-active .dot{ box-shadow:0 0 0 3px rgba(0,0,0,.08) }
+/* Hide duplicate static TOC list when JS builds one */
+.toc .toc-list + .toc-list{ display:none }
+
+/* Colorear títulos por sección (c1..c12) */
+.lesson[class*="c"] > h2{ position:relative; padding-left:12px }
+.lesson.c1 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c1) }
+.lesson.c2 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c2) }
+.lesson.c3 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c3) }
+.lesson.c4 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c4) }
+.lesson.c5 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c5) }
+.lesson.c6 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:var(--c6) }
+.lesson.c7 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c1), var(--c3)) }
+.lesson.c8 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c2), var(--c4)) }
+.lesson.c9 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c3), var(--c5)) }
+.lesson.c10 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c4), var(--c6)) }
+.lesson.c11 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c5), var(--c1)) }
+.lesson.c12 > h2::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:3px; background:linear-gradient(180deg, var(--c6), var(--c2)) }
 
 /* Variante como sección al final (no sticky) */
 .toc.toc--section{ position:static; top:auto; margin:16px 0 0 }
@@ -209,3 +272,21 @@ audio.responsive{ width:100% }
 
 /* Tipografía fluida */
 .fluid-text{ font-size:clamp(1.1rem, 5vw, 2.4rem); font-weight:800; margin:8px 0 }
+
+/* CSS 11: Alineación, transformaciones, decoración e indentación */
+#css-11{ border-left:4px solid var(--c5); padding-left:8px }
+/* Alineación */
+.css-demo .ta-left, .type-demo .left{ text-align:left }
+.css-demo .ta-center, .type-demo .center{ text-align:center }
+.css-demo .ta-right, .type-demo .right{ text-align:right }
+.css-demo .ta-justify, .type-demo .justify{ text-align:justify }
+/* Transformación */
+.css-demo .tt-uppercase, .type-demo .uppercase{ text-transform:uppercase }
+.css-demo .tt-lowercase, .type-demo .lowercase{ text-transform:lowercase }
+.css-demo .tt-capitalize, .type-demo .capitalize{ text-transform:capitalize }
+/* Decoración */
+.css-demo .td-underline, .type-demo .underline{ text-decoration:underline }
+.css-demo .td-through, .type-demo .through{ text-decoration:line-through }
+.css-demo .td-none, .type-demo .no-underline{ text-decoration:none; color:#e53935 }
+/* Indentación */
+.css-demo .ti-2, .type-demo .indent{ text-indent:2rem }
